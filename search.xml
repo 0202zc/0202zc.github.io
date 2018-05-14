@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[用itchat库给好友发微信消息]]></title>
+    <url>%2F2018%2F05%2F15%2F%E7%94%A8itchat%E5%BA%93%E7%BB%99%E5%A5%BD%E5%8F%8B%E5%8F%91%E5%BE%AE%E4%BF%A1%E6%B6%88%E6%81%AF%2F</url>
+    <content type="text"><![CDATA[简介itchat是一个开源的微信个人号接口，使用python调用微信从未如此简单。微信登录可以通过第三方登录来实现，即网页登录。所以我们可以直接通过调用接口（使用itchat）来实现。详细查看微信网页第三方登录原理：https://www.cnblogs.com/lhat/p/6113803.html 安装可以通过本命令安装itchat：1pip install itchat 简单入门实例有了itchat，如果你想要给文件传输助手发一条信息，只需要这样：12345import itchatitchat.auto_login()itchat.send('Hello, filehelper', toUserName='filehelper') 如果你想要回复发给自己的文本消息，只需要这样：12345678import itchat@itchat.msg_register(itchat.content.TEXT)def text_reply(msg): return msg.textitchat.auto_login()itchat.run() 源代码消息发送12345678910111213141516171819# coding=utf8import itchatimport requestsitchat.auto_login(hotReload=True)friend = input('请输入好友昵称：')# 想给谁发信息，先查找到这个朋友,name后填微信备注即可,deepin测试成功users = itchat.search_friends(name=(u''+str(friend)))# 获取好友全部信息,返回一个列表,列表内是一个字典# print(users)# 获取`UserName`,用于发送消息userName = users[0]['UserName']while(True): a = input("Input: ") itchat.send(str(a), toUserName=userName)]]></content>
+      <categories>
+        <category>Python爬虫</category>
+      </categories>
+      <tags>
+        <tag>网络爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python 3.6 模拟登录学校跑操系统获取跑操信息]]></title>
     <url>%2F2018%2F05%2F14%2FPython-3-6%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E5%A4%A7%E8%BF%9E%E5%A4%A7%E5%AD%A6%E8%B7%91%E6%93%8D%E7%B3%BB%E7%BB%9F%E8%8E%B7%E5%8F%96%E8%B7%91%E6%93%8D%E4%BF%A1%E6%81%AF%2F</url>
     <content type="text"><![CDATA[简介本程序通过模拟登录大连大学智慧体育云获取数据该程序要用到requests, BeautifulSoup, re, html.parser等库使用session的post，将用户的数据传给服务器以登录。session可以将用户登录的cookie保存，从而得以进行访问其它网页。BeautifulSoup获取网页数据，并将获取的数据打印在屏幕上。因为学生默认密码为”111111”，所以改过密码的学生无法登录其账号，本程序将其跳过 源代码跑操爬虫1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950import requestsfrom bs4 import BeautifulSoupimport msvcrtimport refrom html.parser import *session = requests.session()login_data = &#123;'StudentNo': '****', 'Pwd': '111111'&#125;if __name__ == '__main__': i = 16422001 count = 0 count1 = 0 tplt = "&#123;0:^10&#125;\t&#123;1:&#123;3&#125;^6&#125;\t&#123;2:^4&#125;" print("\n------------------信息学院16级跑操情况------------------n") print(tplt.format("学号", "姓名", "跑操次数", chr(12288))) while(i &lt;= 16429060): if(count1 &gt; 70): i+=930 count1=0 login_data['StudentNo'] = str(i) response = session.post("http://isscp.dlu.edu.cn/User/UserLogin", data=login_data) if("true" in response.text): i += 1 count1 += 1 continue res = session.get("http://isscp.dlu.edu.cn/Movement/Sign?dc=30&amp;ds=0") res1 = session.get("http://isscp.dlu.edu.cn/My/Index") soup = BeautifulSoup(res.text, "html.parser") soup1 = BeautifulSoup(res1.text, "html.parser") text = soup.find('p', 'data_p_two') text1 = soup1.find('span', 'my_row_right_name') text2 = soup1.find('span', 'my_row_right_department') name = text1.find('p') department = text2.find('p') print(tplt.format(str(i), name.text, text.text, chr(12288))) i += 1 count += 1 count1 += 1 print("\n共计" + str(count) + "人, 按任意键退出...\n") msvcrt.getch()]]></content>
