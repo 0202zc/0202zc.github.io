@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="该程序要用到requests, BeautifulSoup, re, html.parser等库 #简介本程序通过模拟登录获取数据使用session的post，将用户的数据传给服务器以登录。session可以将用户登录的cookie保存，从而得以进行访问其它网页。BeautifulSoup获取网页数据，并将获取的数据打印在屏幕上。因为学生默认密码为”111111”，所以改过密码的学生无法登录其账号">
+<meta name="description" content="该程序要用到requests, BeautifulSoup, re, html.parser等库 简介本程序通过模拟登录获取数据使用session的post，将用户的数据传给服务器以登录。session可以将用户登录的cookie保存，从而得以进行访问其它网页。BeautifulSoup获取网页数据，并将获取的数据打印在屏幕上。因为学生默认密码为”111111”，所以改过密码的学生无法登录其账号，">
 <meta name="keywords" content="网络爬虫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 3.6模拟登陆大连大学跑操系统获取跑操信息">
 <meta property="og:url" content="http://0202zc.github.io/2018/05/14/Python-3-6模拟登陆大连大学跑操系统获取跑操信息/index.html">
 <meta property="og:site_name" content="ZC Liang 的博客">
-<meta property="og:description" content="该程序要用到requests, BeautifulSoup, re, html.parser等库 #简介本程序通过模拟登录获取数据使用session的post，将用户的数据传给服务器以登录。session可以将用户登录的cookie保存，从而得以进行访问其它网页。BeautifulSoup获取网页数据，并将获取的数据打印在屏幕上。因为学生默认密码为”111111”，所以改过密码的学生无法登录其账号">
+<meta property="og:description" content="该程序要用到requests, BeautifulSoup, re, html.parser等库 简介本程序通过模拟登录获取数据使用session的post，将用户的数据传给服务器以登录。session可以将用户登录的cookie保存，从而得以进行访问其它网页。BeautifulSoup获取网页数据，并将获取的数据打印在屏幕上。因为学生默认密码为”111111”，所以改过密码的学生无法登录其账号，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-14T04:10:22.928Z">
+<meta property="og:updated_time" content="2018-05-14T04:13:08.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 3.6模拟登陆大连大学跑操系统获取跑操信息">
-<meta name="twitter:description" content="该程序要用到requests, BeautifulSoup, re, html.parser等库 #简介本程序通过模拟登录获取数据使用session的post，将用户的数据传给服务器以登录。session可以将用户登录的cookie保存，从而得以进行访问其它网页。BeautifulSoup获取网页数据，并将获取的数据打印在屏幕上。因为学生默认密码为”111111”，所以改过密码的学生无法登录其账号">
+<meta name="twitter:description" content="该程序要用到requests, BeautifulSoup, re, html.parser等库 简介本程序通过模拟登录获取数据使用session的post，将用户的数据传给服务器以登录。session可以将用户登录的cookie保存，从而得以进行访问其它网页。BeautifulSoup获取网页数据，并将获取的数据打印在屏幕上。因为学生默认密码为”111111”，所以改过密码的学生无法登录其账号，">
 
 
 
@@ -301,7 +301,7 @@
 
       
         <p>该程序要用到requests, BeautifulSoup, re, html.parser等库</p>
-<p>#简介<br>本程序通过模拟登录获取数据<br>使用session的post，将用户的数据传给服务器以登录。session可以将用户登录的cookie保存，从而得以进行访问其它网页。<br>BeautifulSoup获取网页数据，并将获取的数据打印在屏幕上。<br>因为学生默认密码为”111111”，所以改过密码的学生无法登录其账号，本程序将其跳过</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本程序通过模拟登录获取数据<br>使用session的post，将用户的数据传给服务器以登录。session可以将用户登录的cookie保存，从而得以进行访问其它网页。<br>BeautifulSoup获取网页数据，并将获取的数据打印在屏幕上。<br>因为学生默认密码为”111111”，所以改过密码的学生无法登录其账号，本程序将其跳过</p>
 <h1 id="下面是源代码"><a href="#下面是源代码" class="headerlink" title="下面是源代码"></a>下面是源代码</h1><p>import requests<br>from bs4 import BeautifulSoup<br>import msvcrt<br>import re<br>from html.parser import *</p>
 <p>session = requests.session()<br>login_data = {‘StudentNo’: ‘<em>**</em>‘, ‘Pwd’: ‘111111’}</p>
 <p>def main():<br>    i = 16422001<br>    count = 0<br>    count1 = 0<br>    tplt = “{0:^10}\t{1:{3}^6}\t{2:^4}”<br>    print(“\n——————信息学院16级跑操情况——————n”)<br>    print(tplt.format(“学号”, “姓名”, “跑操次数”, chr(12288)))</p>
@@ -499,7 +499,7 @@ msvcrt.getch()
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下面是源代码"><span class="nav-number">1.</span> <span class="nav-text">下面是源代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下面是源代码"><span class="nav-number">2.</span> <span class="nav-text">下面是源代码</span></a></li></ol></div>
             
 
           </div>
