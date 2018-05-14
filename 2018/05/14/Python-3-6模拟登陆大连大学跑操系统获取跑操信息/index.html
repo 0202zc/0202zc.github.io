@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="ZC Liang 的博客">
 <meta property="og:description" content="该程序要用到requests, BeautifulSoup, re, html.parser等库 简介本程序通过模拟登录获取数据使用session的post，将用户的数据传给服务器以登录。session可以将用户登录的cookie保存，从而得以进行访问其它网页。BeautifulSoup获取网页数据，并将获取的数据打印在屏幕上。因为学生默认密码为”111111”，所以改过密码的学生无法登录其账号，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-14T09:12:41.359Z">
+<meta property="og:updated_time" content="2018-05-14T11:13:27.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 3.6 模拟登陆学校跑操系统获取跑操信息">
 <meta name="twitter:description" content="该程序要用到requests, BeautifulSoup, re, html.parser等库 简介本程序通过模拟登录获取数据使用session的post，将用户的数据传给服务器以登录。session可以将用户登录的cookie保存，从而得以进行访问其它网页。BeautifulSoup获取网页数据，并将获取的数据打印在屏幕上。因为学生默认密码为”111111”，所以改过密码的学生无法登录其账号，">
@@ -382,7 +382,7 @@
       
         <p>该程序要用到requests, BeautifulSoup, re, html.parser等库</p>
 <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本程序通过模拟登录获取数据<br>使用session的post，将用户的数据传给服务器以登录。session可以将用户登录的cookie保存，从而得以进行访问其它网页。<br>BeautifulSoup获取网页数据，并将获取的数据打印在屏幕上。<br>因为学生默认密码为”111111”，所以改过密码的学生无法登录其账号，本程序将其跳过</p>
-<h1 id="下面是源代码"><a href="#下面是源代码" class="headerlink" title="下面是源代码"></a>下面是源代码</h1><figure class="highlight python"><figcaption><span>跑操爬虫</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> msvcrt</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> html.parser <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">session = requests.session()</span><br><span class="line">login_data = &#123;<span class="string">'StudentNo'</span>: <span class="string">'****'</span>, <span class="string">'Pwd'</span>: <span class="string">'111111'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    i = <span class="number">16422001</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    count1 = <span class="number">0</span></span><br><span class="line">    tplt = <span class="string">"&#123;0:^10&#125;\t&#123;1:&#123;3&#125;^6&#125;\t&#123;2:^4&#125;"</span></span><br><span class="line">    </span><br><span class="line">    print(<span class="string">"\n------------------信息学院16级跑操情况------------------n"</span>)</span><br><span class="line">    print(tplt.format(<span class="string">"学号"</span>, <span class="string">"姓名"</span>, <span class="string">"跑操次数"</span>, chr(<span class="number">12288</span>)))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(i &lt;= <span class="number">16429060</span>):</span><br><span class="line">        <span class="keyword">if</span>(count1 &gt; <span class="number">70</span>):</span><br><span class="line">            i+=<span class="number">930</span></span><br><span class="line">            count1=<span class="number">0</span></span><br><span class="line">        login_data[<span class="string">'StudentNo'</span>] = str(i)</span><br><span class="line">        response = session.post(<span class="string">"http://isscp.dlu.edu.cn/User/UserLogin"</span>, data=login_data)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="string">"true"</span> <span class="keyword">in</span> response.text):</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">            count1 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">        res = session.get(<span class="string">"http://isscp.dlu.edu.cn/Movement/Sign?dc=30&amp;ds=0"</span>)</span><br><span class="line">        res1 = session.get(<span class="string">"http://isscp.dlu.edu.cn/My/Index"</span>)</span><br><span class="line"></span><br><span class="line">        soup = BeautifulSoup(res.text, <span class="string">"html.parser"</span>)</span><br><span class="line">        soup1 = BeautifulSoup(res1.text, <span class="string">"html.parser"</span>)</span><br><span class="line"></span><br><span class="line">        text = soup.find(<span class="string">'p'</span>, <span class="string">'data_p_two'</span>)</span><br><span class="line">        text1 = soup1.find(<span class="string">'span'</span>, <span class="string">'my_row_right_name'</span>)</span><br><span class="line">        text2 = soup1.find(<span class="string">'span'</span>, <span class="string">'my_row_right_department'</span>)</span><br><span class="line"></span><br><span class="line">        name = text1.find(<span class="string">'p'</span>)</span><br><span class="line">        department = text2.find(<span class="string">'p'</span>)</span><br><span class="line"></span><br><span class="line">        print(tplt.format(str(i), name.text, text.text, chr(<span class="number">12288</span>)))</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        count1 += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">"\n共计"</span> + str(count) + <span class="string">"人, 按任意键退出...\n"</span>)</span><br><span class="line">    msvcrt.getch()</span><br></pre></td></tr></table></figure>
+<h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight python"><figcaption><span>跑操爬虫</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> msvcrt</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> html.parser <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">session = requests.session()</span><br><span class="line">login_data = &#123;<span class="string">'StudentNo'</span>: <span class="string">'****'</span>, <span class="string">'Pwd'</span>: <span class="string">'111111'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    i = <span class="number">16422001</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    count1 = <span class="number">0</span></span><br><span class="line">    tplt = <span class="string">"&#123;0:^10&#125;\t&#123;1:&#123;3&#125;^6&#125;\t&#123;2:^4&#125;"</span></span><br><span class="line">    </span><br><span class="line">    print(<span class="string">"\n------------------信息学院16级跑操情况------------------n"</span>)</span><br><span class="line">    print(tplt.format(<span class="string">"学号"</span>, <span class="string">"姓名"</span>, <span class="string">"跑操次数"</span>, chr(<span class="number">12288</span>)))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(i &lt;= <span class="number">16429060</span>):</span><br><span class="line">        <span class="keyword">if</span>(count1 &gt; <span class="number">70</span>):</span><br><span class="line">            i+=<span class="number">930</span></span><br><span class="line">            count1=<span class="number">0</span></span><br><span class="line">        login_data[<span class="string">'StudentNo'</span>] = str(i)</span><br><span class="line">        response = session.post(<span class="string">"http://isscp.dlu.edu.cn/User/UserLogin"</span>, data=login_data)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="string">"true"</span> <span class="keyword">in</span> response.text):</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">            count1 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">        res = session.get(<span class="string">"http://isscp.dlu.edu.cn/Movement/Sign?dc=30&amp;ds=0"</span>)</span><br><span class="line">        res1 = session.get(<span class="string">"http://isscp.dlu.edu.cn/My/Index"</span>)</span><br><span class="line"></span><br><span class="line">        soup = BeautifulSoup(res.text, <span class="string">"html.parser"</span>)</span><br><span class="line">        soup1 = BeautifulSoup(res1.text, <span class="string">"html.parser"</span>)</span><br><span class="line"></span><br><span class="line">        text = soup.find(<span class="string">'p'</span>, <span class="string">'data_p_two'</span>)</span><br><span class="line">        text1 = soup1.find(<span class="string">'span'</span>, <span class="string">'my_row_right_name'</span>)</span><br><span class="line">        text2 = soup1.find(<span class="string">'span'</span>, <span class="string">'my_row_right_department'</span>)</span><br><span class="line"></span><br><span class="line">        name = text1.find(<span class="string">'p'</span>)</span><br><span class="line">        department = text2.find(<span class="string">'p'</span>)</span><br><span class="line"></span><br><span class="line">        print(tplt.format(str(i), name.text, text.text, chr(<span class="number">12288</span>)))</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        count1 += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">"\n共计"</span> + str(count) + <span class="string">"人, 按任意键退出...\n"</span>)</span><br><span class="line">    msvcrt.getch()</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -402,14 +402,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.png" alt="0202zc WeChat Pay"/>
+        <img id="wechat_qr" src="F:/Blog/themes/hexo-theme-next/source/imageswechatpay.png" alt="0202zc WeChat Pay"/>
         <p>WeChat Pay</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/img/alipay.jpg" alt="0202zc Alipay"/>
+        <img id="alipay_qr" src="F:/Blog/themes/hexo-theme-next/source/images/alipay.jpg" alt="0202zc Alipay"/>
         <p>Alipay</p>
       </div>
     
@@ -467,44 +467,6 @@
 
 
     <div class="post-spread">
-      
-        
-  <div class="bdsharebuttonbox">
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
-    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-    <a href="#" class="bds_more" data-cmd="more"></a>
-    <a class="bds_count" data-cmd="count"></a>
-  </div>
-  <script>
-    window._bd_share_config = {
-      "common": {
-        "bdText": "",
-        "bdMini": "2",
-        "bdMiniList": false,
-        "bdPic": ""
-      },
-      "share": {
-        "bdSize": "16",
-        "bdStyle": "0"
-      },
-      "image": {
-        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
-        "viewText": "分享到：",
-        "viewSize": "16"
-      }
-    }
-  </script>
-
-<script>
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-
       
     </div>
   </div>
@@ -626,7 +588,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下面是源代码"><span class="nav-number">2.</span> <span class="nav-text">下面是源代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源代码"><span class="nav-number">2.</span> <span class="nav-text">源代码</span></a></li></ol></div>
             
 
           </div>
