@@ -7,22 +7,15 @@
     </url>
     
     <url>
+        <loc>http://0202zc.github.io/message/</loc>
+        <lastmod>2018-05-15T12:13:20.750Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>http://0202zc.github.io/about/</loc>
         <lastmod>2018-05-15T03:20:43.075Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://0202zc.github.io/search/</loc>
-        <lastmod>2018-05-14T10:40:18.300Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://0202zc.github.io/message/</loc>
-        <lastmod>2018-05-14T09:09:01.162Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
