@@ -93,22 +93,22 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="背景在上学期安装好Java后，根据网上的教程配置了环境变量，在cmd里运行”java”成功，而运行”javac”出现“不是内部或外部命令，也不是可运行的程序或批处理文件”的提示。经过了一番苦苦的寻找、测试，终于在百度经验的一篇找到了答案：（原文链接：http://jingyan.baidu.com/article/d5c4b52b80665fda560dc5e4.html）发现的确是环境变量配置的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="f:/Blog/source/images/javac/1.jpg">
-<meta property="og:image" content="f:/Blog/source/images/javac/2.jpg">
-<meta property="og:image" content="f:/Blog/source/images/javac/3.jpg">
-<meta property="og:image" content="f:/Blog/source/images/javac/4.jpg">
-<meta property="og:image" content="f:/Blog/source/images/javac/5.jpg">
-<meta property="og:image" content="f:/Blog/source/images/javac/6.jpg">
-<meta property="og:image" content="f:/Blog/source/images/javac/7.jpg">
-<meta property="og:image" content="f:/Blog/source/images/javac/8.jpg">
-<meta property="og:image" content="f:/Blog/source/images/javac/9.jpg">
-<meta property="og:image" content="f:/Blog/source/images/javac/10.jpg">
-<meta property="og:image" content="f:/Blog/source/images/javac/11.jpg">
-<meta property="og:updated_time" content="2018-05-16T14:42:23.951Z">
+<meta property="og:image" content="http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/1.jpg">
+<meta property="og:image" content="http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/2.jpg">
+<meta property="og:image" content="http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/3.jpg">
+<meta property="og:image" content="http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/4.jpg">
+<meta property="og:image" content="http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/5.jpg">
+<meta property="og:image" content="http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/6.jpg">
+<meta property="og:image" content="http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/7.jpg">
+<meta property="og:image" content="http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/8.jpg">
+<meta property="og:image" content="http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/9.jpg">
+<meta property="og:image" content="http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/10.jpg">
+<meta property="og:image" content="http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/11.jpg">
+<meta property="og:updated_time" content="2018-05-16T14:53:53.417Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习笔记 —— 新版Windows10配置Java环境变量">
 <meta name="twitter:description" content="背景在上学期安装好Java后，根据网上的教程配置了环境变量，在cmd里运行”java”成功，而运行”javac”出现“不是内部或外部命令，也不是可运行的程序或批处理文件”的提示。经过了一番苦苦的寻找、测试，终于在百度经验的一篇找到了答案：（原文链接：http://jingyan.baidu.com/article/d5c4b52b80665fda560dc5e4.html）发现的确是环境变量配置的">
-<meta name="twitter:image" content="f:/Blog/source/images/javac/1.jpg">
+<meta name="twitter:image" content="http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/1.jpg">
 
 
 
@@ -472,15 +472,15 @@
 </ul>
 <h1 id="如何配置"><a href="#如何配置" class="headerlink" title="如何配置"></a>如何配置</h1><ol>
 <li>首先，右键单击桌面“此电脑”图标，选择“属性”</li>
-<li>在左侧的菜单栏中选择“高级系统设置”<br><img src="F:/Blog/source/images/javac/1.jpg" alt="">  </li>
-<li>选择“环境变量”<br><img src="F:/Blog/source/images/javac/2.jpg" alt="">  </li>
-<li>选择下方的新建，变量名为JAVA_HOME,变量值为你安装jdk的路径，我的是D:\Program Files\Java\jdk1.8.0_182，你的就要看自己的了<br><img src="F:/Blog/source/images/javac/3.jpg" alt="">  </li>
-<li>然后在新建个，变量名为CLASSPATH，变量值为 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar; （注意这里一个符号都不能少，包含了前面的 .;  还有后面的 ;），然后确定<br><img src="F:/Blog/source/images/javac/4.jpg" alt=""></li>
-<li>这一步操作之后会出现一个操作界面是14,15版的win10 没有的，所以要注意看，找到Path,然后选择 “编辑”<br><img src="F:/Blog/source/images/javac/5.jpg" alt=""></li>
-<li>会出现这个页面，我们选择下面的“编辑文本”，然后确定<br><img src="F:/Blog/source/images/javac/6.jpg" alt=""><br><img src="F:/Blog/source/images/javac/7.jpg" alt=""></li>
-<li><strong>重点</strong> 在变量值的开始处，找到C: ,在C: 添加这段变量 ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin; （注意前后的符号一个都不能少而且是英文的），然后“确定”<br><img src="F:/Blog/source/images/javac/8.jpg" alt=""> </li>
-<li>编辑完后有两个确定要按<br><img src="F:/Blog/source/images/javac/9.jpg" alt=""><br><img src="F:/Blog/source/images/javac/10.jpg" alt=""></li>
-<li>接下来测试时否安装成功，win+R ,然后输入CMD，进入命令提示符”javac”<br><img src="F:/Blog/source/images/javac/11.jpg" alt=""></li>
+<li>在左侧的菜单栏中选择“高级系统设置”<br><img src="1.jpg" alt="">  </li>
+<li>选择“环境变量”<br><img src="2.jpg" alt="">  </li>
+<li>选择下方的新建，变量名为JAVA_HOME,变量值为你安装jdk的路径，我的是D:\Program Files\Java\jdk1.8.0_182，你的就要看自己的了<br><img src="3.jpg" alt="">  </li>
+<li>然后在新建个，变量名为CLASSPATH，变量值为 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar; （注意这里一个符号都不能少，包含了前面的 .;  还有后面的 ;），然后确定<br><img src="4.jpg" alt=""></li>
+<li>这一步操作之后会出现一个操作界面是14,15版的win10 没有的，所以要注意看，找到Path,然后选择 “编辑”<br><img src="5.jpg" alt=""></li>
+<li>会出现这个页面，我们选择下面的“编辑文本”，然后确定<br><img src="6.jpg" alt=""><br><img src="7.jpg" alt=""></li>
+<li><strong>重点</strong> 在变量值的开始处，找到C: ,在C: 添加这段变量 ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin; （注意前后的符号一个都不能少而且是英文的），然后“确定”<br><img src="8.jpg" alt=""> </li>
+<li>编辑完后有两个确定要按<br><img src="9.jpg" alt=""><br><img src="10.jpg" alt=""></li>
+<li>接下来测试时否安装成功，win+R ,然后输入CMD，进入命令提示符”javac”<br><img src="11.jpg" alt=""></li>
 </ol>
 <h1 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h1><ul>
 <li>其中关键的一步是把<code>PATH</code>里的<code>jdk</code>和<code>jre</code>路径放在<code>PATH</code>列表的<strong>最前面</strong>，这样cmd运行<code>javac</code>时才能先检测到<code>JAVA_HOME</code>系列的路径</li>
