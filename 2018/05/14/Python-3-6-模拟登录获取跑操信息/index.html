@@ -385,16 +385,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/14/Python-3-6-模拟登录获取跑操信息/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/14/Python-3-6-模拟登录获取跑操信息/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -552,8 +542,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/15/Python-3-6-模拟登录学校教务系统获取四六级成绩/" rel="prev" title="Python 3.6 模拟登录学校教务系统获取四六级成绩">
-                Python 3.6 模拟登录学校教务系统获取四六级成绩 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/15/用itchat库给好友发微信消息/" rel="prev" title="用itchat库给好友发微信消息">
+                用itchat库给好友发微信消息 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -585,7 +575,9 @@
 
   
     <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="lzc980202@163.com"></div>
     </div>
+
   
 
 
@@ -640,7 +632,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -651,7 +643,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -662,7 +654,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -917,37 +909,26 @@
 
 
   
-
-
-
-
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'LmnxSgDzqqpaABCtC4LgmPtI-gzGzoHsz',
-        appKey: 'aOT3PG5cL7BHviM1KQkYEB9o',
-        placeholder: '\(^o^)/~来呀！快活呀！',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
+
+
+
+
+
+
+
+
+
 
 
 
