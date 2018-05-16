@@ -9,13 +9,6 @@
     </url>
 
     <url>
-        <loc>http://0202zc.github.io/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/</loc>
-        <lastmod>2018-05-15T13:25:43.467Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://0202zc.github.io/tags/Python/</loc>
         <lastmod>2018-05-16T10:35:28.040Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,6 +18,13 @@
     <url>
         <loc>http://0202zc.github.io/tags/%E5%BE%AE%E4%BF%A1/</loc>
         <lastmod>2018-05-16T10:35:28.040Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://0202zc.github.io/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/</loc>
+        <lastmod>2018-05-16T12:57:43.693Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
