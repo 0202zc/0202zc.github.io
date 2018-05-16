@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0202zc.github.io/"/>
-  <updated>2018-05-16T13:41:22.783Z</updated>
+  <updated>2018-05-16T13:41:58.766Z</updated>
   <id>http://0202zc.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://0202zc.github.io/2018/05/16/%E6%96%B0%E7%89%88Windows10%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
     <id>http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/</id>
     <published>2018-05-16T12:56:50.000Z</published>
-    <updated>2018-05-16T13:41:22.783Z</updated>
+    <updated>2018-05-16T13:41:58.766Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在上学期安装好Java后，根据网上的教程配置了环境变量，在cmd里运行”java”成功，而运行”javac”出现“<em>不是内部或外部命令，也不是可运行的程序或批处理文件</em>”的提示。<br>经过了一番苦苦的寻找、测试，终于在百度经验的一篇找到了答案：(原文链接：<em><a href="http://jingyan.baidu.com/article/d5c4b52b80665fda560dc5e4.html" target="_blank" rel="noopener">http://jingyan.baidu.com/article/d5c4b52b80665fda560dc5e4.html</a></em>) 。<br>的确是环境变量配置的问题，但是感觉不够详细。  </p><h1 id="原料"><a href="#原料" class="headerlink" title="原料"></a>原料</h1><ul><li>一台新版的win10(16,17,18版)的电脑</li><li>Java jkd/jre 1.8以上版本</li><li>人脑</li><li>熟练操作鼠标和键盘的手</li></ul><h1 id="如何配置"><a href="#如何配置" class="headerlink" title="如何配置"></a>如何配置</h1><p>- </p>]]></content>
+    <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在上学期安装好Java后，根据网上的教程配置了环境变量，在cmd里运行”java”成功，而运行”javac”出现“<em>不是内部或外部命令，也不是可运行的程序或批处理文件</em>”的提示。<br>经过了一番苦苦的寻找、测试，终于在百度经验的一篇找到了答案：（原文链接：<em><a href="http://jingyan.baidu.com/article/d5c4b52b80665fda560dc5e4.html" target="_blank" rel="noopener">http://jingyan.baidu.com/article/d5c4b52b80665fda560dc5e4.html</a></em>）。<br>的确是环境变量配置的问题，但是感觉不够详细。  </p><h1 id="原料"><a href="#原料" class="headerlink" title="原料"></a>原料</h1><ul><li>一台新版的win10(16,17,18版)的电脑</li><li>Java jkd/jre 1.8以上版本</li><li>人脑</li><li>熟练操作鼠标和键盘的手</li></ul><h1 id="如何配置"><a href="#如何配置" class="headerlink" title="如何配置"></a>如何配置</h1><p>- </p>]]></content>
     
     <summary type="html">
     
