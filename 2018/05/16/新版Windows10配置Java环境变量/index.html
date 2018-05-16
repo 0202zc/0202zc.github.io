@@ -96,7 +96,14 @@
 <meta property="og:image" content="https://imgsa.baidu.com/exp/pic/item/a0ca99d6277f9e2f2d8bedc01530e924b999f379.jpg">
 <meta property="og:image" content="https://imgsa.baidu.com/exp/pic/item/1899a23eb13533fa43a760e6a2d3fd1f40345ba2.jpg">
 <meta property="og:image" content="https://imgsa.baidu.com/exp/pic/item/00a82701213fb80ef4d5931f3cd12f2eb83894b7.jpg">
-<meta property="og:updated_time" content="2018-05-16T14:06:53.705Z">
+<meta property="og:image" content="https://imgsa.baidu.com/exp/pic/item/c856613e6709c93dbc31f13f953df8dcd30054fc.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/exp/pic/item/969cbf44ad345982c8e91c5a06f431adcaef845c.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/exp/pic/item/9f1011b30f2442a72d43046ddb43ad4bd013026e.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/exp/pic/item/6f4703950a7b02085709c42968d9f2d3552cc8f3.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/exp/pic/item/ac2fc3c451da81cbe68664055866d01608243153.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/exp/pic/item/c87c6ecf3bc79f3d31ea01f8b0a1cd11738b29b4.jpg">
+<meta property="og:image" content="https://imgsa.baidu.com/exp/pic/item/b7bc4c66d0160924487944d3de0735fae7cd345f.jpg">
+<meta property="og:updated_time" content="2018-05-16T14:22:01.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习笔记 —— 新版Windows10配置Java环境变量">
 <meta name="twitter:description" content="背景在上学期安装好Java后，根据网上的教程配置了环境变量，在cmd里运行”java”成功，而运行”javac”出现“不是内部或外部命令，也不是可运行的程序或批处理文件”的提示。经过了一番苦苦的寻找、测试，终于在百度经验的一篇找到了答案：（原文链接：http://jingyan.baidu.com/article/d5c4b52b80665fda560dc5e4.html）发现的确是环境变量配置的">
@@ -418,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  245字
+                  394字
                 </span>
               
 
@@ -467,7 +474,11 @@
 <li>在左侧的菜单栏中选择“高级系统设置”<br><img src="https://imgsa.baidu.com/exp/pic/item/a0ca99d6277f9e2f2d8bedc01530e924b999f379.jpg" alt="">  </li>
 <li>选择“环境变量”<br><img src="https://imgsa.baidu.com/exp/pic/item/1899a23eb13533fa43a760e6a2d3fd1f40345ba2.jpg" alt="">  </li>
 <li>选择下方的新建，变量名为JAVA_HOME,变量值为你安装jdk的路径，我的是D:\Program Files\Java\jdk1.8.0_182，你的就要看自己的了<br><img src="https://imgsa.baidu.com/exp/pic/item/00a82701213fb80ef4d5931f3cd12f2eb83894b7.jpg" alt="">  </li>
-<li></li>
+<li>这一步操作之后会出现一个操作界面是14,15版的win10 没有的，所以要注意看，找到Path,然后选择 “编辑”<br><img src="https://imgsa.baidu.com/exp/pic/item/c856613e6709c93dbc31f13f953df8dcd30054fc.jpg" alt=""></li>
+<li>会出现这个页面，我们选择下面的“编辑文本”，然后确定<br><img src="https://imgsa.baidu.com/exp/pic/item/969cbf44ad345982c8e91c5a06f431adcaef845c.jpg" alt=""><br><img src="https://imgsa.baidu.com/exp/pic/item/9f1011b30f2442a72d43046ddb43ad4bd013026e.jpg" alt=""></li>
+<li>在变量值的开始处，找到C: ,在C: 添加这段变量 ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin; （注意前后的符号一个都不能少而且是英文的），然后“确定”<br><img src="https://imgsa.baidu.com/exp/pic/item/6f4703950a7b02085709c42968d9f2d3552cc8f3.jpg" alt=""> </li>
+<li>编辑完后有两个确定要按<br><img src="https://imgsa.baidu.com/exp/pic/item/ac2fc3c451da81cbe68664055866d01608243153.jpg" alt=""><br><img src="https://imgsa.baidu.com/exp/pic/item/c87c6ecf3bc79f3d31ea01f8b0a1cd11738b29b4.jpg" alt=""></li>
+<li>接下来测试时否安装成功，win+R ,然后输入CMD，进入命令提示符”javac”<br><img src="https://imgsa.baidu.com/exp/pic/item/b7bc4c66d0160924487944d3de0735fae7cd345f.jpg" alt=""></li>
 </ol>
 
       
