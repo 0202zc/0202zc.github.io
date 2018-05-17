@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="有话在先前日注册了百度云账号，接触到了百度云的一系列接口，看到“人脸对比”后突发奇想，用人脸识别来做认证（虽然没有Alipay那么高端）模拟登录执行程序。于是就去百度了百度云接口python实现人脸识别、OpenCV人脸认证。网上实现百度云接口的代码是用Python3写的，但是OpenCV目前只支持Python2；所以我尝试了一下把py3的百度云人脸识别代码改成了py2的。结果……失败了【悲伤.g">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-17T03:20:12.786Z">
+<meta property="og:updated_time" content="2018-05-17T23:36:11.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习笔记 —— OpenCV+百度云接口实现人脸认证">
 <meta name="twitter:description" content="有话在先前日注册了百度云账号，接触到了百度云的一系列接口，看到“人脸对比”后突发奇想，用人脸识别来做认证（虽然没有Alipay那么高端）模拟登录执行程序。于是就去百度了百度云接口python实现人脸识别、OpenCV人脸认证。网上实现百度云接口的代码是用Python3写的，但是OpenCV目前只支持Python2；所以我尝试了一下把py3的百度云人脸识别代码改成了py2的。结果……失败了【悲伤.g">
@@ -460,7 +460,7 @@
 <li>为了照顾现有程式，Python 2.6作为一个过渡版本，基本使用了Python 2.x的语法和库，同时考虑了向Python 3.0的迁移，允许使用部分Python 3.0的语法与函数。</li>
 <li>新的Python程式建议使用Python 3.0版本的语法。</li>
 <li>除非执行环境无法安装Python 3.0或者程式本身使用了不支援Python 3.0的第三方库。目前不支援Python 3.0的第三方库有Twisted, py2exe, PIL等。</li>
-<li>大多数第三方库都正在努力地相容Python 3.0版本。即使无法立即使用Python 3.0，也建议编写相容Python 3.0版本的程式，然后使用Python 2.6, Python 2.7来执行。<br><em>详情阅读：<a href="https://blog.csdn.net/ljl6158999/article/details/78983725" target="_blank" rel="noopener">https://blog.csdn.net/ljl6158999/article/details/78983725</a></em>，<em><a href="https://www.cnblogs.com/sherlockChen/p/8064896.html" target="_blank" rel="noopener">https://www.cnblogs.com/sherlockChen/p/8064896.html</a></em><br>其实我遇到的问题是库的问题，py3将py2的一些库做了整合和删除，导致py2变py3时会很麻烦</li>
+<li>大多数第三方库都正在努力地相容Python 3.0版本。即使无法立即使用Python 3.0，也建议编写相容Python 3.0版本的程式，然后使用Python 2.6, Python 2.7来执行。<br><em>详情阅读：</em><br><em><a href="https://blog.csdn.net/ljl6158999/article/details/78983725" target="_blank" rel="noopener">https://blog.csdn.net/ljl6158999/article/details/78983725</a></em>，<br><em><a href="https://www.cnblogs.com/sherlockChen/p/8064896.html" target="_blank" rel="noopener">https://www.cnblogs.com/sherlockChen/p/8064896.html</a></em><br>其实我遇到的问题是库的问题，py3将py2的一些库做了整合和删除，导致py2变py3时会很麻烦</li>
 </ul>
 <h1 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h1><h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><ul>
 <li>这需要之前先保存一张人脸的图片，然后调用摄像头拍照获取当前人脸，通过代码上传二者到百度云<em>人脸对比</em>进行比较分析</li>
