@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="一、计算机系统概述计算机由五部分组成：控制器，存储器，运算器，输入设备，输出设备   系统结构：计算机系统对各级之间界面的定义，及其上下功能分配。各级都有自己的系统结构，各级之间存在透明性（确实存在，但无法监测设置）   计算机组成是指计算机系统结构的逻辑实现，包括 机器级内的数据通道和控制信号的组成及逻辑设计，他着眼于机器级内各事件的时序方式与控制机构，各部件功能及相互联系   计算机实现是指计">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-21T11:52:51.779Z">
+<meta property="og:updated_time" content="2018-05-21T12:04:34.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机组成原理笔记">
 <meta name="twitter:description" content="一、计算机系统概述计算机由五部分组成：控制器，存储器，运算器，输入设备，输出设备   系统结构：计算机系统对各级之间界面的定义，及其上下功能分配。各级都有自己的系统结构，各级之间存在透明性（确实存在，但无法监测设置）   计算机组成是指计算机系统结构的逻辑实现，包括 机器级内的数据通道和控制信号的组成及逻辑设计，他着眼于机器级内各事件的时序方式与控制机构，各部件功能及相互联系   计算机实现是指计">
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,721字
+                  3,597字
                 </span>
               
 
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9分钟
+                  12分钟
                 </span>
               
             </div>
@@ -455,6 +455,10 @@
 <p><strong>系统结构</strong>：计算机系统对各级之间界面的定义，及其上下功能分配。各级都有自己的系统结构，各级之间存在透明性（确实存在，但无法监测设置）  </p>
 <p><strong>计算机组成</strong>是指计算机系统结构的逻辑实现，包括 机器级内的数据通道和控制信号的组成及逻辑设计，他着眼于机器级内各事件的时序方式与控制机构，各部件功能及相互联系  </p>
 <p><strong>计算机实现</strong>是指计算机组成的物理实现</p>
+<p><strong>吞吐量</strong>：表征一台计算机在某一时间间隔内能够处理的信息量。</p>
+<p><strong>CPI(Cycles Per Instruction)</strong>：表示每条指令周期数，即执行一条质量所需的平均时钟周期数。计算如下：<br>CPI=执行某段程序所需的CPU时钟周期数/程序包含的指令条数</p>
+<p><strong>MIPS(Million Instructions Per Second)</strong>：每秒执行多少百万条定点指令数，计算如下：<br>MIPS=指令数/(程序执行的时间*10^6)</p>
+<p><strong>FLOPS(Floating-point Operations Per Second)</strong>：每秒执行浮点操作的次数，用来衡量机器浮点操作的性能，计算如下：<br>FLOPS=程序中的浮点操作次数/程序执行时间(S)</p>
 <h1 id="二、数据的机器表示"><a href="#二、数据的机器表示" class="headerlink" title="二、数据的机器表示"></a>二、数据的机器表示</h1><p><strong>计算机数制</strong>：十进制D，二进制B，十六进制H······<br>二进制——&gt;十进制：按权相加<br>十进制——&gt;二进制：除2取余<br>十进制——&gt;十六进制：除16取余<br>十六进制——&gt;十进制：按权相加<br>二进制——&gt;十六进制：四位合一（小数点左或右，每四位合一位）<br>十六进制——&gt;二进制：将十六进制的每位用四位二进制表示</p>
 <p><strong>字母ASCII码</strong>：A所对应的码是在其十六进制的基础上加37H，小写字母的码比其大写字母对应的码大20H<br><strong>数字ASCII码</strong>：在其数字基础上加30H</p>
 <p><strong>校验编码和解码</strong><br>为了判断，纠正信息在存入物理设备或传输中被干扰而导致某些信息错误，需要在信息发送（存储）后之前进行编码，在信息接收（读出）后进行解码。<br>校验码编码采用冗余校验（在近笨的有效信息位尚在扩充若干校验位称为冗余位，冗余位越多纠错差错能力越强）的编码思想。<br><strong>奇偶校验</strong>：是一种只有一位冗余位的编码方法，常用于主存校验，信息传送。分为奇校验，偶校验两种。<br>奇校验：编码后的有效信息位和奇偶校验位的个数为奇数<br>偶校验：编码后有效信息位和奇偶校验位1的个数为偶数</p>
@@ -483,6 +487,15 @@
 <p><em>微命令</em> 和<em>微操作</em>是一一对应的微命令是微操作的控制信号，微操作是微命令的操作过程。</p>
 <p><em>微指令</em>：是控制存储器的一个单元的内容，是若干微命令的集合<br><em>微地址</em>：存放控制存储单元的单元地址就成为微地址。<br><em>微周期</em>：从控制存储器中读取一条微指令并执行相应的微命令所需的全部时间<br><em>微程序</em>：一系列微指令的有序集合就是微程序。每一条机器指令都对应一个微程序。</p>
 <p><strong>微指令编码法</strong><br>直接控制法，最短编码法，字段编码法</p>
+<h1 id="六、指令流水线"><a href="#六、指令流水线" class="headerlink" title="六、指令流水线"></a>六、指令流水线</h1><h1 id="七、存储器系统及其层次结构"><a href="#七、存储器系统及其层次结构" class="headerlink" title="七、存储器系统及其层次结构"></a>七、存储器系统及其层次结构</h1><p><strong>存储器的性能指标</strong><br>存储容量：存储器所能容纳二进制信息的总量。容量单位：位（b) 字节(B)…… 1B=8b</p>
+<p>存储器速度：衡量存储器的速度通常有三个相关参数（存取时间，存取周期，存储器带宽）</p>
+<p><strong>存储器的分类</strong><br>按存储介质分（磁表面存储器，半导体存储器，光盘存储器）<br>按所处位置分（内存，外村，缓冲存储器（cache））<br>按存取方式分（随机存储器，只读存储器，串行访问存储器）</p>
+<p><strong>存储器的层次结构</strong><br>缓存-主存主要解决cpu和主存速度不匹配问题 ，主存和缓存之间的数据调动是由硬件自动完成的<br>主存-辅存层次主要解决存储系统的容量问题，主存和辅存志坚的数据调动是由硬件和操作系统共同完成的</p>
+<p><strong>半导体存储器</strong><br>随机存储器RAM：可以通过指令随机的对任意存储单元进行读写访问，RAM通常是住存储器的主要组成部分。分为动态(DRAM，每隔2ms刷新一次)和静态(SRAM)两种<br>只读存储器（ROM)：仅能执行读操作的存储器<br>半导体串行存储器：其数据按位串行读出或写入</p>
+<p><strong>存储器芯片</strong><br>存储容量：用常用存储单元个数乘以存储单元的位数计算<br>在存储器中存储1位二进制信息的存储元件称为基本存储单元，若干个基本存储单元组成一个存储字，存储字的位数称为存储器位宽，被一定的规则组合在一起构成一个存储体<br>存储器芯片由存储阵列，译码器，读写控制电路，数据缓冲电路构成。<br>地址译码器：将输入的地址信号（来自cpu发出的地址信号）翻译成某单元（存储字或字节）的选通信号，使该单元能被读写</p>
+<p>存储阵列，译码器，读写控制电路分别通过片选信号CE，读写控制信号WE，输出允许信号OE引脚实现。</p>
+<p>动态RAM的刷新：刷新即将原信息读出，再生成原信息重新写入。刷新的原因（因为存储单元是随机访问，未得到访问的单元内的原信息可能会消失，因此要定时刷新）通常有三种刷新（集中刷新，分散刷新，异步刷新）</p>
+<p><strong>存储器与cpu</strong><br>存储容量的扩展：位拓展，自拓展，字位拓展<br>存储器与cpu的连接：地址线，数据线，读写命令线，片选线</p>
 
       
     </div>
@@ -780,7 +793,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、计算机系统概述"><span class="nav-number">1.</span> <span class="nav-text">一、计算机系统概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数据的机器表示"><span class="nav-number">2.</span> <span class="nav-text">二、数据的机器表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、运算方法运算器"><span class="nav-number">3.</span> <span class="nav-text">三、运算方法运算器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、指令系统"><span class="nav-number">4.</span> <span class="nav-text">四、指令系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、中央处理器"><span class="nav-number">5.</span> <span class="nav-text">五、中央处理器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、计算机系统概述"><span class="nav-number">1.</span> <span class="nav-text">一、计算机系统概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数据的机器表示"><span class="nav-number">2.</span> <span class="nav-text">二、数据的机器表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、运算方法运算器"><span class="nav-number">3.</span> <span class="nav-text">三、运算方法运算器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、指令系统"><span class="nav-number">4.</span> <span class="nav-text">四、指令系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、中央处理器"><span class="nav-number">5.</span> <span class="nav-text">五、中央处理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、指令流水线"><span class="nav-number">6.</span> <span class="nav-text">六、指令流水线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、存储器系统及其层次结构"><span class="nav-number">7.</span> <span class="nav-text">七、存储器系统及其层次结构</span></a></li></ol></div>
             
 
           </div>
