@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="一、计算机系统概述计算机由五部分组成：控制器，存储器，运算器，输入设备，输出设备   系统结构：计算机系统对各级之间界面的定义，及其上下功能分配。各级都有自己的系统结构，各级之间存在透明性（确实存在，但无法监测设置）   计算机组成是指计算机系统结构的逻辑实现，包括 机器级内的数据通道和控制信号的组成及逻辑设计，他着眼于机器级内各事件的时序方式与控制机构，各部件功能及相互联系   计算机实现是指计">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-21T12:04:34.603Z">
+<meta property="og:updated_time" content="2018-05-21T12:15:40.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机组成原理笔记">
 <meta name="twitter:description" content="一、计算机系统概述计算机由五部分组成：控制器，存储器，运算器，输入设备，输出设备   系统结构：计算机系统对各级之间界面的定义，及其上下功能分配。各级都有自己的系统结构，各级之间存在透明性（确实存在，但无法监测设置）   计算机组成是指计算机系统结构的逻辑实现，包括 机器级内的数据通道和控制信号的组成及逻辑设计，他着眼于机器级内各事件的时序方式与控制机构，各部件功能及相互联系   计算机实现是指计">
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,597字
+                  4,291字
                 </span>
               
 
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  12分钟
+                  15分钟
                 </span>
               
             </div>
@@ -477,7 +477,7 @@
 <p><strong>加法</strong><br>先对阶，按照小阶看齐大阶原则，使阶小的尾数右移。然后尾数相加，得数若是数值位第一位和符号位相同需左规（左移一位，阶码减1 ）若得数符号位两位不同需右规，再做舍入处理<br><strong>减法</strong><br>先对阶，按照小阶看齐大阶原则，使阶小的尾数右移。然后尾数相减，得数若是数值位第一位和符号位相同需左规（左移一位，阶码减1 ）若得数符号位两位不同需右规，再做舍入处理。阶符为01时为上溢，需做溢出处理，阶符为10时为下溢，按机器零处理。</p>
 <h1 id="四、指令系统"><a href="#四、指令系统" class="headerlink" title="四、指令系统"></a>四、指令系统</h1><p>指令是指计算机执行某些操作的命令，一台计算机的所有指令的集合构成该机的指令系统，也称指令集。<br><strong>寻址技术</strong><br>指的是寻找操作数的地址或下一条将要执行的指令地址，寻址技术是计算机设计中硬件对软件最早提供支持的技术之一。<br>寻找下一条将要执行的指令地址称为指令寻址，寻找操作数的地址称为数据寻址。</p>
 <p><strong>s设计指令系统格式</strong><br>直接寻址：OP + A<br>变址寻址：OP + Rx+A<br>寄存器寻址：OP+Rx</p>
-<p>OP为操作码，A为形式地址，M为寻址特征<br>P116 #5.1 #5.2 #5.3 #5.4</p>
+<p>OP为操作码，A为形式地址，M为寻址特征 </p>
 <h1 id="五、中央处理器"><a href="#五、中央处理器" class="headerlink" title="五、中央处理器"></a>五、中央处理器</h1><p><strong>指令流，数据流</strong><br>在程序运行过程中，在计算机的各部件之间流动的指令和数据形成了指令流，数据流。<br>指令流，数据流，不是程序中静态的指令序列和存储器中静态分配序列。指令流指的是cpu执行的指令序列，数据流指的是根据指令操作要求依次存取数据的序列。</p>
 <p>cpu的基本功能就是对指令流和数据流在时间与空间上实施正确的控制。</p>
 <p><strong>程序计数器（PC）</strong><br>是专用寄存器，又称指令计数器，用来存放正在执行的指令地址，或接着要执行的下一条指令地址。<br><strong>cpu中的主要技术参数</strong><br>cpu的字长：指的是在单位时间内同时处理的二进制数据的位数。cpu按照其处理信息的字长可分为，8位cpu，16位，32位，64位。<br>内部工作频率：又称为内频或主频，它是衡量cpu速度的重要参数。主频表示在cpu内数字脉冲信号震荡的速度。</p>
@@ -496,6 +496,16 @@
 <p>存储阵列，译码器，读写控制电路分别通过片选信号CE，读写控制信号WE，输出允许信号OE引脚实现。</p>
 <p>动态RAM的刷新：刷新即将原信息读出，再生成原信息重新写入。刷新的原因（因为存储单元是随机访问，未得到访问的单元内的原信息可能会消失，因此要定时刷新）通常有三种刷新（集中刷新，分散刷新，异步刷新）</p>
 <p><strong>存储器与cpu</strong><br>存储容量的扩展：位拓展，自拓展，字位拓展<br>存储器与cpu的连接：地址线，数据线，读写命令线，片选线</p>
+<h1 id="八、互连及输入输出组织"><a href="#八、互连及输入输出组织" class="headerlink" title="八、互连及输入输出组织"></a>八、互连及输入输出组织</h1><h1 id="九、总线系统"><a href="#九、总线系统" class="headerlink" title="九、总线系统"></a>九、总线系统</h1><p><strong>总线</strong><br>是连接多个部件的信息传输线，是各部件共享的传输介质。<br>按照总线上传输信号的不同，总线可分为地址总线，控制总线，数据总线三类。<br><strong>地址总线</strong><br>传送的是从cpu等主设备发往从设备的地址信号<br><strong>控制总线</strong><br>传送的是一个部件对另一个部件的控制或状态信息。<br><strong>数据总线</strong><br>传送的是各部件之间交换的数据信息</p>
+<p>根据连接方式不同，单处理机系统中采用的总线结构有两种基本类型，即单总线结构，多总线结构。<br><strong>单总线结构</strong><br>使用单一的系统总线连接cpu，主存，I/o设备，允许各设备间的信息直接交换。</p>
+<p>简单，易扩充，工作效率低。</p>
+<p><strong>多总线结构</strong><br>cpu和缓存之间采用高速的cpu总线，主存在系统总线上，通过桥，cpu总线，系统总线，高速总线彼此相连。</p>
+<p><strong>总线的仲裁</strong><br>连接到总线上的功能模块分为主模块，从模块。主模块不固定，有启动一个总线周期的作用。从模块只能响应主模块的请求。每次只能有一个主模块。<br>仲裁就是在多个模块同时竞争总线控制权的时候选择一个主模块。<br>按照总线仲裁电路的位置不同，仲裁分为集中式仲裁和分布式仲裁。</p>
+<p><strong>集中式仲裁</strong><br>每个功能模块有两条线连到总线，一条是仲裁请求线br另一条是仲裁授权线bg<br>具体实现方式有链式查询方式，计数器定时查询，独立请求。</p>
+<p>链式查询方式：通过判断离总线仲裁器的远近判断其优先级，优先级高的且有仲裁请求则被授权。</p>
+<p><strong>总线通信控制</strong><br>总线的通信控制主要解决通信双方如何获知传输开始和传输结束，以及通信双方如何协调，如何配合，通常用同步通信，异步通信，半同步通信和分离式通信四种方式。  </p>
+<p><em>总线传输速率=总线宽度/总线传输周期</em></p>
+<p>异步串行通信的数据传输速率用<em>波特率</em>表示。波特率是指单位时间内传送二进制数据的位数，单位用位/秒表示，记为波特。由于异步通信中包含若干附加位，如起始位，终止位，可用比特率来衡量异步串行通信的有效数据传输速率，即单位时间内传送二进制有效数据的位数单位用位/秒表示。</p>
 
       
     </div>
@@ -585,6 +595,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/25/Python-3-6-监控爬取成绩并推送到邮箱/" rel="prev" title="Python 3.6 监控爬取成绩并推送到邮箱">
+                Python 3.6 监控爬取成绩并推送到邮箱 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -703,7 +717,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -793,7 +807,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、计算机系统概述"><span class="nav-number">1.</span> <span class="nav-text">一、计算机系统概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数据的机器表示"><span class="nav-number">2.</span> <span class="nav-text">二、数据的机器表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、运算方法运算器"><span class="nav-number">3.</span> <span class="nav-text">三、运算方法运算器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、指令系统"><span class="nav-number">4.</span> <span class="nav-text">四、指令系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、中央处理器"><span class="nav-number">5.</span> <span class="nav-text">五、中央处理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、指令流水线"><span class="nav-number">6.</span> <span class="nav-text">六、指令流水线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、存储器系统及其层次结构"><span class="nav-number">7.</span> <span class="nav-text">七、存储器系统及其层次结构</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、计算机系统概述"><span class="nav-number">1.</span> <span class="nav-text">一、计算机系统概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数据的机器表示"><span class="nav-number">2.</span> <span class="nav-text">二、数据的机器表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、运算方法运算器"><span class="nav-number">3.</span> <span class="nav-text">三、运算方法运算器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、指令系统"><span class="nav-number">4.</span> <span class="nav-text">四、指令系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、中央处理器"><span class="nav-number">5.</span> <span class="nav-text">五、中央处理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、指令流水线"><span class="nav-number">6.</span> <span class="nav-text">六、指令流水线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、存储器系统及其层次结构"><span class="nav-number">7.</span> <span class="nav-text">七、存储器系统及其层次结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、互连及输入输出组织"><span class="nav-number">8.</span> <span class="nav-text">八、互连及输入输出组织</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、总线系统"><span class="nav-number">9.</span> <span class="nav-text">九、总线系统</span></a></li></ol></div>
             
 
           </div>
