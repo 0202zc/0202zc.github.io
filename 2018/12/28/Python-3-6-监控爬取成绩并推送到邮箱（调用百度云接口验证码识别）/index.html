@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="网络爬虫," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="L..z、℃的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="简介本程序模拟登录正方教务系统获取本人当前学期成绩（也可以手动改学期学年），20分钟检测一次，当有新成绩公布时就发送到邮箱，本程序用到的是我学校的教务网网址。  第一代手动输入验证码的程序Python 3.6 监控爬取成绩并推送到邮箱 验证码识别参照了XiaoYaoII的文章利用python3 爬取教务处实现自动查询成绩并发送给用户QQ邮箱 使用百度云文字识别的SDK的帮助文档在此Python S">
+<meta name="keywords" content="网络爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 3.6 监控爬取成绩并推送到邮箱(基于百度云接口的验证码识别)">
+<meta property="og:url" content="http://0202zc.github.io/2018/12/28/Python-3-6-监控爬取成绩并推送到邮箱（调用百度云接口验证码识别）/index.html">
+<meta property="og:site_name" content="L..z、℃的博客">
+<meta property="og:description" content="简介本程序模拟登录正方教务系统获取本人当前学期成绩（也可以手动改学期学年），20分钟检测一次，当有新成绩公布时就发送到邮箱，本程序用到的是我学校的教务网网址。  第一代手动输入验证码的程序Python 3.6 监控爬取成绩并推送到邮箱 验证码识别参照了XiaoYaoII的文章利用python3 爬取教务处实现自动查询成绩并发送给用户QQ邮箱 使用百度云文字识别的SDK的帮助文档在此Python S">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://0202zc.github.io/images/Screenshot2018-12-29-00-02.png">
+<meta property="og:image" content="http://0202zc.github.io/images/Screenshot_2018-07-26-16-10-33-543_com.netease.mo.png">
+<meta property="og:image" content="http://0202zc.github.io/images/Screenshot_2018-12-29-00-00-27-699_com.netease.mo.png">
+<meta property="og:updated_time" content="2018-12-28T16:07:54.303Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python 3.6 监控爬取成绩并推送到邮箱(基于百度云接口的验证码识别)">
+<meta name="twitter:description" content="简介本程序模拟登录正方教务系统获取本人当前学期成绩（也可以手动改学期学年），20分钟检测一次，当有新成绩公布时就发送到邮箱，本程序用到的是我学校的教务网网址。  第一代手动输入验证码的程序Python 3.6 监控爬取成绩并推送到邮箱 验证码识别参照了XiaoYaoII的文章利用python3 爬取教务处实现自动查询成绩并发送给用户QQ邮箱 使用百度云文字识别的SDK的帮助文档在此Python S">
+<meta name="twitter:image" content="http://0202zc.github.io/images/Screenshot2018-12-29-00-02.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://0202zc.github.io/2018/12/28/Python-3-6-监控爬取成绩并推送到邮箱（调用百度云接口验证码识别）/"/>
+
+
+
+
+
+  <title>Python 3.6 监控爬取成绩并推送到邮箱(基于百度云接口的验证码识别) | L..z、℃的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  <script type="text/javascript"
+  color="0,0,255" opacity='0.6' zIndex="-2" count="10" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://0202zc.github.io" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">L..z、℃的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Be unfazed by defeat.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/message/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-clipboard"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://0202zc.github.io/2018/12/28/Python-3-6-监控爬取成绩并推送到邮箱（调用百度云接口验证码识别）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="0202zc">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/custom_logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="L..z、℃的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python 3.6 监控爬取成绩并推送到邮箱(基于百度云接口的验证码识别)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-28T23:53:25+08:00">
+                2018-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python学习/" itemprop="url" rel="index">
+                    <span itemprop="name">Python学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/12/28/Python-3-6-监控爬取成绩并推送到邮箱（调用百度云接口验证码识别）/" class="leancloud_visitors" data-flag-title="Python 3.6 监控爬取成绩并推送到邮箱(基于百度云接口的验证码识别)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,668字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  19分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本程序模拟登录正方教务系统获取本人当前学期成绩（也可以手动改学期学年），20分钟检测一次，当有新成绩公布时就发送到邮箱，本程序用到的是我学校的教务网网址。</p>
+<ul>
+<li>第一代手动输入验证码的程序<a href="https://0202zc.github.io/2018/07/25/Python-3-6-监控爬取成绩并推送到邮箱">Python 3.6 监控爬取成绩并推送到邮箱</a></li>
+<li>验证码识别参照了XiaoYaoII的文章<a href="https://blog.csdn.net/qq_35323001/article/details/79100664" target="_blank" rel="noopener">利用python3 爬取教务处实现自动查询成绩并发送给用户QQ邮箱</a></li>
+<li>使用百度云文字识别的SDK的帮助文档在此<a href="https://ai.baidu.com/docs#/OCR-Python-SDK/top" target="_blank" rel="noopener">Python SDK文档</a></li>
+</ul>
+<h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br><span class="line">620</span><br><span class="line">621</span><br><span class="line">622</span><br><span class="line">623</span><br><span class="line">624</span><br><span class="line">625</span><br><span class="line">626</span><br><span class="line">627</span><br><span class="line">628</span><br><span class="line">629</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">大连大学成绩查询助手V3.7.181226</span></span><br><span class="line"><span class="string">Code Changed By ZC Liang</span></span><br><span class="line"><span class="string">2018.6.6</span></span><br><span class="line"><span class="string">Completed on 2018.12.26</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> getpass</span><br><span class="line"><span class="keyword">import</span> http.cookiejar</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> platform</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</span><br><span class="line"><span class="keyword">from</span> email.utils <span class="keyword">import</span> formataddr</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> bs4</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> prettytable <span class="keyword">as</span> pt</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> aip <span class="keyword">import</span> AipOcr</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> prettytable <span class="keyword">import</span> PrettyTable</span><br><span class="line"></span><br><span class="line">my_sender = <span class="string">'发件人邮箱账号'</span>    <span class="comment"># 发件人邮箱账号</span></span><br><span class="line">my_pass = <span class="string">'发件人邮箱密码'</span>              <span class="comment"># 发件人邮箱密码(当时申请smtp给的口令)</span></span><br><span class="line"><span class="comment"># my_user = '收件人邮箱账号'      # 收件人邮箱账号，我这边发送给自己</span></span><br><span class="line">email_send_to = <span class="string">''</span>                <span class="comment"># 收件人邮箱账号</span></span><br><span class="line"></span><br><span class="line">DstDir = os.getcwd()</span><br><span class="line">searchCount = <span class="number">0</span>  <span class="comment"># 查询次数</span></span><br><span class="line">count = <span class="number">0</span>  <span class="comment"># 循环计数</span></span><br><span class="line">scorenum = <span class="number">0</span>  <span class="comment"># 成绩条数</span></span><br><span class="line">score = []</span><br><span class="line">scorenp = np.array(score)</span><br><span class="line">makeup_course_num = <span class="number">0</span>  <span class="comment"># 重修课程数目</span></span><br><span class="line">makeup_course_flag = <span class="number">-1</span>  <span class="comment"># 重修课程数目下标</span></span><br><span class="line">courseList = [] <span class="comment"># 选课情况查询列表</span></span><br><span class="line">required_course_num = <span class="number">0</span> <span class="comment"># 本学期必修课总数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 准备Cookie和opener，因为cookie存于opener中，所以以下所有网页操作全部要基于同一个opener</span></span><br><span class="line">cookie = http.cookiejar.CookieJar()</span><br><span class="line">opener = urllib.request.build_opener(</span><br><span class="line">    urllib.request.HTTPCookieProcessor(cookie))</span><br><span class="line"></span><br><span class="line">final_url = <span class="string">""</span>      <span class="comment"># 头 + 随机编码 + default2.aspx</span></span><br><span class="line">final_url_head = <span class="string">""</span></span><br><span class="line">url_head = <span class="string">"202.199.155."</span> + str(random.randint(<span class="number">33</span>, <span class="number">37</span>))     <span class="comment"># 随机产生网址</span></span><br><span class="line"></span><br><span class="line">ddlxn = <span class="string">""</span></span><br><span class="line">ddlxq = <span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="string">""" 你的 APPID AK SK """</span></span><br><span class="line">APP_ID = <span class="string">'你的 APP_ID'</span></span><br><span class="line">API_KEY = <span class="string">'你的 API_KEY'</span></span><br><span class="line">SECRET_KEY = <span class="string">'你的 SECRET_KEY'</span></span><br><span class="line"></span><br><span class="line">client = AipOcr(APP_ID, API_KEY, SECRET_KEY)</span><br><span class="line"></span><br><span class="line"><span class="string">""" 读取图片 """</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_file_content</span><span class="params">(filePath)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filePath, <span class="string">'rb'</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        <span class="keyword">return</span> fp.read()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">DBUtil</span><span class="params">()</span>:</span></span><br><span class="line">    conn = pymysql.connect(host=<span class="string">"127.0.0.1"</span>, port=<span class="number">3307</span>, user=<span class="string">"root"</span>, passwd=<span class="string">"adobe197341022"</span>, db=<span class="string">"grade_query_system"</span>,charset=<span class="string">"utf8"</span>)</span><br><span class="line">    cur = conn.cursor()</span><br><span class="line">    sql = <span class="string">"select * from student"</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        cur.execute(sql)</span><br><span class="line">        <span class="comment"># 获取所有记录列表</span></span><br><span class="line">        results = cur.fetchall()</span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> results:</span><br><span class="line">            sId = row[<span class="number">0</span>]</span><br><span class="line">            sName = row[<span class="number">1</span>]</span><br><span class="line">            sPwd = row[<span class="number">2</span>]</span><br><span class="line">            sEmail = row[<span class="number">3</span>]</span><br><span class="line">            <span class="comment"># 打印结果</span></span><br><span class="line">            print(<span class="string">"sId=%s,sName=%s,sPwd=%s,sEmail=%s"</span> % (sId, sName, sPwd, sEmail))</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        print(e)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        conn.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断操作系统类型</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getOpeningSystem</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> platform.system()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断是否联网</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isConnected</span><span class="params">()</span>:</span></span><br><span class="line">    userOs = getOpeningSystem()</span><br><span class="line">    <span class="keyword">if</span> userOs == <span class="string">"Windows"</span>:</span><br><span class="line">        subprocess.check_call(</span><br><span class="line">            [<span class="string">"ping"</span>, <span class="string">"-n"</span>, <span class="string">"2"</span>, url_head], stdout=subprocess.PIPE)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        subprocess.check_call(</span><br><span class="line">            [<span class="string">"ping"</span>, <span class="string">"-c"</span>, <span class="string">"2"</span>, url_head], stdout=subprocess.PIPE)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取重定向编码</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check_for_redirects</span><span class="params">(url)</span>:</span></span><br><span class="line">    r = requests.head(url)</span><br><span class="line">    <span class="keyword">if</span> r.ok:</span><br><span class="line">        <span class="keyword">return</span> r.headers[<span class="string">'location'</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'[no redirect]'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#   登陆</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 构造表单</span></span><br><span class="line">    params = &#123;</span><br><span class="line">        <span class="string">'txtUserName'</span>: sid,</span><br><span class="line">        <span class="string">'Textbox1'</span>: <span class="string">''</span>,</span><br><span class="line">        <span class="string">'Textbox2'</span>: spwd,</span><br><span class="line">        <span class="string">'RadioButtonList1'</span>: <span class="string">'学生'</span>,</span><br><span class="line">        <span class="string">'Button1'</span>: <span class="string">''</span>,</span><br><span class="line">        <span class="string">'lbLanguage'</span>: <span class="string">''</span>,</span><br><span class="line">        <span class="string">'hidPdrs'</span>: <span class="string">''</span>,</span><br><span class="line">        <span class="string">'hidsc'</span>: <span class="string">''</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">#   获取验证码</span></span><br><span class="line">    res = opener.open(final_url_head + <span class="string">'/checkcode.aspx'</span>).read()</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">''</span> + DstDir + <span class="string">'\\ScoreHelper\\CheckCode.jpg'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(res)</span><br><span class="line">    img = Image.open(<span class="string">''</span> + DstDir + <span class="string">'\\ScoreHelper\\CheckCode.jpg'</span>)</span><br><span class="line"></span><br><span class="line">    new_im = img.convert(<span class="string">"RGB"</span>)<span class="comment">#将验证码图片转换成24位图片</span></span><br><span class="line">    new_im.save(<span class="string">''</span> + DstDir + <span class="string">'\\ScoreHelper\\CheckCode1.jpg'</span>)<span class="comment">#将24位图片保存到本地</span></span><br><span class="line"></span><br><span class="line">    result = client.basicAccurate(get_file_content(<span class="string">''</span> + DstDir + <span class="string">'\\ScoreHelper\\CheckCode1.jpg'</span>))</span><br><span class="line">    word = result.get(<span class="string">'words_result'</span>)</span><br><span class="line">    res = re.findall(<span class="string">'[a-zA-Z0-9]+'</span>, word[<span class="number">0</span>].get(<span class="string">'words'</span>))[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">if</span> len(res) &gt; <span class="number">4</span>:  <span class="comment">#教务系统所有的验证码都是四位的，若大于四位，则挑选前四位</span></span><br><span class="line">        res = res[<span class="number">0</span>:<span class="number">4</span>]</span><br><span class="line">    print(res)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># img.show()</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'识别验证码：'</span> + res)</span><br><span class="line">    vcode = res</span><br><span class="line">    <span class="comment"># img.close()</span></span><br><span class="line">    params[<span class="string">'txtSecretCode'</span>] = vcode</span><br><span class="line">    <span class="comment">#   获取ViewState</span></span><br><span class="line">    response = urllib.request.urlopen(<span class="string">'http://'</span> + url_head + <span class="string">'/'</span>)</span><br><span class="line">    html = response.read().decode(<span class="string">'gb2312'</span>)</span><br><span class="line">    viewstate = re.search(</span><br><span class="line">        <span class="string">'&lt;input type="hidden" name="__VIEWSTATE" value="(.+?)"'</span>, html)</span><br><span class="line">    params[<span class="string">'__VIEWSTATE'</span>] = viewstate.group(<span class="number">1</span>)</span><br><span class="line">    <span class="comment">#   尝试登陆</span></span><br><span class="line">    loginurl = final_url</span><br><span class="line">    print(<span class="string">"\n本次登录所用网址为："</span> + loginurl + <span class="string">"\n"</span>)</span><br><span class="line">    data = urllib.parse.urlencode(params).encode(<span class="string">'gb2312'</span>)</span><br><span class="line">    response = opener.open(loginurl, data)</span><br><span class="line">    <span class="keyword">if</span> response.geturl() == final_url:</span><br><span class="line">        print(<span class="string">'登陆失败，可能是姓名、学号、密码、验证码填写错误！'</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#   获取本学期必修课数目</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_RequiredCourse_num</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> required_course_num</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"正在查询本学期必修课数目..."</span>)</span><br><span class="line">    <span class="comment">#   构造url</span></span><br><span class="line">    url = <span class="string">''</span>.join([</span><br><span class="line">        final_url_head + <span class="string">'/xsxkqk.aspx'</span>,</span><br><span class="line">        <span class="string">'?xh='</span>,</span><br><span class="line">        sid,</span><br><span class="line">        <span class="string">'&amp;xm='</span>,</span><br><span class="line">        urllib.parse.quote(sname),</span><br><span class="line">        <span class="string">'&amp;gnmkdm=N121615'</span>,</span><br><span class="line">    ])</span><br><span class="line">    <span class="comment">#   构建查询学生选课情况表单</span></span><br><span class="line">    params = &#123;</span><br><span class="line">        <span class="string">'ddlxn'</span>: ddlxn,</span><br><span class="line">        <span class="string">'ddlxq'</span>: ddlxq,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">#   构造Request对象，填入Header，防止302跳转，获取新的View_State</span></span><br><span class="line">    req = urllib.request.Request(url)</span><br><span class="line">    req.add_header(<span class="string">'Referer'</span>, final_url)</span><br><span class="line">    req.add_header(<span class="string">'Origin'</span>, <span class="string">'http://'</span> + url_head + <span class="string">'/'</span>)</span><br><span class="line">    req.add_header(</span><br><span class="line">        <span class="string">'User-Agent'</span>, <span class="string">'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'</span>)</span><br><span class="line">    response = opener.open(req)</span><br><span class="line">    html = response.read().decode(<span class="string">'gb2312'</span>)</span><br><span class="line">    viewstate = re.search(</span><br><span class="line">        <span class="string">'&lt;input type="hidden" name="__VIEWSTATE" value="(.+?)"'</span>, html)</span><br><span class="line">    params[<span class="string">'__VIEWSTATE'</span>] = viewstate.group(<span class="number">1</span>)</span><br><span class="line">    <span class="comment">#   查询所有成绩</span></span><br><span class="line">    req = urllib.request.Request(</span><br><span class="line">        url, urllib.parse.urlencode(params).encode(<span class="string">'gb2312'</span>))</span><br><span class="line">    req.add_header(<span class="string">'Referer'</span>, final_url)</span><br><span class="line">    req.add_header(<span class="string">'Origin'</span>, <span class="string">'http://'</span> + url_head + <span class="string">'/'</span>)</span><br><span class="line">    response = opener.open(req)</span><br><span class="line">    soup = BeautifulSoup(response.read().decode(<span class="string">'gb2312'</span>), <span class="string">'html.parser'</span>)</span><br><span class="line">    html = soup.find(<span class="string">'table'</span>, class_=<span class="string">'datelist'</span>)</span><br><span class="line">    <span class="comment">#   指定要输出的列，原网页的表格列下标从0开始</span></span><br><span class="line">    <span class="comment">#   用于标记是否是遍历第一行</span></span><br><span class="line">    flag = <span class="keyword">True</span></span><br><span class="line">    <span class="comment">#   根据DOM解析所要数据，首位的each是NavigatableString对象，其余为Tag对象</span></span><br><span class="line">    <span class="comment">#   遍历行</span></span><br><span class="line">    counter = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> each <span class="keyword">in</span> html:</span><br><span class="line">        columnCounter = <span class="number">0</span></span><br><span class="line">        column = []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(type(each) == bs4.element.NavigableString):</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment">#   遍历列</span></span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> each.contents:</span><br><span class="line">                <span class="keyword">if</span>(item != <span class="string">'\n'</span>):</span><br><span class="line">                    <span class="keyword">if</span>(counter&gt;<span class="number">0</span> <span class="keyword">and</span> columnCounter == <span class="number">3</span>):</span><br><span class="line">                        courseList.append(str(item.contents[<span class="number">0</span>]).strip())</span><br><span class="line">                    columnCounter += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> flag:</span><br><span class="line">                flag = <span class="keyword">False</span></span><br><span class="line">            counter += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> each <span class="keyword">in</span> courseList:</span><br><span class="line">        <span class="keyword">if</span>(each == <span class="string">"必修课程"</span>):</span><br><span class="line">            required_course_num += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#   获取成绩</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getScore</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> searchCount</span><br><span class="line">    <span class="keyword">global</span> scorenum</span><br><span class="line">    <span class="keyword">global</span> scorenp</span><br><span class="line">    <span class="keyword">global</span> ddlxn</span><br><span class="line">    <span class="keyword">global</span> ddlxq</span><br><span class="line">    score = []</span><br><span class="line">    <span class="comment">#   构造url</span></span><br><span class="line">    url = <span class="string">''</span>.join([</span><br><span class="line">        final_url_head + <span class="string">'/xscjcx_dq.aspx'</span>,</span><br><span class="line">        <span class="string">'?xh='</span>,</span><br><span class="line">        sid,</span><br><span class="line">        <span class="string">'&amp;xm='</span>,</span><br><span class="line">        urllib.parse.quote(sname),</span><br><span class="line">        <span class="string">'&amp;gnmkdm=N121605'</span>,</span><br><span class="line">    ])</span><br><span class="line">    <span class="comment">#   构建查询全部成绩表单</span></span><br><span class="line">    params = &#123;</span><br><span class="line">        <span class="string">'ddlxn'</span>: ddlxn,  <span class="comment"># 全部为 %C8%AB%B2%BF</span></span><br><span class="line">        <span class="string">'ddlxq'</span>: ddlxq,</span><br><span class="line">        <span class="string">'btnCx'</span>: <span class="string">'+%B2%E9++%D1%AF+'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">#   构造Request对象，填入Header，防止302跳转，获取新的View_State</span></span><br><span class="line">    req = urllib.request.Request(url)</span><br><span class="line">    req.add_header(<span class="string">'Referer'</span>, final_url)</span><br><span class="line">    req.add_header(<span class="string">'Origin'</span>, <span class="string">'http://'</span> + url_head + <span class="string">'/'</span>)</span><br><span class="line">    req.add_header(</span><br><span class="line">        <span class="string">'User-Agent'</span>, <span class="string">'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'</span>)</span><br><span class="line">    response = opener.open(req)</span><br><span class="line">    html = response.read().decode(<span class="string">'gb2312'</span>)</span><br><span class="line">    viewstate = re.search(<span class="string">'&lt;input type="hidden" name="__VIEWSTATE" value="(.+?)"'</span>, html)</span><br><span class="line">    params[<span class="string">'__VIEWSTATE'</span>] = viewstate.group(<span class="number">1</span>)</span><br><span class="line">    <span class="comment">#   查询所有成绩</span></span><br><span class="line">    req = urllib.request.Request(</span><br><span class="line">        url, urllib.parse.urlencode(params).encode(<span class="string">'gb2312'</span>))</span><br><span class="line">    req.add_header(<span class="string">'Referer'</span>, final_url)</span><br><span class="line">    req.add_header(<span class="string">'Origin'</span>, <span class="string">'http://'</span> + url_head + <span class="string">'/'</span>)</span><br><span class="line">    response = opener.open(req)</span><br><span class="line">    soup = BeautifulSoup(response.read().decode(<span class="string">'gb2312'</span>), <span class="string">'html.parser'</span>)</span><br><span class="line">    html = soup.find(<span class="string">'table'</span>, class_=<span class="string">'datelist'</span>)</span><br><span class="line">    print(<span class="string">"执行第"</span> + str(searchCount) + <span class="string">"次查询："</span>)</span><br><span class="line">    print(<span class="string">'你的所有成绩如下：'</span>)</span><br><span class="line">    <span class="comment">#   指定要输出的列，原网页的表格列下标从0开始</span></span><br><span class="line">    outColumn = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">11</span>, <span class="number">13</span>]</span><br><span class="line">    <span class="comment">#   用于标记是否是遍历第一行</span></span><br><span class="line">    flag = <span class="keyword">True</span></span><br><span class="line">    <span class="comment">#   根据DOM解析所要数据，首位的each是NavigatableString对象，其余为Tag对象</span></span><br><span class="line">    <span class="comment">#   遍历行</span></span><br><span class="line">    <span class="keyword">for</span> each <span class="keyword">in</span> html:</span><br><span class="line">        columnCounter = <span class="number">0</span></span><br><span class="line">        column = []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(type(each) == bs4.element.NavigableString):</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment">#   遍历列</span></span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> each.contents:</span><br><span class="line">                <span class="keyword">if</span>(item != <span class="string">'\n'</span>):</span><br><span class="line">                    <span class="keyword">if</span> columnCounter <span class="keyword">in</span> outColumn:</span><br><span class="line">                        <span class="comment">#   要使用str转换，不然陷入copy与deepcopy的无限递归</span></span><br><span class="line">                        column.append(str(item.contents[<span class="number">0</span>]).strip())</span><br><span class="line">                    columnCounter += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> flag:</span><br><span class="line">                table = PrettyTable(column)</span><br><span class="line">                flag = <span class="keyword">False</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                table.add_row(column)</span><br><span class="line">            score.extend([column])</span><br><span class="line">    searchCount += <span class="number">1</span></span><br><span class="line">    scorenp = np.array(score)</span><br><span class="line">    <span class="comment">#   table.set_style(pt.PLAIN_COLUMNS)</span></span><br><span class="line">    print(table)</span><br><span class="line">    print(<span class="string">"分条统计："</span>)</span><br><span class="line">    scorenum = sendScore(table)</span><br><span class="line">    print(<span class="string">"成绩数目: "</span> + str(scorenum) + <span class="string">"条"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sendScore</span><span class="params">(table)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> scorenum</span><br><span class="line">    <span class="keyword">global</span> count</span><br><span class="line">    <span class="keyword">global</span> email_send_to</span><br><span class="line">    <span class="keyword">global</span> scorenp</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> table:</span><br><span class="line">        print(i.get_string())</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(count &gt; scorenum):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            scorenum = count</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 文本模式</span></span><br><span class="line">            <span class="comment"># context = i.get_string().replace("+"," ")</span></span><br><span class="line">            <span class="comment"># context = context.replace("-"," ")</span></span><br><span class="line">            <span class="comment"># context = context.replace("2017 2018","2017-2018")</span></span><br><span class="line">            <span class="comment"># if(scorenum == 1):</span></span><br><span class="line">            <span class="comment">#     msg=MIMEText("有成绩下来了：" + context,'plain','utf-8')</span></span><br><span class="line">            <span class="comment"># else:</span></span><br><span class="line">            <span class="comment">#     msg=MIMEText("又有成绩下来了：" + context,'plain','utf-8')</span></span><br><span class="line">            <span class="comment"># msg = prettyScore()</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># html格式</span></span><br><span class="line">            msg = prettyScore()</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 括号里的对应发件人邮箱昵称、发件人邮箱账号</span></span><br><span class="line">            msg[<span class="string">'From'</span>] = formataddr([<span class="string">"1115810371@qq.com"</span>, my_sender])</span><br><span class="line">            <span class="comment"># 括号里的对应收件人邮箱昵称、收件人邮箱账号</span></span><br><span class="line">            msg[<span class="string">'To'</span>] = formataddr([email_send_to, email_send_to])</span><br><span class="line">            <span class="keyword">if</span>(count == required_course_num):</span><br><span class="line">                msg[<span class="string">'Subject'</span>] = <span class="string">"第"</span> + \</span><br><span class="line">                    str(count) + <span class="string">"次成绩推送加平均绩点"</span>  <span class="comment"># 邮件的主题，也可以说是标题</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                msg[<span class="string">'Subject'</span>] = <span class="string">"第"</span> + str(count) + <span class="string">"次成绩推送"</span>  <span class="comment"># 邮件的主题，也可以说是标题</span></span><br><span class="line">            <span class="comment"># 发件人邮箱中的SMTP服务器，端口是465</span></span><br><span class="line">            server = smtplib.SMTP_SSL(<span class="string">"smtp.qq.com"</span>, <span class="number">465</span>)</span><br><span class="line">            server.login(my_sender, my_pass)  <span class="comment"># 括号中对应的是发件人邮箱账号、邮箱密码</span></span><br><span class="line">            <span class="comment"># 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件</span></span><br><span class="line">            server.sendmail(my_sender, [email_send_to, ], msg.as_string())</span><br><span class="line">            server.quit()  <span class="comment"># 关闭连接</span></span><br><span class="line">            print(<span class="string">"发送成功，请注意在此邮箱查收："</span> + email_send_to)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(e)</span><br><span class="line">            print(<span class="string">"发送失败"</span>)</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span>(scorenum != required_course_num):</span><br><span class="line">        print(<span class="string">"程序休息中...（按'Ctrl C'结束）"</span>)</span><br><span class="line">        time.sleep(<span class="number">1200</span>)  <span class="comment"># 二十分钟查一次</span></span><br><span class="line">    <span class="keyword">return</span> scorenum</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prettyScore</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> scorenp</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># context = MIMEText(html,_subtype='html',_charset='utf-8')  #解决乱码</span></span><br><span class="line">        msg = MIMEText(str(htmlText(scorenum)), <span class="string">"html"</span>, <span class="string">"gb2312"</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        print(e)</span><br><span class="line">    <span class="keyword">return</span> msg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">htmlText</span><span class="params">(scorenum)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> required_course_num</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(scorenum == required_course_num):</span><br><span class="line">        html = <span class="string">"""</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                        &lt;table color="CCCC33" width="800" border="1" cellspacing="0" cellpadding="5" text-align="center"&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                &lt;tr&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                        &lt;td text-align="center"&gt;课程名称&lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                        &lt;td text-align="center"&gt;课程性质&lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                        &lt;td text-align="center"&gt;学分&lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                        &lt;td text-align="center"&gt;平时成绩&lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                        &lt;td text-align="center"&gt;期末成绩&lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                        &lt;td text-align="center"&gt;成绩&lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                &lt;/tr&gt;   </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                    """</span> + addtrs(scorenum) + <span class="string">"""</span></span><br><span class="line"><span class="string">                        &lt;/table&gt;</span></span><br><span class="line"><span class="string">                        &lt;div&gt;&lt;h2&gt;--&gt;平均绩点：%s --&lt;&lt;/h2&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="string">                    """</span> % (getGPA())</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        html = <span class="string">"""</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                        &lt;table color="CCCC33" width="800" border="1" cellspacing="0" cellpadding="5" text-align="center"&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                &lt;tr&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                        &lt;td text-align="center"&gt;课程名称&lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                        &lt;td text-align="center"&gt;课程性质&lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                        &lt;td text-align="center"&gt;学分&lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                        &lt;td text-align="center"&gt;平时成绩&lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                        &lt;td text-align="center"&gt;期末成绩&lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                        &lt;td text-align="center"&gt;成绩&lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                &lt;/tr&gt;   </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                    """</span> + addtrs(scorenum)</span><br><span class="line">    <span class="keyword">return</span> html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addtrs</span><span class="params">(scorenum)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> scorenp</span><br><span class="line">    i = <span class="number">1</span></span><br><span class="line">    array = []</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= scorenum):</span><br><span class="line">        trs = <span class="string">'''</span></span><br><span class="line"><span class="string">                        &lt;tr&gt;   </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                &lt;td text-align="center"&gt;%s &lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                &lt;td&gt;%s &lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                &lt;td&gt;%s &lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                &lt;td&gt;%s &lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                &lt;td&gt;%s &lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                                &lt;td&gt;%s &lt;/td&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                        &lt;/tr&gt;</span></span><br><span class="line"><span class="string">            '''</span> % (scorenp[i][<span class="number">0</span>], scorenp[i][<span class="number">1</span>], scorenp[i][<span class="number">2</span>], scorenp[i][<span class="number">3</span>], scorenp[i][<span class="number">4</span>], scorenp[i][<span class="number">5</span>])</span><br><span class="line">        array.append(trs)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    s = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> array:</span><br><span class="line">        s += str(x)</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getGPA</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> scorenp</span><br><span class="line">    <span class="keyword">global</span> scorenum</span><br><span class="line">    <span class="keyword">global</span> makeup_course_num</span><br><span class="line">    <span class="keyword">global</span> makeup_course_flag</span><br><span class="line"></span><br><span class="line">    sc = []</span><br><span class="line">    GPAlist = []</span><br><span class="line">    i = <span class="number">1</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    coursenum = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(i &lt;= scorenum):</span><br><span class="line">        <span class="keyword">if</span>(scorenp[i][<span class="number">1</span>] != <span class="string">"必修课程"</span> <span class="keyword">or</span> scorenp[i][<span class="number">6</span>] == <span class="string">"是"</span>):</span><br><span class="line">            makeup_course_num += <span class="number">1</span></span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span>(scorenp[i][<span class="number">5</span>] == <span class="string">"F"</span>):</span><br><span class="line">                sc.append(<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">elif</span>(scorenp[i][<span class="number">5</span>] == <span class="string">"A"</span>):</span><br><span class="line">                sc.append(<span class="number">95</span>)</span><br><span class="line">            <span class="keyword">elif</span>(scorenp[i][<span class="number">5</span>] == <span class="string">"B"</span>):</span><br><span class="line">                sc.append(<span class="number">85</span>)</span><br><span class="line">            <span class="keyword">elif</span>(scorenp[i][<span class="number">5</span>] == <span class="string">"C"</span>):</span><br><span class="line">                sc.append(<span class="number">75</span>)</span><br><span class="line">            <span class="keyword">elif</span>(scorenp[i][<span class="number">5</span>] == <span class="string">"D"</span>):</span><br><span class="line">                sc.append(<span class="number">65</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                sc.append(int(scorenp[i][<span class="number">5</span>]))</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(int(sc[j]) &lt; <span class="number">60</span>):</span><br><span class="line">                GPAlist.append(<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                GPAlist.append((int(sc[j]) - <span class="number">50</span>)/<span class="number">10</span>*float(scorenp[i][<span class="number">2</span>]))</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">            coursenum += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    i = <span class="number">1</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    sum = <span class="number">0</span></span><br><span class="line">    scoresum = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(i &lt;= scorenum):</span><br><span class="line">        <span class="keyword">if</span>(scorenp[i][<span class="number">1</span>] != <span class="string">"必修课程"</span> <span class="keyword">or</span> scorenp[i][<span class="number">6</span>] == <span class="string">"是"</span>):</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        sum += GPAlist[j]</span><br><span class="line">        scoresum += float(scorenp[i][<span class="number">2</span>])</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    GPA = sum/scoresum</span><br><span class="line">    print(<span class="string">"平均绩点："</span> + str(GPA))</span><br><span class="line">    <span class="keyword">return</span> GPA</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        localtime = time.localtime(time.time())     <span class="comment"># 获取当前日期</span></span><br><span class="line">        <span class="keyword">if</span>(int((localtime.tm_mon) &gt;= <span class="number">9</span> <span class="keyword">and</span> int(localtime.tm_mon) &lt;= <span class="number">12</span>) <span class="keyword">or</span> (int(localtime.tm_mon) &gt;= <span class="number">1</span> <span class="keyword">and</span> int(localtime.tm_mon) &lt;= <span class="number">2</span>)):</span><br><span class="line">            <span class="keyword">if</span>(str(localtime.tm_year) == <span class="string">"2020"</span>):</span><br><span class="line">                print(<span class="string">"您已毕业，无须监控成绩！"</span>)</span><br><span class="line">                sys.exit(<span class="number">0</span>)</span><br><span class="line">            ddlxn = str(localtime.tm_year) + <span class="string">'-'</span> + str(int(localtime.tm_year) + <span class="number">1</span>)</span><br><span class="line">            ddlxq = <span class="string">'1'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            ddlxn = str(int(localtime.tm_year) - <span class="number">1</span>) + <span class="string">'-'</span> + str(localtime.tm_year)</span><br><span class="line">            ddlxq = <span class="string">'2'</span></span><br><span class="line"></span><br><span class="line">        searchCount = <span class="number">1</span></span><br><span class="line">        print(<span class="string">'欢迎使用大连大学成绩查询助手！'</span>)</span><br><span class="line">        print(<span class="string">'正在检查网络...'</span>)</span><br><span class="line">        isConnected()</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">r''</span> + DstDir + <span class="string">'\\ScoreHelper\\uinfo.bin'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> file:</span><br><span class="line">            udick = pickle.load(file)</span><br><span class="line">            sname = udick[<span class="string">'sname'</span>]</span><br><span class="line">            sid = udick[<span class="string">'sid'</span>]</span><br><span class="line">            spwd = udick[<span class="string">'spwd'</span>]</span><br><span class="line">            email_send_to = udick[<span class="string">'email_send_to'</span>]</span><br><span class="line">        final_url = <span class="string">'http://'</span> + url_head + \</span><br><span class="line">            check_for_redirects(<span class="string">'http://'</span> + url_head + <span class="string">'/default2.aspx'</span>)</span><br><span class="line">        final_url_head = final_url[<span class="number">0</span>:<span class="number">48</span>]</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">not</span> login()):</span><br><span class="line">            print(<span class="string">"正在等待重试..."</span>)</span><br><span class="line">            time.sleep(<span class="number">3</span>)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        get_RequiredCourse_num()</span><br><span class="line">        getScore()</span><br><span class="line">        counter = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span>(scorenum &lt;= required_course_num):</span><br><span class="line">            counter += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span>(scorenum == required_course_num):</span><br><span class="line">                print(<span class="string">"本学期成绩查询完成！"</span>)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span>(counter &gt; <span class="number">0</span>):</span><br><span class="line">                getScore()</span><br><span class="line">    <span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">        <span class="comment"># if os.path.exists(r'' + DstDir + '\\ScoreHelper'):</span></span><br><span class="line">        <span class="comment">#     os.remove(r'' + DstDir + '\\ScoreHelper')</span></span><br><span class="line">        os.mkdir(<span class="string">r''</span> + DstDir + <span class="string">'\\ScoreHelper'</span>)  <span class="comment"># 注：针对Windows目录结构</span></span><br><span class="line">        print(<span class="string">'这是你第一次使用，请按提示输入信息，以后可不必再次输入~'</span>)</span><br><span class="line">        sid = input(<span class="string">'请输入学号：'</span>)</span><br><span class="line">        sname = input(<span class="string">'请输入姓名：'</span>)</span><br><span class="line">        <span class="comment"># 隐藏密码</span></span><br><span class="line">        <span class="comment"># spwd = getpass.getpass('请输入密码：')</span></span><br><span class="line">        spwd = input(<span class="string">'请输入密码：'</span>)</span><br><span class="line">        email_send_to = input(<span class="string">'请输入要将成绩发送到的邮箱地址：'</span>)</span><br><span class="line">        udick = &#123;<span class="string">'sname'</span>: sname, <span class="string">'sid'</span>: sid,</span><br><span class="line">                 <span class="string">'spwd'</span>: spwd, <span class="string">'email_send_to'</span>: email_send_to&#125;</span><br><span class="line">        file = open(<span class="string">r''</span> + DstDir + <span class="string">'\\ScoreHelper\\uinfo.bin'</span>, <span class="string">'wb'</span>)</span><br><span class="line">        pickle.dump(udick, file)</span><br><span class="line">        file.close()</span><br><span class="line">        final_url = <span class="string">'http://'</span> + url_head + \</span><br><span class="line">            check_for_redirects(<span class="string">'http://'</span> + url_head + <span class="string">'/default2.aspx'</span>)</span><br><span class="line">        final_url_head = final_url[<span class="number">0</span>:<span class="number">48</span>]</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">not</span> login()):</span><br><span class="line">            sname = input(<span class="string">'请输入姓名：'</span>)</span><br><span class="line">            sid = input(<span class="string">'请输入学号：'</span>)</span><br><span class="line">            <span class="comment"># spwd = getpass.getpass('请输入密码：')</span></span><br><span class="line">            spwd = input(<span class="string">'请输入密码：'</span>)</span><br><span class="line">            email_send_to = input(<span class="string">'请输入要将成绩发送到的邮箱地址：'</span>)</span><br><span class="line">            udick = &#123;<span class="string">'sname'</span>: sname, <span class="string">'sid'</span>: sid,</span><br><span class="line">                     <span class="string">'spwd'</span>: spwd, <span class="string">'email_send_to'</span>: email_send_to&#125;</span><br><span class="line">            file = open(<span class="string">r''</span> + DstDir + <span class="string">'\\ScoreHelper\\uinfo.bin'</span>, <span class="string">'wb'</span>)</span><br><span class="line">            pickle.dump(udick, file)</span><br><span class="line">            file.close()</span><br><span class="line">            final_url = <span class="string">'http://'</span> + url_head + \</span><br><span class="line">                check_for_redirects(<span class="string">'http://'</span> + url_head + <span class="string">'/default2.aspx'</span>)</span><br><span class="line">            final_url_head = final_url[<span class="number">0</span>:<span class="number">48</span>]</span><br><span class="line">        get_RequiredCourse_num()</span><br><span class="line">        getScore()</span><br><span class="line">        counter = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> (scorenum &lt;= required_course_num):</span><br><span class="line">            counter += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> (scorenum == required_course_num):</span><br><span class="line">                print(<span class="string">"本学期成绩查询完成！"</span>)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> (counter &gt; <span class="number">0</span>):</span><br><span class="line">                getScore()</span><br><span class="line">            print(scorenum)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> subprocess.CalledProcessError:</span><br><span class="line">        print(<span class="string">"网络连接不正常！请检查网络！"</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        print(<span class="string">"失败！可能是你没有完成教学评价！没有完成教学评价则无法查看成绩！或用户中途取消或网络故障。"</span>)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        <span class="comment"># if os.path.exists(r'' + DstDir + '\\ScoreHelper\\CheckCode.jpg'):</span></span><br><span class="line">        <span class="comment">#     os.remove(r'' + DstDir + '\\ScoreHelper\\CheckCode.jpg')</span></span><br><span class="line">        print(<span class="string">"程序将在3秒后退出..."</span>)</span><br><span class="line">        time.sleep(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><ul>
+<li><p>电脑端运行截图：<br><img src="/images/Screenshot2018-12-29-00-02.png" alt=""></p>
+</li>
+<li><p>上学期最后一次发送成功 截图：<br><img src="/images/Screenshot_2018-07-26-16-10-33-543_com.netease.mo.png" alt=""></p>
+</li>
+<li><p>最近一次运行截图：<br><img src="/images/Screenshot_2018-12-29-00-00-27-699_com.netease.mo.png" alt=""></p>
+</li>
+</ul>
+<h1 id="BUG"><a href="#BUG" class="headerlink" title="BUG"></a>BUG</h1><ul>
+<li><p>当百度云识别不成功时，为了防止网页错误，我设置了3秒间隔重试登录</p>
+</li>
+<li><p>当多次识别不成功是，程序可能结束</p>
+</li>
+<li><p>关于自动判断学期的功能，我是根据我个人的毕业时间来算的结束监控的年月日期，请按需修改</p>
+</li>
+<li><p>当教务网关闭以及断网的时候本程序就不灵了。。。</p>
+</li>
+<li><p>由于session有时间限制，所以每隔一段时间（约27小时）就要重新登录</p>
+</li>
+</ul>
+<h1 id="本程序需要改进的一些功能"><a href="#本程序需要改进的一些功能" class="headerlink" title="本程序需要改进的一些功能"></a>本程序需要改进的一些功能</h1><ul>
+<li>程序被停止后需要立即重新运行（在完善中）</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="0202zc 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="0202zc 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <div>
+      
+        
+
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 ------</div>
+<br/>
+<div style="border: 1px solid black">
+<div style="margin-left:10px">
+<span style="font-weight:blod">版权声明</span>
+<img src="https://thumbnail0.baidupcs.com/thumbnail/09bc6c91a1b7db62746fe86310d11232?fid=1610822326-250528-403238338227916&time=1537920000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-3hkILHNHmPxOVxI4CZaOU6ujMFk%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=459040393079657347&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" >
+<br/>
+<p style="font-size: 10px;line-height: 30px"><a href="http://0202zc.github.io" style="color:#258FC6">0202zc's Notes</a> by <a href="http://0202zc.github.io" style="color:#258FC6">Zhancheng Liang</a> is licensed under a <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color:#258FC6">Creative Commons BY-NC-ND 4.0 International License</a>.<br/>
+由<a href="http://0202zc.github.io" style="color:#258FC6">LZC</a>创作并维护的<a href="http://0202zc.github.io" style="color:#258FC6">0202zc's Notes</a>博客采用<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color:#258FC6">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>。<br/>
+本文首发于<a href="http://0202zc.github.io" style="color:#258FC6">0202zc's Notes</a> 博客（ <a href="http://0202zc.github.io" style="color:#258FC6">http://0202zc.github.io</a> ），版权所有，侵权必究。</p>
+</div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络爬虫/" rel="tag"><i class="fa fa-tag"></i> 网络爬虫</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/25/Python-3-6-监控爬取成绩并推送到邮箱/" rel="next" title="Python 3.6 监控爬取成绩并推送到邮箱">
+                <i class="fa fa-chevron-left"></i> Python 3.6 监控爬取成绩并推送到邮箱
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+    <!--MOB SHARE BEGIN-->
+                                <div class="-mob-share-ui-button -mob-share-open">分享</div>
+                                <div class="-mob-share-ui" style="display: none">
+                                    <ul class="-mob-share-list">
+                                        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+                                        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+                                        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+                                        <li class="-mob-share-qq"><p>QQ好友</p></li>
+                                        <li class="-mob-share-weixin"><p>微信</p></li>
+                                        <li class="-mob-share-douban"><p>豆瓣</p></li>
+                                        <li class="-mob-share-renren"><p>人人网</p></li>
+                                        <li class="-mob-share-kaixin"><p>开心网</p></li>
+                                        <li class="-mob-share-facebook"><p>Facebook</p></li>
+                                        <li class="-mob-share-twitter"><p>Twitter</p></li>
+                                        <li class="-mob-share-pocket"><p>Pocket</p></li>
+                                        <li class="-mob-share-google"><p>Google+</p></li>
+                                        <li class="-mob-share-youdao"><p>有道云笔记</p></li>
+                                        <li class="-mob-share-mingdao"><p>明道</p></li>
+                                        <li class="-mob-share-pengyou"><p>朋友网</p></li>
+                                        <li class="-mob-share-tumblr"><p>Tumblr</p></li>
+                                        <li class="-mob-share-instapaper"><p>Instapaper</p></li>
+                                        <li class="-mob-share-linkedin"><p>LinkedIn</p></li>
+                                    </ul>
+                                    <div class="-mob-share-close">取消</div>
+                                </div>
+                                <div class="-mob-share-ui-bg"></div>
+                                <script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=25d6a78a6eb2f"></script>
+                                <!--MOB SHARE END-->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjUzMy8xMzA2OA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/custom_logo.jpg"
+                alt="0202zc" />
+            
+              <p class="site-author-name" itemprop="name">0202zc</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/0202zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:lzc980202@163.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/0202zc" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/0202zc" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-heart"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源代码"><span class="nav-number">2.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行结果"><span class="nav-number">3.</span> <span class="nav-text">运行结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BUG"><span class="nav-number">4.</span> <span class="nav-text">BUG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本程序需要改进的一些功能"><span class="nav-number">5.</span> <span class="nav-text">本程序需要改进的一些功能</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">0202zc</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("LmnxSgDzqqpaABCtC4LgmPtI-gzGzoHsz", "aOT3PG5cL7BHviM1KQkYEB9o");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
