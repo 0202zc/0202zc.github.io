@@ -96,7 +96,8 @@
 <meta property="og:image" content="http://0202zc.github.io/images/Screenshot2018-12-29-00-11.png">
 <meta property="og:image" content="http://0202zc.github.io/images/Screenshot_2018-07-26-16-10-33-543_com.netease.mo.png">
 <meta property="og:image" content="http://0202zc.github.io/images/Screenshot_2018-12-29-00-00-27-699_com.netease.mo.png">
-<meta property="og:updated_time" content="2019-01-02T15:11:32.947Z">
+<meta property="og:image" content="http://0202zc.github.io/images/screenshot2019-01-13-18-59.png">
+<meta property="og:updated_time" content="2019-01-13T11:01:06.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 3.6 监控爬取成绩并推送到邮箱(基于百度云接口的验证码识别)">
 <meta name="twitter:description" content="简介本程序模拟登录正方教务系统获取本人当前学期成绩（也可以手动改学期学年），20分钟检测一次，当有新成绩公布时就发送到邮箱，本程序用到的是我学校的教务网网址。  第一代手动输入验证码的程序Python 3.6 监控爬取成绩并推送到邮箱 验证码识别参照了XiaoYaoII的文章利用python3 爬取教务处实现自动查询成绩并发送给用户QQ邮箱 使用百度云文字识别的SDK的帮助文档在此Python S">
@@ -418,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,721字
+                  3,920字
                 </span>
               
 
@@ -434,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  19分钟
+                  20分钟
                 </span>
               
             </div>
@@ -485,7 +486,18 @@
 <h1 id="本程序需要改进的一些功能"><a href="#本程序需要改进的一些功能" class="headerlink" title="本程序需要改进的一些功能"></a>本程序需要改进的一些功能</h1><ul>
 <li>程序被停止后需要立即重新运行（在完善中）</li>
 </ul>
-<h1 id="2019-1-2-修复日期计算错误的问题"><a href="#2019-1-2-修复日期计算错误的问题" class="headerlink" title="2019-1-2 修复日期计算错误的问题"></a>2019-1-2 修复日期计算错误的问题</h1>
+<h1 id="修复日志"><a href="#修复日志" class="headerlink" title="修复日志"></a>修复日志</h1><ul>
+<li>2019-1-2 修复日期计算错误的问题</li>
+</ul>
+<h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><h2 id="新增python控制自动运行-bat文件功能，使程序得以无休止运行"><a href="#新增python控制自动运行-bat文件功能，使程序得以无休止运行" class="headerlink" title="新增python控制自动运行.bat文件功能，使程序得以无休止运行"></a>新增python控制自动运行.bat文件功能，使程序得以无休止运行</h2><ul>
+<li><p>battle.bat</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@echo off </span><br><span class="line"></span><br><span class="line">cd  ./</span><br><span class="line"></span><br><span class="line">start python 成绩监控并推送.py</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>startpy.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># startpy.py</span></span><br><span class="line"><span class="comment"># coding:utf8</span></span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doSth</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 把爬虫程序放在这个类里</span></span><br><span class="line">    print(<span class="string">'这个程序要开始疯狂的运转啦'</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">if</span> os.path.exists(path):</span><br><span class="line">            command = path + <span class="string">'/battle.bat'</span></span><br><span class="line">            os.system(command)</span><br><span class="line">    <span class="keyword">except</span> (IOError, Exception) <span class="keyword">as</span> e:</span><br><span class="line">        print(e)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    path = os.getcwd()</span><br><span class="line"></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    timeCount = <span class="number">0</span></span><br><span class="line">    doSth()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> timeCount &lt; <span class="number">27</span>:</span><br><span class="line">        timeCount += <span class="number">1</span></span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        print(<span class="string">"程序第"</span>,end=<span class="string">""</span>)</span><br><span class="line">        print(count,end=<span class="string">""</span>)</span><br><span class="line">        print(<span class="string">"次执行"</span>)</span><br><span class="line">        <span class="keyword">if</span> timeCount == <span class="number">27</span>:</span><br><span class="line">            timeCount = <span class="number">0</span></span><br><span class="line">            <span class="comment"># doSth()</span></span><br><span class="line">        <span class="comment"># 每隔1小时检测一次</span></span><br><span class="line">        time.sleep(<span class="number">3600</span>)</span><br></pre></td></tr></table></figure></li>
+<li>startpy.py运行截图：<br><img src="/images/screenshot2019-01-13-18-59.png" alt=""></li>
+</ul>
+
       
     </div>
     
@@ -788,7 +800,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源代码"><span class="nav-number">2.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行结果"><span class="nav-number">3.</span> <span class="nav-text">运行结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BUG"><span class="nav-number">4.</span> <span class="nav-text">BUG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本程序需要改进的一些功能"><span class="nav-number">5.</span> <span class="nav-text">本程序需要改进的一些功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2019-1-2-修复日期计算错误的问题"><span class="nav-number">6.</span> <span class="nav-text">2019-1-2 修复日期计算错误的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源代码"><span class="nav-number">2.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行结果"><span class="nav-number">3.</span> <span class="nav-text">运行结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BUG"><span class="nav-number">4.</span> <span class="nav-text">BUG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本程序需要改进的一些功能"><span class="nav-number">5.</span> <span class="nav-text">本程序需要改进的一些功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修复日志"><span class="nav-number">6.</span> <span class="nav-text">修复日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新"><span class="nav-number">7.</span> <span class="nav-text">更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新增python控制自动运行-bat文件功能，使程序得以无休止运行"><span class="nav-number">7.1.</span> <span class="nav-text">新增python控制自动运行.bat文件功能，使程序得以无休止运行</span></a></li></ol></li></ol></div>
             
 
           </div>
