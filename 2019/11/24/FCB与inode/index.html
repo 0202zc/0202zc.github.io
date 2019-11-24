@@ -93,12 +93,14 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="序言文件控制块（FCB）与索引结点（inode）都是操作系统文件管理中逻辑结构的重要部分。在今日考研复习过程中，基本解决了以前遇到的“FCB与inode”的问题，现以此博文记录该知识点。 文件控制块与索引结点这需要从目录结构说起。  文件目录：包含有关文件的信息，信息主要有：属性，位置，所有权。这些信息主要是由OS进行管理。把所有的FCB组织在一起，就构成了文件目录，即文件控制块的有序集合，其包含">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://0202zc.github.io/images/catalogue_FCB.jpg">
+<meta property="og:image" content="http://0202zc.github.io/images/FCB&inode_1.jpg">
 <meta property="og:image" content="http://0202zc.github.io/images/FCB&inode.jpg">
-<meta property="og:updated_time" content="2019-11-24T14:30:34.216Z">
+<meta property="og:updated_time" content="2019-11-24T14:36:45.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件控制块与索引节点的总结">
 <meta name="twitter:description" content="序言文件控制块（FCB）与索引结点（inode）都是操作系统文件管理中逻辑结构的重要部分。在今日考研复习过程中，基本解决了以前遇到的“FCB与inode”的问题，现以此博文记录该知识点。 文件控制块与索引结点这需要从目录结构说起。  文件目录：包含有关文件的信息，信息主要有：属性，位置，所有权。这些信息主要是由OS进行管理。把所有的FCB组织在一起，就构成了文件目录，即文件控制块的有序集合，其包含">
-<meta name="twitter:image" content="http://0202zc.github.io/images/FCB&inode.jpg">
+<meta name="twitter:image" content="http://0202zc.github.io/images/catalogue_FCB.jpg">
 
 
 
@@ -416,7 +418,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  834字
+                  911字
                 </span>
               
 
@@ -461,10 +463,12 @@
 <ul>
 <li>共享系统中目录还需要提供控制访问文件的信息。重名问题主要通过树形结构来解决。</li>
 </ul>
+<p><img src="/images/catalogue_FCB.jpg" alt="" title="目录实现对比"></p>
+<p>采用索引结点的方式来实现目录，好处是文件目录的目录项长度会缩短很多。因为通过文件目录实现对文件的按名存取时，在寻找文件的过程中只需要用到文件名这个信息，而其他信息在寻找文件的时候没有必要。<br>如果一个目录中存放了很多个文件，采用传统的以FCB构成目录项的方式，那么这个文件目录会非常大，因为每个目录项就特别大。<br>而采用索引结点的方式实现目录，每个目录项就会很小，只包含文件名和指向索引结点的指针。可以提高文件检索速度。</p>
 <ul>
 <li>FCB：文件控制块。用于存放控制文件的各种信息的数据结构，实现了按名存取。</li>
 </ul>
-<p><br><br>总结如下表：<br>| FCB |  inode  |<br>| :—-: | :—-: |<br>| · 基本信息：如文件名、文件的物理位置、文件的逻辑结构、文件的物理结构等 <br> · 存取控制信息：如文件存取权限等 <br> · 使用信息；如文件建立时间、修改时间等 <br> 【注：FCB必须连续存放】 | 文件描述信息（i结点）<br> 【在文件目录中的每个目录项仅由文件名和指向该文件所对应的i结点的指针构成】  |</p>
+<p><br><br>总结如下表：<br><img src="/images/FCB&amp;inode_1.jpg" alt="" title="FCB与inode"></p>
 <p>此处有个小问题：</p>
 <ul>
 <li>某科技大学的OS考研试卷填空题答案中索引节点分为文件描述信息和i结点，而资料书上说的是索引节点即为i结点</li>
