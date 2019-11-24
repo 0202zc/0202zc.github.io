@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://0202zc.github.io/images/catalogue_FCB.jpg">
 <meta property="og:image" content="http://0202zc.github.io/images/FCB&inode_1.jpg">
 <meta property="og:image" content="http://0202zc.github.io/images/FCB&inode.jpg">
-<meta property="og:updated_time" content="2019-11-24T14:37:19.871Z">
+<meta property="og:updated_time" content="2019-11-24T14:58:35.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件控制块与索引节点的总结">
 <meta name="twitter:description" content="序言文件控制块（FCB）与索引结点（inode）都是操作系统文件管理中逻辑结构的重要部分。在今日考研复习过程中，基本解决了以前遇到的“FCB与inode”的问题，现以此博文记录该知识点。 文件控制块与索引结点这需要从目录结构说起。  文件目录：包含有关文件的信息，信息主要有：属性，位置，所有权。这些信息主要是由OS进行管理。把所有的FCB组织在一起，就构成了文件目录，即文件控制块的有序集合，其包含">
@@ -477,9 +477,8 @@
 <ul>
 <li>存放在磁盘上的索引结点称为磁盘索引结点。</li>
 </ul>
-<h2 id="文件控制块与索引节点的区别"><a href="#文件控制块与索引节点的区别" class="headerlink" title="文件控制块与索引节点的区别"></a>文件控制块与索引节点的区别</h2><p>个人总结：</p>
+<h2 id="文件控制块与索引节点的区别"><a href="#文件控制块与索引节点的区别" class="headerlink" title="文件控制块与索引节点的区别"></a>文件控制块与索引节点的区别</h2><p>个人总结：<br>从文件目录结构来看，UNIX中，</p>
 <ul>
-<li>从文件目录结构来看，UNIX中，</li>
 <li>文件目录由FCB（目录项）组成</li>
 <li>FCB = 文件名 + inode</li>
 <li>inode包含了文件物理地址信息</li>
