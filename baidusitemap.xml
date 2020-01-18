@@ -3,6 +3,28 @@
 
 
     
+  <url>
+    <loc>http://0202zc.github.io/2020/01/18/%E5%B0%B1%E5%9C%B0%E9%80%86%E7%BD%AE%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%85%83%E7%B4%A0/</loc>
+    <lastmod>2020-01-18T08:34:24.776Z</lastmod>
+    <data>
+        <display>
+        <title>就地逆置线性表元素</title>
+        <pubTime>2020-01-18T08:23:00.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>Algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://0202zc.github.io/2019/11/24/FCB%E4%B8%8Einode/</loc>
@@ -95,9 +117,9 @@
         <title>Python学习笔记 —— 爬取教务网明日课程并发送微信好友</title>
         <pubTime>2018-05-18T07:29:34.000Z</pubTime>
         
-        <tag>网络爬虫</tag>
-         
         <tag>Python</tag>
+         
+        <tag>网络爬虫</tag>
          
          
            

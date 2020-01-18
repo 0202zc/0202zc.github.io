@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0202zc.github.io/"/>
-  <updated>2019-11-24T14:58:35.923Z</updated>
+  <updated>2020-01-18T08:34:24.776Z</updated>
   <id>http://0202zc.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>就地逆置线性表元素</title>
+    <link href="http://0202zc.github.io/2020/01/18/%E5%B0%B1%E5%9C%B0%E9%80%86%E7%BD%AE%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%85%83%E7%B4%A0/"/>
+    <id>http://0202zc.github.io/2020/01/18/就地逆置线性表元素/</id>
+    <published>2020-01-18T08:23:00.000Z</published>
+    <updated>2020-01-18T08:34:24.776Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文分为线性表逆置操作的基本操作和扩展操作</p><h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><ol><li><p>顺序表<br>Q: 设计一个高效算法，将顺序表L的所有元素逆置，要求空间复杂度为O(1)</p><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>扫描前半部分元素，对于L.data[i]（0&lt;i&lt;L.length/2），与后半部分对应元素L.data[L.length-i-1].data交换</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Reverse</span><span class="params">(SqList &amp;L)</span> </span>&#123;</span><br><span class="line">ElemType temp;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;L.length/<span class="number">2</span>;i++) &#123;</span><br><span class="line">temp = L.data[i];</span><br><span class="line">L.data[i] = L.data[L.length-i<span class="number">-1</span>];</span><br><span class="line">L.data[L.length-i<span class="number">-1</span>] = temp;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>单链表</p></li><li>双链表</li></ol><h1 id="扩展操作"><a href="#扩展操作" class="headerlink" title="扩展操作"></a>扩展操作</h1><ol><li>两个顺序表位置互换</li><li>三个顺序表位置互换</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本文分为线性表逆置操作的基本操作和扩展操作&lt;/p&gt;
+&lt;h1 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;顺序表&lt;br&gt;Q: 设计一个高效算法，将顺序表L
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://0202zc.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Algorithm" scheme="http://0202zc.github.io/tags/Algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>文件控制块与索引节点的总结</title>
@@ -141,9 +170,9 @@
       <category term="Python学习" scheme="http://0202zc.github.io/categories/Python%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="网络爬虫" scheme="http://0202zc.github.io/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/"/>
-    
       <category term="Python" scheme="http://0202zc.github.io/tags/Python/"/>
+    
+      <category term="网络爬虫" scheme="http://0202zc.github.io/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
