@@ -54,12 +54,10 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="简介本程序模拟登录正方教务系统获取本人当前学期成绩（也可以手动改学期学年），20分钟检测一次，当有新成绩公布时就发送到邮箱，本程序用到的是我学校的教务网网址。  由于正方网页的每一项都需要cookie来进行访问，在用Chrome单独打开子页面时，网页会直接跳到登录前界面。在用调试查看了post后，发现cookie消失了；但是直接从网页上打开子网页可以访问。所以在登录时就要保存登录信息cookie。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://0202zc.github.io/images/Screenshot_2018-07-26-16-10-33-543_com.netease.mo.png">
 <meta property="og:updated_time" content="2018-09-25T16:02:33.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 3.6 监控爬取成绩并推送到邮箱">
 <meta name="twitter:description" content="简介本程序模拟登录正方教务系统获取本人当前学期成绩（也可以手动改学期学年），20分钟检测一次，当有新成绩公布时就发送到邮箱，本程序用到的是我学校的教务网网址。  由于正方网页的每一项都需要cookie来进行访问，在用Chrome单独打开子页面时，网页会直接跳到登录前界面。在用调试查看了post后，发现cookie消失了；但是直接从网页上打开子网页可以访问。所以在登录时就要保存登录信息cookie。">
-<meta name="twitter:image" content="http://0202zc.github.io/images/Screenshot_2018-07-26-16-10-33-543_com.netease.mo.png">
 
 <link rel="canonical" href="http://0202zc.github.io/2018/07/25/Python-3-6-监控爬取成绩并推送到邮箱/">
 
@@ -179,6 +177,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -299,7 +298,7 @@
 </li>
 <li><p>由于session有时间限制，所以每隔一段时间（约27小时）就要重新登录</p>
 </li>
-<li><p>最后一次发送成功 截图：<br><img src="/images/Screenshot_2018-07-26-16-10-33-543_com.netease.mo.png" alt=""></p>
+<li><p>最后一次发送成功 截图：<br><img data-src="/images/Screenshot_2018-07-26-16-10-33-543_com.netease.mo.png" alt=""></p>
 </li>
 <li><p>2018-09-25新增——自动获取本学期必修课总数</p>
 </li>
@@ -506,95 +505,6 @@
 
 
 
-  <script>
-  function leancloudSelector(url) {
-    url = encodeURI(url);
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.getAttribute('data-flag-title');
-
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length > 0) {
-            var counter = results[0];
-            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
-              .then(() => {
-                leancloudSelector(url).innerText = counter.time + 1;
-              })
-              .catch(error => {
-                console.error('Failed to save visitor count', error);
-              })
-          } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-  } else {
-    function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.getAttribute('id'));
-      });
-
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (let item of results) {
-            let { url, time } = item;
-            leancloudSelector(url).innerText = time;
-          }
-          for (let url of entries) {
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
-            }
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-  }
-
-  fetch('https://app-router.leancloud.cn/2/route?appId=LmnxSgDzqqpaABCtC4LgmPtI-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
-          headers: {
-            'X-LC-Id': 'LmnxSgDzqqpaABCtC4LgmPtI-gzGzoHsz',
-            'X-LC-Key': 'aOT3PG5cL7BHviM1KQkYEB9o',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      if (CONFIG.page.isPost) {
-        if (CONFIG.hostname !== location.hostname) return;
-        addCount(Counter);
-      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
 
 
       </div>
@@ -656,10 +566,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       avatar: 'mm',
       meta: guest,
       pageSize: '10' || 10,
-      visitor: false,
+      visitor: true,
       lang: '' || 'zh-cn',
       path: location.pathname,
-      recordIP: false,
+      recordIP: true,
       serverURLs: ''
     });
   }, window.Valine);

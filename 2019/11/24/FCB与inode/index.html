@@ -54,14 +54,10 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="序言文件控制块（FCB）与索引结点（inode）都是操作系统文件管理中逻辑结构的重要部分。在今日考研复习过程中，基本解决了以前遇到的“FCB与inode”的问题，现以此博文记录该知识点。 文件控制块与索引结点这需要从目录结构说起。  文件目录：包含有关文件的信息，信息主要有：属性，位置，所有权。这些信息主要是由OS进行管理。把所有的FCB组织在一起，就构成了文件目录，即文件控制块的有序集合，其包含">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://0202zc.github.io/images/catalogue_FCB.jpg">
-<meta property="og:image" content="http://0202zc.github.io/images/FCB&inode_1.jpg">
-<meta property="og:image" content="http://0202zc.github.io/images/FCB&inode.jpg">
 <meta property="og:updated_time" content="2019-11-24T14:58:35.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件控制块与索引节点的总结">
 <meta name="twitter:description" content="序言文件控制块（FCB）与索引结点（inode）都是操作系统文件管理中逻辑结构的重要部分。在今日考研复习过程中，基本解决了以前遇到的“FCB与inode”的问题，现以此博文记录该知识点。 文件控制块与索引结点这需要从目录结构说起。  文件目录：包含有关文件的信息，信息主要有：属性，位置，所有权。这些信息主要是由OS进行管理。把所有的FCB组织在一起，就构成了文件目录，即文件控制块的有序集合，其包含">
-<meta name="twitter:image" content="http://0202zc.github.io/images/catalogue_FCB.jpg">
 
 <link rel="canonical" href="http://0202zc.github.io/2019/11/24/FCB与inode/">
 
@@ -181,6 +177,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -288,12 +285,12 @@
 <ul>
 <li>共享系统中目录还需要提供控制访问文件的信息。重名问题主要通过树形结构来解决。</li>
 </ul>
-<p><img src="/images/catalogue_FCB.jpg" alt="" title="目录实现对比"></p>
+<p><img data-src="/images/catalogue_FCB.jpg" alt="" title="目录实现对比"></p>
 <p>采用索引结点的方式来实现目录，好处是文件目录的目录项长度会缩短很多。因为通过文件目录实现对文件的按名存取时，在寻找文件的过程中只需要用到文件名这个信息，而其他信息在寻找文件的时候没有必要。<br>如果一个目录中存放了很多个文件，采用传统的以FCB构成目录项的方式，那么这个文件目录会非常大，因为每个目录项就特别大。<br>而采用索引结点的方式实现目录，每个目录项就会很小，只包含文件名和指向索引结点的指针。可以提高文件检索速度。</p>
 <ul>
 <li>FCB：文件控制块。用于存放控制文件的各种信息的数据结构，实现了按名存取。</li>
 </ul>
-<p><br><br>总结如下表：<br><img src="/images/FCB&amp;inode_1.jpg" alt="" title="FCB与inode"></p>
+<p><br><br>总结如下表：<br><img data-src="/images/FCB&amp;inode_1.jpg" alt="" title="FCB与inode"></p>
 <p>此处有个小问题：</p>
 <ul>
 <li>某科技大学的OS考研试卷填空题答案中索引节点分为文件描述信息和i结点，而资料书上说的是索引节点即为i结点</li>
@@ -307,7 +304,7 @@
 <li>文件目录由FCB（目录项）组成</li>
 <li>FCB = 文件名 + inode</li>
 <li>inode包含了文件物理地址信息</li>
-<li>物理地址信息的组成主要是主索引表<br><br><br>如图所示:<br><img src="/images/FCB&amp;inode.jpg" alt="" title="逻辑结构图"></li>
+<li>物理地址信息的组成主要是主索引表<br><br><br>如图所示:<br><img data-src="/images/FCB&amp;inode.jpg" alt="" title="逻辑结构图"></li>
 </ul>
 <p><strong>个人能力有限，总结有问题请指出。</strong></p>
 
@@ -513,95 +510,6 @@
 
 
 
-  <script>
-  function leancloudSelector(url) {
-    url = encodeURI(url);
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.getAttribute('data-flag-title');
-
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length > 0) {
-            var counter = results[0];
-            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
-              .then(() => {
-                leancloudSelector(url).innerText = counter.time + 1;
-              })
-              .catch(error => {
-                console.error('Failed to save visitor count', error);
-              })
-          } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-  } else {
-    function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.getAttribute('id'));
-      });
-
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (let item of results) {
-            let { url, time } = item;
-            leancloudSelector(url).innerText = time;
-          }
-          for (let url of entries) {
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
-            }
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-  }
-
-  fetch('https://app-router.leancloud.cn/2/route?appId=LmnxSgDzqqpaABCtC4LgmPtI-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
-          headers: {
-            'X-LC-Id': 'LmnxSgDzqqpaABCtC4LgmPtI-gzGzoHsz',
-            'X-LC-Key': 'aOT3PG5cL7BHviM1KQkYEB9o',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      if (CONFIG.page.isPost) {
-        if (CONFIG.hostname !== location.hostname) return;
-        addCount(Counter);
-      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
 
 
       </div>
@@ -663,10 +571,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       avatar: 'mm',
       meta: guest,
       pageSize: '10' || 10,
-      visitor: false,
+      visitor: true,
       lang: '' || 'zh-cn',
       path: location.pathname,
-      recordIP: false,
+      recordIP: true,
       serverURLs: ''
     });
   }, window.Valine);
