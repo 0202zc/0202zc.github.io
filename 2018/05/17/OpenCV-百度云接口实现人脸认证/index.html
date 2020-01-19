@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="有话在先前日注册了百度云账号，接触到了百度云的一系列接口，看到“人脸对比”后突发奇想，用人脸识别来做认证（虽然没有Alipay那么高端）模拟登录执行程序。于是就去百度了百度云接口python实现人脸识别、OpenCV人脸认证。网上实现百度云接口的代码是用Python3写的，但是OpenCV目前只支持Python2；所以我尝试了一下把py3的百度云人脸识别代码改成了py2的。结果……失败了【悲伤.g">
+  <meta name="description" content="有话在先前日注册了百度云账号，接触到了百度云的一系列接口，看到“人脸对比”后突发奇想，用人脸识别来做认证（虽然没有Alipay那么高端）模拟登录执行程序。">
 <meta name="keywords" content="Python,人脸识别,百度云">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习笔记 —— OpenCV+百度云接口实现人脸认证">
 <meta property="og:url" content="http://0202zc.github.io/2018/05/17/OpenCV-百度云接口实现人脸认证/index.html">
 <meta property="og:site_name" content="L..z、℃的博客">
-<meta property="og:description" content="有话在先前日注册了百度云账号，接触到了百度云的一系列接口，看到“人脸对比”后突发奇想，用人脸识别来做认证（虽然没有Alipay那么高端）模拟登录执行程序。于是就去百度了百度云接口python实现人脸识别、OpenCV人脸认证。网上实现百度云接口的代码是用Python3写的，但是OpenCV目前只支持Python2；所以我尝试了一下把py3的百度云人脸识别代码改成了py2的。结果……失败了【悲伤.g">
+<meta property="og:description" content="有话在先前日注册了百度云账号，接触到了百度云的一系列接口，看到“人脸对比”后突发奇想，用人脸识别来做认证（虽然没有Alipay那么高端）模拟登录执行程序。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-17T23:36:11.750Z">
+<meta property="og:updated_time" content="2020-01-19T03:01:13.819Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习笔记 —— OpenCV+百度云接口实现人脸认证">
-<meta name="twitter:description" content="有话在先前日注册了百度云账号，接触到了百度云的一系列接口，看到“人脸对比”后突发奇想，用人脸识别来做认证（虽然没有Alipay那么高端）模拟登录执行程序。于是就去百度了百度云接口python实现人脸识别、OpenCV人脸认证。网上实现百度云接口的代码是用Python3写的，但是OpenCV目前只支持Python2；所以我尝试了一下把py3的百度云人脸识别代码改成了py2的。结果……失败了【悲伤.g">
+<meta name="twitter:description" content="有话在先前日注册了百度云账号，接触到了百度云的一系列接口，看到“人脸对比”后突发奇想，用人脸识别来做认证（虽然没有Alipay那么高端）模拟登录执行程序。">
 
 <link rel="canonical" href="http://0202zc.github.io/2018/05/17/OpenCV-百度云接口实现人脸认证/">
 
@@ -248,7 +248,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-05-18 07:36:11" itemprop="dateModified" datetime="2018-05-18T07:36:11+08:00">2018-05-18</time>
+                <time title="修改时间：2020-01-19 11:01:13" itemprop="dateModified" datetime="2020-01-19T11:01:13+08:00">2020-01-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -308,7 +308,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="有话在先"><a href="#有话在先" class="headerlink" title="有话在先"></a>有话在先</h1><p>前日注册了百度云账号，接触到了百度云的一系列接口，看到“<em>人脸对比</em>”后突发奇想，用人脸识别来做认证（虽然没有Alipay那么高端）模拟登录执行程序。<br>于是就去百度了<em>百度云接口python实现人脸识别</em>、<em>OpenCV人脸认证</em>。网上实现百度云接口的代码是用Python3写的，但是OpenCV目前只支持Python2；所以我尝试了一下把py3的百度云人脸识别代码改成了py2的。<br>结果……失败了【悲伤.gif】……<br>所以我将就用那个py3，同时安装了py2，然后再在一个程序里面调用另一个程序<br>但是这样做可移植性差，需要用户同时安装py2和py3。  </p>
+        <h1 id="有话在先"><a href="#有话在先" class="headerlink" title="有话在先"></a>有话在先</h1><p>前日注册了百度云账号，接触到了百度云的一系列接口，看到“<em>人脸对比</em>”后突发奇想，用人脸识别来做认证（虽然没有Alipay那么高端）模拟登录执行程序。  <a id="more"></a><br>于是就去百度了<em>百度云接口python实现人脸识别</em>、<em>OpenCV人脸认证</em>。网上实现百度云接口的代码是用Python3写的，但是OpenCV目前只支持Python2；所以我尝试了一下把py3的百度云人脸识别代码改成了py2的。<br>结果……失败了【悲伤.gif】……<br>所以我将就用那个py3，同时安装了py2，然后再在一个程序里面调用另一个程序<br>但是这样做可移植性差，需要用户同时安装py2和py3。  </p>
 <h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><p><em>python3.6+百度人脸识别API进行照片人脸对比：<a href="https://blog.csdn.net/weixin_39133476/article/details/79310817" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39133476/article/details/79310817</a></em><br><em>python+OpenCV人脸认证：<a href="https://www.cnblogs.com/hanson1/p/7105265.html" target="_blank" rel="noopener">https://www.cnblogs.com/hanson1/p/7105265.html</a></em></p>
 <h1 id="Python2-x与3​​-x版本区别"><a href="#Python2-x与3​​-x版本区别" class="headerlink" title="Python2.x与3​​.x版本区别"></a>Python2.x与3​​.x版本区别</h1><ul>
 <li>Python的3​​.0版本，常被称为Python 3000，或简称Py3k。相对于Python的早期版本，这是一个较大的升级。</li>
