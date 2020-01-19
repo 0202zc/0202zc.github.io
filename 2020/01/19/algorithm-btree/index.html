@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="层次遍历求二叉树宽度、高度//设计一个非递归算法求以二叉链表存储的二叉树的高度、最大宽度//非递归：层次遍历，设置level记录当前结点所在层数，last指向下一层第一个结点的位置 123456789101112131415161718192021int Btdepth(BiTree T) &amp;#123;    if(!T)	return 0;    int front=-1, rear=-1;">
+  <meta name="description" content="二叉树的系列应用">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二叉树的应用">
 <meta property="og:url" content="http://0202zc.github.io/2020/01/19/algorithm-btree/index.html">
 <meta property="og:site_name" content="L..z、℃的博客">
-<meta property="og:description" content="层次遍历求二叉树宽度、高度//设计一个非递归算法求以二叉链表存储的二叉树的高度、最大宽度//非递归：层次遍历，设置level记录当前结点所在层数，last指向下一层第一个结点的位置 123456789101112131415161718192021int Btdepth(BiTree T) &amp;#123;    if(!T)	return 0;    int front=-1, rear=-1;">
+<meta property="og:description" content="二叉树的系列应用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-19T13:10:12.078Z">
+<meta property="og:updated_time" content="2020-01-19T13:11:03.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二叉树的应用">
-<meta name="twitter:description" content="层次遍历求二叉树宽度、高度//设计一个非递归算法求以二叉链表存储的二叉树的高度、最大宽度//非递归：层次遍历，设置level记录当前结点所在层数，last指向下一层第一个结点的位置 123456789101112131415161718192021int Btdepth(BiTree T) &amp;#123;    if(!T)	return 0;    int front=-1, rear=-1;">
+<meta name="twitter:description" content="二叉树的系列应用">
 
 <link rel="canonical" href="http://0202zc.github.io/2020/01/19/algorithm-btree/">
 
@@ -242,7 +242,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-01-19 21:09:15 / 修改时间：21:10:12" itemprop="dateCreated datePublished" datetime="2020-01-19T21:09:15+08:00">2020-01-19</time>
+              <time title="创建时间：2020-01-19 21:09:15 / 修改时间：21:11:03" itemprop="dateCreated datePublished" datetime="2020-01-19T21:09:15+08:00">2020-01-19</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,7 +283,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>789</span>
+              <span>797</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -302,7 +302,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <ol>
+        <p>二叉树的系列应用<br><a id="more"></a></p>
+<ol>
 <li><p>层次遍历求二叉树宽度、高度<br>//设计一个非递归算法求以二叉链表存储的二叉树的高度、最大宽度<br>//非递归：层次遍历，设置level记录当前结点所在层数，last指向下一层第一个结点的位置</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Btdepth</span><span class="params">(BiTree T)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T)	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> front=<span class="number">-1</span>, rear=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> last=<span class="number">0</span>, level=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> maxWidth=<span class="number">0</span>;	<span class="comment">//记录最大宽度</span></span><br><span class="line">    BiTree Q[MaxSize];</span><br><span class="line">    Q[++rear]=T;	<span class="comment">//将根结点入队</span></span><br><span class="line">    BiTree p;</span><br><span class="line">    <span class="keyword">while</span>(front&lt;rear)&#123;	<span class="comment">//队不空，则循环</span></span><br><span class="line">        p=Q[++rear];	<span class="comment">//队列元素出队，即正在访问的结点</span></span><br><span class="line">        <span class="keyword">if</span>(p-&gt;lchild)</span><br><span class="line">            Q[++rear]=p-&gt;lchild;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;rchild)</span><br><span class="line">            Q[++rear]=p-&gt;rchild;</span><br><span class="line">        <span class="keyword">if</span>(front == last)		处理该层的最右结点，此时last指向该层最右结点</span><br><span class="line">            level++;		层数加<span class="number">1</span></span><br><span class="line">        last = rear;		last指向下一层</span><br><span class="line">        maxWidth=maxWidth&gt;(last-front) ? maxWidth : (last-front);	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> level;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
