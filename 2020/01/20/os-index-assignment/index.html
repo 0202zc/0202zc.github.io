@@ -46,14 +46,18 @@
   };
 </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="L..z、℃的博客">
+  <meta name="description" content="磁盘空间分配的主要常用方法有三个：连续分配、链接分配和索引分配。本文主要讨论索引分配中处理索引块大小的问题。">
+<meta name="keywords" content="操作系统,OS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件分配方式之索引分配">
 <meta property="og:url" content="http://0202zc.github.io/2020/01/20/os-index-assignment/index.html">
 <meta property="og:site_name" content="L..z、℃的博客">
+<meta property="og:description" content="磁盘空间分配的主要常用方法有三个：连续分配、链接分配和索引分配。本文主要讨论索引分配中处理索引块大小的问题。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-20T03:08:23.872Z">
+<meta property="og:updated_time" content="2020-01-20T03:50:35.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="L..z、℃的博客">
+<meta name="twitter:title" content="文件分配方式之索引分配">
+<meta name="twitter:description" content="磁盘空间分配的主要常用方法有三个：连续分配、链接分配和索引分配。本文主要讨论索引分配中处理索引块大小的问题。">
 
 <link rel="canonical" href="http://0202zc.github.io/2020/01/20/os-index-assignment/">
 
@@ -67,7 +71,7 @@
   };
 </script>
 
-  <title> | L..z、℃的博客</title>
+  <title>文件分配方式之索引分配 | L..z、℃的博客</title>
   
 
 
@@ -227,7 +231,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          文件分配方式之索引分配
         </h1>
 
         <div class="post-meta">
@@ -236,12 +240,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-01-20 11:08:23" itemprop="dateCreated datePublished" datetime="2020-01-20T11:08:23+08:00">2020-01-20</time>
+              <time title="创建时间：2020-01-20 11:14:05 / 修改时间：11:50:35" itemprop="dateCreated datePublished" datetime="2020-01-20T11:14:05+08:00">2020-01-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机操作系统</span>
+                  </a>
+                </span>
             </span>
 
           
-            <span id="/2020/01/20/os-index-assignment/" class="post-meta-item leancloud_visitors" data-flag-title="" title="阅读次数">
+            <span id="/2020/01/20/os-index-assignment/" class="post-meta-item leancloud_visitors" data-flag-title="文件分配方式之索引分配" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -267,7 +283,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
+              <span>844</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -286,7 +302,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>磁盘空间分配的主要常用方法有三个：<strong>连续分配</strong>、<strong>链接分配</strong>和<strong>索引分配</strong>。本文主要讨论<strong>索引分配中处理索引块大小</strong>的问题。<br><a id="more"></a><br>文件实际上是一种抽象数据类型，文件的实现就是研究文件的物理结构，即文件数据在物理存储设备上是如何分布和组织的。同一个问题有两个方面的回答：一是文件的<strong>分配方式</strong>，讲的是对磁盘<u>非空闲块</u>的管理；二是文件<strong>存储空间管理</strong>，将的是对磁盘<u>空闲块</u>的管理。<br><br><br>索引分配解决了连续分配和链式分配中的许多问题。对于索引分配，每个文件在文件分配表中有一个一级索引，索引包含分配给文件的每个分区入口。典型地，文件索引在物理上并不是作为文件分配表的一部分存储的，相反，<u>文件索引保存在一个单独的块中，文件分配表中改文件的入口指向这一块。</u>分配可以基于大小固定的块，也可以基于大小可变的块。索引分配支持顺序访问和直接访问文件，因而是最普遍的一种文件分配方式。</p>
+<p>索引分配解决了连接分配不能有效支持直接访问（FAT除外）的问题，它把每个文件的所有的盘块号都集中放在一起构成索引块（表），如下图所示。</p>
+<p><img data-src="http://c.biancheng.net/uploads/allimg/181112/2-1Q112104520B6.gif" alt="" title="磁盘空间的索引分配【来源：C语言中文网 http://c.biancheng.net/view/1302.html】"></p>
+<p>每个文件都有其索引块，这是一个磁盘块地址的数组。索引表记录了文件的<strong>各个逻辑块对应的物理块</strong>。索引块的第i个条目指向文件的第i个块。目录条目包括索引块的地址。要读第i块，通过索引块的第i个条目的指针来查找和读入所需的块。<br>创建文件时，索引块的所有制证都设为空。首次写入第i块时，先从空闲空间中取得一个块，再将其地址写到索引块的第i个条目。<strong>索引分配支持直接访问（随机访问），且没有外部碎片的问题，易于文件拓展</strong>。其缺点是由于索引块的分配，增加了系统存储空间的开销。索引块的大小是一个重要的问题，每个文件必须有一个索引块，因此需要索引块尽可能小，但索引块太小就无法支持大文件。可采用以下机制来处理这个问题。</p>
+<ul>
+<li>链接方案：一个块通常为一个磁盘块，因此它本身能直接读写。为了处理大文件，可以将多个索引块链接起来。</li>
+<li>多层索引：使第一层索引块指向第二层索引块，第二层文件块指向文件块。根据实际要求可以继续到第三层或第四层。</li>
+<li>混合索引：多重索引分配方式相结合。</li>
+</ul>
+
     </div>
 
     
@@ -314,6 +339,10 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/操作系统/" rel="tag"># 操作系统</a>
+              <a href="/tags/OS/" rel="tag"># OS</a>
+          </div>
 
         
 
@@ -461,12 +490,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">58k</span>
+    <span title="站点总字数">59k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">53 分钟</span>
+    <span title="站点阅读时长">54 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.7.1
   </div>
