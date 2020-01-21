@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://0202zc.github.io/2020/01/21/algorithm-LCM&GCD/</loc>
+    <lastmod>2020-01-21T03:27:06.850Z</lastmod>
+    <data>
+        <display>
+        <title>最小公倍数&最大公因数</title>
+        <pubTime>2020-01-21T03:08:28.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://0202zc.github.io/2020/01/20/os-index-assignment/</loc>
     <lastmod>2020-01-20T04:08:58.789Z</lastmod>
     <data>
@@ -96,9 +116,9 @@
         <title>Python学习笔记 —— 爬取教务网明日课程并发送微信好友</title>
         <pubTime>2018-05-18T07:29:34.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>网络爬虫</tag>
+         
+        <tag>Python</tag>
          
          
            

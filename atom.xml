@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0202zc.github.io/"/>
-  <updated>2020-01-20T04:08:58.789Z</updated>
+  <updated>2020-01-21T03:27:06.850Z</updated>
   <id>http://0202zc.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最小公倍数&amp;最大公因数</title>
+    <link href="http://0202zc.github.io/2020/01/21/algorithm-LCM&amp;GCD/"/>
+    <id>http://0202zc.github.io/2020/01/21/algorithm-LCM&amp;GCD/</id>
+    <published>2020-01-21T03:08:28.000Z</published>
+    <updated>2020-01-21T03:27:06.850Z</updated>
+    
+    <content type="html"><![CDATA[<p>几个数共有的倍数叫做这几个数的公倍数，其中除0以外最小的一个公倍数，叫做这几个数的最小公倍数。如果数a能被数b整除，a就叫做b的倍数，b就叫做a的约数。约数和倍数都表示一个整数与另一个整数的关系，不能单独存在。<br><a id="more"></a></p><h3 id="求最小公倍数算法"><a href="#求最小公倍数算法" class="headerlink" title="求最小公倍数算法"></a>求最小公倍数算法</h3><blockquote><p><strong>最小公倍数 = 两整数的乘积 ÷ 最大公约数</strong></p></blockquote><h3 id="求最大公因数算法"><a href="#求最大公因数算法" class="headerlink" title="求最大公因数算法"></a>求最大公因数算法</h3><p>求最大公约数有多种方法，常见的有<strong>质因数分解法</strong>、<strong>短除法</strong>、<strong>辗转相除法</strong>、<strong>更相减损法</strong>。<br>下面介绍辗转相除法（欧几里德算法）</p><blockquote><p>有两整数a和b：</p></blockquote><blockquote><p>① a%b得余数temp</p></blockquote><blockquote><p>② 若temp=0，则b即为两数的最大公约数</p></blockquote><blockquote><p>③ 若temp≠0，则令a=b，b=temp，再回去执行①</p></blockquote><p>例如，求27和15的最大公约数过程为：</p><blockquote><p>27÷15=1 余12<br>15÷12=1 余3<br>12÷3=4 余0<br>因此，3即为最大公约数</p></blockquote><h4 id="代码实现如下："><a href="#代码实现如下：" class="headerlink" title="代码实现如下："></a>代码实现如下：</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b, temp;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    temp = a % b;</span><br><span class="line">    <span class="keyword">if</span>(temp == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        a = b;</span><br><span class="line">        b = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">while</span>(temp != <span class="number">0</span>);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;几个数共有的倍数叫做这几个数的公倍数，其中除0以外最小的一个公倍数，叫做这几个数的最小公倍数。如果数a能被数b整除，a就叫做b的倍数，b就叫做a的约数。约数和倍数都表示一个整数与另一个整数的关系，不能单独存在。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://0202zc.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>文件分配方式之索引分配</title>
@@ -197,9 +219,9 @@
       <category term="Python学习" scheme="http://0202zc.github.io/categories/Python%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Python" scheme="http://0202zc.github.io/tags/Python/"/>
-    
       <category term="网络爬虫" scheme="http://0202zc.github.io/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="Python" scheme="http://0202zc.github.io/tags/Python/"/>
     
   </entry>
   

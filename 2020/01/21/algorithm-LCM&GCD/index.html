@@ -46,15 +46,20 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="L..z、℃的博客">
-<meta property="og:url" content="http://0202zc.github.io/categories/计算机操作系统/index.html">
+  <meta name="description" content="几个数共有的倍数叫做这几个数的公倍数，其中除0以外最小的一个公倍数，叫做这几个数的最小公倍数。如果数a能被数b整除，a就叫做b的倍数，b就叫做a的约数。约数和倍数都表示一个整数与另一个整数的关系，不能单独存在。">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最小公倍数&amp;最大公因数">
+<meta property="og:url" content="http://0202zc.github.io/2020/01/21/algorithm-LCM&GCD/index.html">
 <meta property="og:site_name" content="L..z、℃的博客">
+<meta property="og:description" content="几个数共有的倍数叫做这几个数的公倍数，其中除0以外最小的一个公倍数，叫做这几个数的最小公倍数。如果数a能被数b整除，a就叫做b的倍数，b就叫做a的约数。约数和倍数都表示一个整数与另一个整数的关系，不能单独存在。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-21T03:27:06.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="L..z、℃的博客">
+<meta name="twitter:title" content="最小公倍数&amp;最大公因数">
+<meta name="twitter:description" content="几个数共有的倍数叫做这几个数的公倍数，其中除0以外最小的一个公倍数，叫做这几个数的最小公倍数。如果数a能被数b整除，a就叫做b的倍数，b就叫做a的约数。约数和倍数都表示一个整数与另一个整数的关系，不能单独存在。">
 
-<link rel="canonical" href="http://0202zc.github.io/categories/计算机操作系统/">
+<link rel="canonical" href="http://0202zc.github.io/2020/01/21/algorithm-LCM&GCD/">
 
 
 <script id="page-configurations">
@@ -62,11 +67,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>分类: 计算机操作系统 | L..z、℃的博客</title>
+  <title>最小公倍数&最大公因数 | L..z、℃的博客</title>
   
 
 
@@ -208,77 +213,173 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">计算机操作系统
-          <small>分类</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://0202zc.github.io/2020/01/21/algorithm-LCM&GCD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom_logo.jpg">
+      <meta itemprop="name" content="0202zc">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="L..z、℃的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          最小公倍数&最大公因数
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-21 11:08:28 / 修改时间：11:27:06" itemprop="dateCreated datePublished" datetime="2020-01-21T11:08:28+08:00">2020-01-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/01/21/algorithm-LCM&GCD/" class="post-meta-item leancloud_visitors" data-flag-title="最小公倍数&最大公因数" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/01/21/algorithm-LCM&GCD/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/21/algorithm-LCM&GCD/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>434</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
+        <p>几个数共有的倍数叫做这几个数的公倍数，其中除0以外最小的一个公倍数，叫做这几个数的最小公倍数。如果数a能被数b整除，a就叫做b的倍数，b就叫做a的约数。约数和倍数都表示一个整数与另一个整数的关系，不能单独存在。<br><a id="more"></a></p>
+<h3 id="求最小公倍数算法"><a href="#求最小公倍数算法" class="headerlink" title="求最小公倍数算法"></a>求最小公倍数算法</h3><blockquote>
+<p><strong>最小公倍数 = 两整数的乘积 ÷ 最大公约数</strong></p>
+</blockquote>
+<h3 id="求最大公因数算法"><a href="#求最大公因数算法" class="headerlink" title="求最大公因数算法"></a>求最大公因数算法</h3><p>求最大公约数有多种方法，常见的有<strong>质因数分解法</strong>、<strong>短除法</strong>、<strong>辗转相除法</strong>、<strong>更相减损法</strong>。<br>下面介绍辗转相除法（欧几里德算法）</p>
+<blockquote>
+<p>有两整数a和b：</p>
+</blockquote>
+<blockquote>
+<p>① a%b得余数temp</p>
+</blockquote>
+<blockquote>
+<p>② 若temp=0，则b即为两数的最大公约数</p>
+</blockquote>
+<blockquote>
+<p>③ 若temp≠0，则令a=b，b=temp，再回去执行①</p>
+</blockquote>
+<p>例如，求27和15的最大公约数过程为：</p>
+<blockquote>
+<p>27÷15=1 余12<br>15÷12=1 余3<br>12÷3=4 余0<br>因此，3即为最大公约数</p>
+</blockquote>
+<h4 id="代码实现如下："><a href="#代码实现如下：" class="headerlink" title="代码实现如下："></a>代码实现如下：</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b, temp;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    temp = a % b;</span><br><span class="line">    <span class="keyword">if</span>(temp == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        a = b;</span><br><span class="line">        b = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">while</span>(temp != <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-20T11:14:05+08:00"
-              content="2020-01-20">
-          01-20
-        </time>
+    
+    
+    
+        <div class="reward-container">
+  <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="0202zc 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="0202zc 支付宝">
+        <p>支付宝</p>
       </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/20/os-index-assignment/" itemprop="url">
-            <span itemprop="name">文件分配方式之索引分配</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-24T22:37:17+08:00"
-              content="2019-11-24">
-          11-24
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/24/os-FCB-and-inode/" itemprop="url">
-            <span itemprop="name">文件控制块与索引节点的总结</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-    </div>
   </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/算法/" rel="tag"># 算法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/20/os-index-assignment/" rel="prev" title="文件分配方式之索引分配">
+      <i class="fa fa-chevron-left"></i> 文件分配方式之索引分配
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-
+  </div>
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -325,6 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#求最小公倍数算法"><span class="nav-number">1.</span> <span class="nav-text">求最小公倍数算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求最大公因数算法"><span class="nav-number">2.</span> <span class="nav-text">求最大公因数算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码实现如下："><span class="nav-number">2.1.</span> <span class="nav-text">代码实现如下：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
