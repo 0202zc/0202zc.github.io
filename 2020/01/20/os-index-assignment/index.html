@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="磁盘空间分配的主要常用方法有三个：连续分配、链接分配和索引分配。本文主要讨论索引分配中处理索引块大小的问题。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-20T04:08:58.789Z">
+<meta property="og:updated_time" content="2020-01-21T04:45:24.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件分配方式之索引分配">
 <meta name="twitter:description" content="磁盘空间分配的主要常用方法有三个：连续分配、链接分配和索引分配。本文主要讨论索引分配中处理索引块大小的问题。">
@@ -240,10 +240,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-20 11:14:05 / 修改时间：12:08:58" itemprop="dateCreated datePublished" datetime="2020-01-20T11:14:05+08:00">2020-01-20</time>
+              <time title="创建时间：2020-01-20 11:14:05" itemprop="dateCreated datePublished" datetime="2020-01-20T11:14:05+08:00">2020-01-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-21 12:45:24" itemprop="dateModified" datetime="2020-01-21T12:45:24+08:00">2020-01-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -323,7 +329,7 @@
 <ol start="3">
 <li>混合索引：多重索引分配方式相结合。<ul>
 <li>UNIX的文件系统采用三级索引机制。在文件控制块（FCB）中，设置了一个索引表，共有13个索引地址。其中，前10个为直接索引地址，后3个为间接索引地址，包括1个一级索引地址、1个二级索引地址和1个三级索引地址。</li>
-<li>每一块中能记录的数据块数=512/4≈128<br>一级索引时文件最大长度的字节数=128<em>512<br>二级索引时文件最大长度的字节数=128</em>128<em>512<br>三级索引时文件最大长度的字节数=128</em>128<em>128</em>512<br>最大搜索文件的长度=（10+128+128<em>128+128</em>128<em>128）</em>512<br><img data-src="/images/mixed_index_allocation.jpg" alt="" title="混合索引分配方式"><br>与多层索引方式不同，混合索引有个<strong>主索引表</strong>（13个地址项）【主索引表是索引节点的一部分】，若题目告知主索引表<strong>在内存中【主索引表在FCB中，FCB在内存中】</strong>，访问k级间址需要读磁盘k+1次（读取数据块1次）；若主索引表不在内存中，访问k级间址需要读磁盘k+2次。<br>而多层索引没有主索引表，因此相当于直接从混合索引的一级间址开始读磁盘，故k层索引读磁盘k+1次。<br>【以上是使用索引结点的次数】<br>注：<ul>
+<li>每一块中能记录的数据块数=512/4≈128<br>一级索引时文件最大长度的字节数 = 128 × 512<br>二级索引时文件最大长度的字节数 = 128×128 × 512<br>三级索引时文件最大长度的字节数 = 128×128×128 × 512<br>最大搜索文件的长度 = (10 + 128 + 128×128 + 128×128×128) × 512<br><img data-src="/images/mixed_index_allocation.jpg" alt="" title="混合索引分配方式"><br>与多层索引方式不同，混合索引有个<strong>主索引表</strong>（13个地址项）【主索引表是索引节点的一部分】，若题目告知主索引表<strong>在内存中【主索引表在FCB中，FCB在内存中】</strong>，访问k级间址需要读磁盘k+1次（读取数据块1次）；若主索引表不在内存中，访问k级间址需要读磁盘k+2次。<br>而多层索引没有主索引表，因此相当于直接从混合索引的一级间址开始读磁盘，故k层索引读磁盘k+1次。<br>【以上是使用索引结点的次数】<br>注：<ul>
 <li>与单个文件长度无关的因素：索引结点的总数【索引结点个数仅与文件个数有关，一个索引结点对应一个文件】</li>
 <li>一个盘块号就有一个索引项</li>
 <li>将文件描述信息从目录项中分离出来，有利于减少查找文件时的I/O信息量</li>
