@@ -46,15 +46,20 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="L..z、℃的博客">
-<meta property="og:url" content="http://0202zc.github.io/archives/2018/page/2/index.html">
+  <meta name="description" content="题目描述 假设按照升序排序的数组在预先未知的某个点上进行了旋转。( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。请找出其中最小的元素。你可以假设数组中不存在重复元素。  示例 1: 输入: [3,4,5,1,2]输出: 1  示例 2 输入: [4,5,6,7,0,1,2]输出: 0  方法：二分查找思路一种暴力的解法是搜索整个数组，找到其中的最小元素">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="寻找旋转排序数组中的最小值">
+<meta property="og:url" content="http://0202zc.github.io/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/index.html">
 <meta property="og:site_name" content="L..z、℃的博客">
+<meta property="og:description" content="题目描述 假设按照升序排序的数组在预先未知的某个点上进行了旋转。( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。请找出其中最小的元素。你可以假设数组中不存在重复元素。  示例 1: 输入: [3,4,5,1,2]输出: 1  示例 2 输入: [4,5,6,7,0,1,2]输出: 0  方法：二分查找思路一种暴力的解法是搜索整个数组，找到其中的最小元素">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-22T03:33:07.950Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="L..z、℃的博客">
+<meta name="twitter:title" content="寻找旋转排序数组中的最小值">
+<meta name="twitter:description" content="题目描述 假设按照升序排序的数组在预先未知的某个点上进行了旋转。( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。请找出其中最小的元素。你可以假设数组中不存在重复元素。  示例 1: 输入: [3,4,5,1,2]输出: 1  示例 2 输入: [4,5,6,7,0,1,2]输出: 0  方法：二分查找思路一种暴力的解法是搜索整个数组，找到其中的最小元素">
 
-<link rel="canonical" href="http://0202zc.github.io/archives/2018/page/2/">
+<link rel="canonical" href="http://0202zc.github.io/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/">
 
 
 <script id="page-configurations">
@@ -62,11 +67,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>归档 | L..z、℃的博客</title>
+  <title>寻找旋转排序数组中的最小值 | L..z、℃的博客</title>
   
 
 
@@ -208,56 +213,163 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://0202zc.github.io/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom_logo.jpg">
+      <meta itemprop="name" content="0202zc">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="L..z、℃的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          寻找旋转排序数组中的最小值
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-22 11:21:36 / 修改时间：11:33:07" itemprop="dateCreated datePublished" datetime="2020-01-22T11:21:36+08:00">2020-01-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/" class="post-meta-item leancloud_visitors" data-flag-title="寻找旋转排序数组中的最小值" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 17 篇日志。 继续努力。</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>324</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2018</h1>
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。<br>( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。<br>请找出其中最小的元素。<br>你可以假设数组中不存在重复元素。</p>
+</blockquote>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h4><blockquote>
+<p>输入: [3,4,5,1,2]<br>输出: 1</p>
+</blockquote>
+<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h4><blockquote>
+<p>输入: [4,5,6,7,0,1,2]<br>输出: 0</p>
+</blockquote>
+<h3 id="方法：二分查找"><a href="#方法：二分查找" class="headerlink" title="方法：二分查找"></a>方法：二分查找</h3><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>一种暴力的解法是搜索整个数组，找到其中的最小元素，这样的时间复杂度是 $O(N)$ 其中 $N$ 是给定数组的大小。</p>
+<p>一个非常棒的解决该问题的办法是使用<code>二分搜索</code>。在二分搜索中，我们找到区间的中间点并根据某些条件决定去区间左半部分还是右半部分搜索。</p>
+<p>由于给定的数组是有序的，我们就可以使用二分搜索。然而，数组被旋转了，所以简单的使用二分搜索并不可行。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-13T22:40:29+08:00"
-              content="2018-05-13">
-          05-13
-        </time>
+    
+    
+    
+        <div class="reward-container">
+  <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="0202zc 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="0202zc 支付宝">
+        <p>支付宝</p>
       </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/13/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-
-    </div>
   </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/算法/" rel="tag"># 算法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/21/algorithm-LCM&GCD/" rel="prev" title="最小公倍数&最大公因数">
+      <i class="fa fa-chevron-left"></i> 最小公倍数&最大公因数
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span>
-  </nav>
-
+  </div>
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -304,6 +416,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#示例-1"><span class="nav-number">1.1.</span> <span class="nav-text">示例 1:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例-2"><span class="nav-number">1.2.</span> <span class="nav-text">示例 2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法：二分查找"><span class="nav-number">2.</span> <span class="nav-text">方法：二分查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路"><span class="nav-number">2.1.</span> <span class="nav-text">思路</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
