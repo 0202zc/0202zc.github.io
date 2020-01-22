@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="题目描述 假设按照升序排序的数组在预先未知的某个点上进行了旋转。( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。请找出其中最小的元素。你可以假设数组中不存在重复元素。  示例 1: 输入: [3,4,5,1,2]输出: 1  示例 2 输入: [4,5,6,7,0,1,2]输出: 0  方法：二分查找思路一种暴力的解法是搜索整个数组，找到其中的最小元素">
+  <meta name="description" content="LeetCode上一道题目：153. 寻找旋转排序数组中的最小值链接：https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/xun-zhao-xuan-zhuan-pai-lie-shu-zu-zhong-de-zui-xi/">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="寻找旋转排序数组中的最小值">
 <meta property="og:url" content="http://0202zc.github.io/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/index.html">
 <meta property="og:site_name" content="L..z、℃的博客">
-<meta property="og:description" content="题目描述 假设按照升序排序的数组在预先未知的某个点上进行了旋转。( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。请找出其中最小的元素。你可以假设数组中不存在重复元素。  示例 1: 输入: [3,4,5,1,2]输出: 1  示例 2 输入: [4,5,6,7,0,1,2]输出: 0  方法：二分查找思路一种暴力的解法是搜索整个数组，找到其中的最小元素">
+<meta property="og:description" content="LeetCode上一道题目：153. 寻找旋转排序数组中的最小值链接：https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/xun-zhao-xuan-zhuan-pai-lie-shu-zu-zhong-de-zui-xi/">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-22T06:50:26.533Z">
+<meta property="og:updated_time" content="2020-01-22T07:00:55.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="寻找旋转排序数组中的最小值">
-<meta name="twitter:description" content="题目描述 假设按照升序排序的数组在预先未知的某个点上进行了旋转。( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。请找出其中最小的元素。你可以假设数组中不存在重复元素。  示例 1: 输入: [3,4,5,1,2]输出: 1  示例 2 输入: [4,5,6,7,0,1,2]输出: 0  方法：二分查找思路一种暴力的解法是搜索整个数组，找到其中的最小元素">
+<meta name="twitter:description" content="LeetCode上一道题目：153. 寻找旋转排序数组中的最小值链接：https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/xun-zhao-xuan-zhuan-pai-lie-shu-zu-zhong-de-zui-xi/">
 
 <link rel="canonical" href="http://0202zc.github.io/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/">
 
@@ -242,7 +242,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-01-22 11:21:36 / 修改时间：14:50:26" itemprop="dateCreated datePublished" datetime="2020-01-22T11:21:36+08:00">2020-01-22</time>
+              <time title="创建时间：2020-01-22 11:21:36 / 修改时间：15:00:55" itemprop="dateCreated datePublished" datetime="2020-01-22T11:21:36+08:00">2020-01-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,7 +283,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>708</span>
+              <span>872</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -302,7 +302,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+        <p>LeetCode上一道题目：153. 寻找旋转排序数组中的最小值<br>链接：<a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/xun-zhao-xuan-zhuan-pai-lie-shu-zu-zhong-de-zui-xi/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/xun-zhao-xuan-zhuan-pai-lie-shu-zu-zhong-de-zui-xi/</a><br><a id="more"></a></p>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
 <p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。<br>( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。<br>请找出其中最小的元素。<br>你可以假设数组中不存在重复元素。</p>
 </blockquote>
 <h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h4><blockquote>
