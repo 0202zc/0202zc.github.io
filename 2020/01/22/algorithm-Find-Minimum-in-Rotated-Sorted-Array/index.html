@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="LeetCode上一道题目：153. 寻找旋转排序数组中的最小值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-22T07:04:03.008Z">
+<meta property="og:updated_time" content="2020-01-22T12:18:59.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="寻找旋转排序数组中的最小值">
 <meta name="twitter:description" content="LeetCode上一道题目：153. 寻找旋转排序数组中的最小值">
@@ -242,7 +242,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-01-22 11:21:36 / 修改时间：15:04:03" itemprop="dateCreated datePublished" datetime="2020-01-22T11:21:36+08:00">2020-01-22</time>
+              <time title="创建时间：2020-01-22 11:21:36 / 修改时间：20:18:59" itemprop="dateCreated datePublished" datetime="2020-01-22T11:21:36+08:00">2020-01-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -302,7 +302,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>LeetCode上一道题目：153. 寻找旋转排序数组中的最小值<br><a id="more"></a><br>链接：<a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/xun-zhao-xuan-zhuan-pai-lie-shu-zu-zhong-de-zui-xi/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/xun-zhao-xuan-zhuan-pai-lie-shu-zu-zhong-de-zui-xi/</a></p>
+        <p>LeetCode上一道题目：153. 寻找旋转排序数组中的最小值<br><a id="more"></a><br>来源：<br><a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/xun-zhao-xuan-zhuan-pai-lie-shu-zu-zhong-de-zui-xi/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/xun-zhao-xuan-zhuan-pai-lie-shu-zu-zhong-de-zui-xi/</a></p>
 <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
 <p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。<br>( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。<br>请找出其中最小的元素。<br>你可以假设数组中不存在重复元素。</p>
 </blockquote>
@@ -317,12 +317,12 @@
 <p>由于给定的数组是有序的，我们就可以使用二分搜索。然而，数组被旋转了，所以简单的使用二分搜索并不可行。</p>
 <p>我们希望找到旋转排序数组的最小值，如果数组没有被旋转呢？如何检验这一点呢？</p>
 <p>如果数组没有被旋转，是升序排列，就满足 <code>last element &gt; first element</code>。</p>
-<p><img data-src="&quot;https://pic.leetcode-cn.com/ee86edb1c1e318b73f81714240c3bb487e72a666bcfe6019272f40564b78b403-153-1.png&quot;" alt=""></p>
+<p><img data-src="/images/algorithm/Find-Minimum-in-Rotated-Sorted-Array-1.png" alt=""></p>
 <p>上图例子中 <code>7&gt;2</code> 。说明数组仍然是有序的，没有被旋转。</p>
-<p><img data-src="&quot;https://pic.leetcode-cn.com/f3c66f374430349032b482b7973f36c98004a8a89813133867758d55457774a5-153-2.png&quot;" alt=""></p>
+<p><img data-src="/images/algorithm/Find-Minimum-in-Rotated-Sorted-Array-2.png" alt=""></p>
 <p>上面的例子中 <code>3 &lt; 4</code>，因此数组旋转过了。这是因为原先的数组为 <code>[2, 3, 4, 5, 6, 7]</code>，通过旋转较小的元素 <code>[2, 3]</code> 移到了后面，也就是 [4, 5, 6, 7, <code>2, 3</code>]。因此旋转数组中第一个元素 <code>[4]</code> 变得比最后一个元素大。</p>
 <p>这意味着在数组中你会发现一个变化的点，这个点会帮助我们解决这个问题，我们称其为<code>变化点</code>。</p>
-<p><img data-src="&quot;https://pic.leetcode-cn.com/a78a34cc8145ef5b51b59b1482238c6fa940ecfb67bf424cb839d197d4c72eba-153-3.png&quot;" alt=""></p>
+<p><img data-src="/images/algorithm/Find-Minimum-in-Rotated-Sorted-Array-3.png" alt=""></p>
 <p>在这个改进版本的二分搜索算法中，我们需要找到这个点。下面是关于<code>变化点</code>的特点：</p>
 <blockquote>
 <p>所有变化点左侧元素 &gt; 数组第一个元素<br>所有变化点右侧元素 &lt; 数组第一个元素</p>
