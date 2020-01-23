@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</loc>
-    <lastmod>2020-01-23T05:20:54.084Z</lastmod>
+    <lastmod>2020-01-23T05:22:22.223Z</lastmod>
     <data>
         <display>
         <title>C语言一些要点总结</title>
@@ -158,9 +158,9 @@
         <title>Python学习笔记 —— 爬取教务网明日课程并发送微信好友</title>
         <pubTime>2018-05-18T07:29:34.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>网络爬虫</tag>
+         
+        <tag>Python</tag>
          
          
            
