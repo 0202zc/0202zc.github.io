@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0202zc.github.io/"/>
-  <updated>2020-01-22T13:16:55.066Z</updated>
+  <updated>2020-01-23T03:43:00.067Z</updated>
   <id>http://0202zc.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>寻找旋转排序数组中的最小值</title>
+    <link href="http://0202zc.github.io/2020/01/23/algorithm-something-about-C/"/>
+    <id>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</id>
+    <published>2020-01-23T02:39:09.000Z</published>
+    <updated>2020-01-23T03:43:00.067Z</updated>
+    
+    <content type="html"><![CDATA[<p>复试笔试C语言一些要点<br><a id="more"></a></p><h3 id="C语言短路求值（逻辑与、逻辑或）"><a href="#C语言短路求值（逻辑与、逻辑或）" class="headerlink" title="C语言短路求值（逻辑与、逻辑或）"></a>C语言短路求值（逻辑与、逻辑或）</h3><h4 id="逻辑或的短路"><a href="#逻辑或的短路" class="headerlink" title="逻辑或的短路"></a>逻辑或的短路</h4><p>首先上代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"a = %d\n"</span>, a);</span><br><span class="line">    <span class="number">1</span> || (a = <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"a = %d\n"</span>, a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>运⾏结果如下：</p><blockquote><p>a = 1<br>a = 1</p></blockquote><p>逻辑或的表现形式如下：<br><code>expression1 || exexpression2</code></p><p>这⾥⽤到了逻辑或，由于逻辑或的短路，expression1为true，则后⾯的expression2（即：(a=0) ）不再求值，整个表达式的结果为true，所以a的值仍为1，没有改变。【即：一真为真】</p><h4 id="逻辑与的短路"><a href="#逻辑与的短路" class="headerlink" title="逻辑与的短路"></a>逻辑与的短路</h4><p>⾸先看如下代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"a = %d\n"</span>, a);</span><br><span class="line">    <span class="number">0</span> &amp;&amp; (a = <span class="number">3</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"a = %d\n"</span>, a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>运行结果如下：</p><blockquote><p>a = 1<br>a = 1</p></blockquote><p>逻辑与的表现形式如下：<br><code>expression1 &amp;&amp; expression2</code></p><p>上述代码中用到了逻辑与，由于逻辑与的短路，<code>expression1</code>为<code>false</code>，则后面的<code>expression2</code>不再求值，整个的结果为<code>false</code>，所以a的值没有改变。【即：一假则假】</p><h3 id="Eratosthenes筛选法"><a href="#Eratosthenes筛选法" class="headerlink" title="Eratosthenes筛选法"></a>Eratosthenes筛选法</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;复试笔试C语言一些要点&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://0202zc.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>寻找旋转排序数组中的最小值</title>
@@ -241,9 +263,9 @@
       <category term="Python学习" scheme="http://0202zc.github.io/categories/Python%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Python" scheme="http://0202zc.github.io/tags/Python/"/>
-    
       <category term="网络爬虫" scheme="http://0202zc.github.io/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="Python" scheme="http://0202zc.github.io/tags/Python/"/>
     
   </entry>
   
