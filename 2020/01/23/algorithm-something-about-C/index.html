@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="复试笔试C语言一些要点">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-23T04:52:20.419Z">
+<meta property="og:updated_time" content="2020-01-23T04:53:57.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言一些要点总结">
 <meta name="twitter:description" content="复试笔试C语言一些要点">
@@ -242,7 +242,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-01-23 10:39:09 / 修改时间：12:52:20" itemprop="dateCreated datePublished" datetime="2020-01-23T10:39:09+08:00">2020-01-23</time>
+              <time title="创建时间：2020-01-23 10:39:09 / 修改时间：12:53:57" itemprop="dateCreated datePublished" datetime="2020-01-23T10:39:09+08:00">2020-01-23</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -330,7 +330,7 @@
 <li><code>void</code>指针可以指向任意类型的数据，亦即可用任意数据类型的指针对<code>void</code>指针赋值。例如：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p_int;</span><br><span class="line"><span class="keyword">void</span> *p_void;</span><br><span class="line">p_void = p_int; <span class="comment">/*但是不能 p_int = p_void*/</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>如果要将p_void赋给其他类型指针，则需要强制类型转换如：<code>p_int = (int *)p_void;</code></p>
+<p>如果要将<code>p_void</code>赋给其他类型指针，则需要强制类型转换如：<code>p_int = (int *)p_void;</code></p>
 <ul>
 <li>在ANSIC标准中，不允许对<code>void</code>指针进⾏算术运算如<code>p_void++</code>或<code>p_void += 1</code>等，⽽在GNU中则允许。因为在缺省情况下，GNU认为<code>void *</code>与<code>char *</code>⼀样。<code>sizeof(*pvoid ) == sizeof(char)</code>.</li>
 <li>由于<code>void</code>指针可以指向任意类型的数据，亦即可⽤任意数据类型的指针对<code>void</code>指针赋值，因此还可以⽤<code>void</code>指针来作为函数形参，这样函数就可以接受任意数据类型的指针作为参数。例如：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">memcpy</span><span class="params">(<span class="keyword">void</span> *dest, <span class="keyword">const</span> <span class="keyword">void</span> *src, <span class="keyword">size_t</span> len)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">memset</span><span class="params">(<span class="keyword">void</span> * buffer, <span class="keyword">int</span> c, <span class="keyword">size_t</span> num)</span></span>;</span><br></pre></td></tr></table></figure>
