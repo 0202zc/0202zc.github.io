@@ -4,36 +4,16 @@
 
     
   <url>
-    <loc>http://0202zc.github.io/2020/01/24/algorithm-remove-elements/</loc>
-    <lastmod>2020-01-24T07:25:01.834Z</lastmod>
+    <loc>http://0202zc.github.io/2020/01/19/algorithm-btree/</loc>
+    <lastmod>2020-01-24T09:52:53.699Z</lastmod>
     <data>
         <display>
-        <title>删除排序数组中的重复项与移除元素</title>
-        <pubTime>2020-01-24T06:54:54.000Z</pubTime>
+        <title>二叉树的应用</title>
+        <pubTime>2020-01-19T13:09:15.000Z</pubTime>
         
         <tag>算法</tag>
          
-         
-           
-             
-              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</loc>
-    <lastmod>2020-01-23T05:22:22.223Z</lastmod>
-    <data>
-        <display>
-        <title>C语言一些要点总结</title>
-        <pubTime>2020-01-23T02:39:09.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-        <tag>C/C++</tag>
+        <tag>Algorithm</tag>
          
          
            
@@ -47,13 +27,83 @@
     
   <url>
     <loc>http://0202zc.github.io/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/</loc>
-    <lastmod>2020-01-22T13:16:55.066Z</lastmod>
+    <lastmod>2020-01-24T09:52:51.953Z</lastmod>
     <data>
         <display>
         <title>寻找旋转排序数组中的最小值</title>
         <pubTime>2020-01-22T03:21:36.000Z</pubTime>
         
         <tag>算法</tag>
+         
+        <tag>Algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://0202zc.github.io/2020/01/21/algorithm-LCM&GCD/</loc>
+    <lastmod>2020-01-24T09:52:50.425Z</lastmod>
+    <data>
+        <display>
+        <title>最小公倍数&最大公因数</title>
+        <pubTime>2020-01-21T03:08:28.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>Algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://0202zc.github.io/2020/01/24/algorithm-remove-elements/</loc>
+    <lastmod>2020-01-24T09:52:48.401Z</lastmod>
+    <data>
+        <display>
+        <title>删除排序数组中的重复项与移除元素</title>
+        <pubTime>2020-01-24T06:54:54.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>Algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</loc>
+    <lastmod>2020-01-24T09:52:45.898Z</lastmod>
+    <data>
+        <display>
+        <title>C语言一些要点总结</title>
+        <pubTime>2020-01-23T02:39:09.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>Algorithm</tag>
+         
+        <tag>C/C++</tag>
          
          
            
@@ -81,46 +131,6 @@
            
              
               <breadCrumb title="计算机操作系统" url="http://0202zc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://0202zc.github.io/2020/01/21/algorithm-LCM&GCD/</loc>
-    <lastmod>2020-01-21T03:51:43.300Z</lastmod>
-    <data>
-        <display>
-        <title>最小公倍数&最大公因数</title>
-        <pubTime>2020-01-21T03:08:28.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://0202zc.github.io/2020/01/19/algorithm-btree/</loc>
-    <lastmod>2020-01-19T13:12:04.112Z</lastmod>
-    <data>
-        <display>
-        <title>二叉树的应用</title>
-        <pubTime>2020-01-19T13:09:15.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
           
         </display>
     </data>
@@ -178,9 +188,9 @@
         <title>Python学习笔记 —— 爬取教务网明日课程并发送微信好友</title>
         <pubTime>2018-05-18T07:29:34.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>网络爬虫</tag>
+         
+        <tag>Python</tag>
          
          
            
