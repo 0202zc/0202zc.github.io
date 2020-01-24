@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://0202zc.github.io/2020/01/22/algorithm-remove-elements/</loc>
+    <lastmod>2020-01-24T06:43:19.605Z</lastmod>
+    <data>
+        <display>
+        <title>删除排序数组中的重复项与移除元素</title>
+        <pubTime>2020-01-22T03:21:36.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</loc>
     <lastmod>2020-01-23T05:22:22.223Z</lastmod>
     <data>
@@ -158,9 +178,9 @@
         <title>Python学习笔记 —— 爬取教务网明日课程并发送微信好友</title>
         <pubTime>2018-05-18T07:29:34.000Z</pubTime>
         
-        <tag>网络爬虫</tag>
-         
         <tag>Python</tag>
+         
+        <tag>网络爬虫</tag>
          
          
            

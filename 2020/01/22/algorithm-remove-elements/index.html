@@ -46,20 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="LeetCode上的一道题目：153. 寻找旋转排序数组中的最小值">
+  <meta name="description" content="LeetCode 26. Remove Duplicates from Sorted Array &amp;amp; 27. remove elements">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="寻找旋转排序数组中的最小值">
-<meta property="og:url" content="http://0202zc.github.io/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/index.html">
+<meta property="og:title" content="删除排序数组中的重复项与移除元素">
+<meta property="og:url" content="http://0202zc.github.io/2020/01/22/algorithm-remove-elements/index.html">
 <meta property="og:site_name" content="L..z、℃的博客">
-<meta property="og:description" content="LeetCode上的一道题目：153. 寻找旋转排序数组中的最小值">
+<meta property="og:description" content="LeetCode 26. Remove Duplicates from Sorted Array &amp;amp; 27. remove elements">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-22T13:16:55.066Z">
+<meta property="og:updated_time" content="2020-01-24T06:43:19.605Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="寻找旋转排序数组中的最小值">
-<meta name="twitter:description" content="LeetCode上的一道题目：153. 寻找旋转排序数组中的最小值">
+<meta name="twitter:title" content="删除排序数组中的重复项与移除元素">
+<meta name="twitter:description" content="LeetCode 26. Remove Duplicates from Sorted Array &amp;amp; 27. remove elements">
 
-<link rel="canonical" href="http://0202zc.github.io/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/">
+<link rel="canonical" href="http://0202zc.github.io/2020/01/22/algorithm-remove-elements/">
 
 
 <script id="page-configurations">
@@ -71,7 +71,7 @@
   };
 </script>
 
-  <title>寻找旋转排序数组中的最小值 | L..z、℃的博客</title>
+  <title>删除排序数组中的重复项与移除元素 | L..z、℃的博客</title>
   
 
 
@@ -218,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://0202zc.github.io/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/">
+    <link itemprop="mainEntityOfPage" href="http://0202zc.github.io/2020/01/22/algorithm-remove-elements/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/custom_logo.jpg">
@@ -231,7 +231,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          寻找旋转排序数组中的最小值
+          删除排序数组中的重复项与移除元素
         </h1>
 
         <div class="post-meta">
@@ -240,10 +240,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-22 11:21:36 / 修改时间：21:16:55" itemprop="dateCreated datePublished" datetime="2020-01-22T11:21:36+08:00">2020-01-22</time>
+              <time title="创建时间：2020-01-22 11:21:36" itemprop="dateCreated datePublished" datetime="2020-01-22T11:21:36+08:00">2020-01-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-24 14:43:19" itemprop="dateModified" datetime="2020-01-24T14:43:19+08:00">2020-01-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -257,7 +263,7 @@
             </span>
 
           
-            <span id="/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/" class="post-meta-item leancloud_visitors" data-flag-title="寻找旋转排序数组中的最小值" title="阅读次数">
+            <span id="/2020/01/22/algorithm-remove-elements/" class="post-meta-item leancloud_visitors" data-flag-title="删除排序数组中的重复项与移除元素" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -272,8 +278,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/01/22/algorithm-remove-elements/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/22/algorithm-remove-elements/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -283,14 +289,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.8k</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -302,63 +308,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>LeetCode上的一道题目：153. 寻找旋转排序数组中的最小值<br><a id="more"></a><br>来源：<br><a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/xun-zhao-xuan-zhuan-pai-lie-shu-zu-zhong-de-zui-xi/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/xun-zhao-xuan-zhuan-pai-lie-shu-zu-zhong-de-zui-xi/</a></p>
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
-<p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。<br>( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。<br>请找出其中最小的元素。<br>你可以假设数组中不存在重复元素。</p>
+        <p>LeetCode 26. Remove Duplicates from Sorted Array &amp; 27. remove elements<br><a id="more"></a></p>
+<h3 id="删除排序数组中的重复项"><a href="#删除排序数组中的重复项" class="headerlink" title="删除排序数组中的重复项"></a>删除排序数组中的重复项</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个排序数组，你需要在<strong>原地</strong>删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须在<strong>原地修改输入数组</strong>并在使用$O(1)$额外空间的条件下完成。</p>
+<h5 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h5><blockquote>
+<p>给定数组 <code>nums = [1,1,2]</code>,<br>函数应该返回新的长度<code>2</code>, 并且原数组<code>nums</code>的前两个元素被修改为<code>1, 2</code>。<br>你不需要考虑数组中超出新长度后面的元素。</p>
 </blockquote>
-<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h4><blockquote>
-<p>输入: [3,4,5,1,2]<br>输出: 1</p>
-</blockquote>
-<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h4><blockquote>
-<p>输入: [4,5,6,7,0,1,2]<br>输出: 0</p>
-</blockquote>
-<h3 id="方法：二分查找"><a href="#方法：二分查找" class="headerlink" title="方法：二分查找"></a>方法：二分查找</h3><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>一种暴力的解法是搜索整个数组，找到其中的最小元素，这样的时间复杂度是 $O(N)$ 其中 $N$ 是给定数组的大小。</p>
-<p>一个非常棒的解决该问题的办法是使用<code>二分搜索</code>。在二分搜索中，我们找到区间的中间点并根据某些条件决定去区间左半部分还是右半部分搜索。</p>
-<p>由于给定的数组是有序的，我们就可以使用二分搜索。然而，数组被旋转了，所以简单的使用二分搜索并不可行。</p>
-<p>我们希望找到旋转排序数组的最小值，如果数组没有被旋转呢？如何检验这一点呢？</p>
-<p>如果数组没有被旋转，是升序排列，就满足 <code>last element &gt; first element</code>。</p>
-<p><img data-src="/images/algorithm/Find-Minimum-in-Rotated-Sorted-Array-1.png" alt=""></p>
-<p>上图例子中 <code>7&gt;2</code> 。说明数组仍然是有序的，没有被旋转。</p>
-<p><img data-src="/images/algorithm/Find-Minimum-in-Rotated-Sorted-Array-2.png" alt=""></p>
-<p>上面的例子中 <code>3 &lt; 4</code>，因此数组旋转过了。这是因为原先的数组为 <code>[2, 3, 4, 5, 6, 7]</code>，通过旋转较小的元素 <code>[2, 3]</code> 移到了后面，也就是 [4, 5, 6, 7, <code>2, 3</code>]。因此旋转数组中第一个元素 <code>[4]</code> 变得比最后一个元素大。</p>
-<p>这意味着在数组中你会发现一个变化的点，这个点会帮助我们解决这个问题，我们称其为<code>变化点</code>。</p>
-<p><img data-src="/images/algorithm/Find-Minimum-in-Rotated-Sorted-Array-3.png" alt=""></p>
-<p>在这个改进版本的二分搜索算法中，我们需要找到这个点。下面是关于<code>变化点</code>的特点：</p>
-<blockquote>
-<p>所有变化点左侧元素 &gt; 数组第一个元素<br>所有变化点右侧元素 &lt; 数组第一个元素</p>
-</blockquote>
-<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><ol>
-<li><p>找到数组的中间元素<code>mid</code>。</p>
-</li>
-<li><p>如果<code>中间元素 &gt; 数组第一个元素</code>，我们需要在<code>mid</code>右边搜索变化点。</p>
-</li>
-<li><p>如果<code>中间元素 &lt; 数组第一个元素</code>，我们需要在<code>mid</code>做边搜索变化点。</p>
-</li>
-</ol>
-<p><img data-src="/images/algorithm/Find-Minimum-in-Rotated-Sorted-Array-4.png" alt=""></p>
-<p>上面的例子中，中间元素<code>6</code>比第一个元素<code>4</code>大，因此在中间点右侧继续搜索。</p>
-<ol start="4">
-<li><p>当我们找到变化点时停止搜索，当以下条件满足任意一个即可：<br><code>nums[mid] &gt; nums[mid + 1]</code>，因此<strong>mid+1</strong>是最小值。</p>
-<p><code>nums[mid - 1] &gt; nums[mid]</code>，因此<strong>mid</strong>是最小值。</p>
-</li>
-</ol>
-<p><img data-src="/images/algorithm/Find-Minimum-in-Rotated-Sorted-Array-5.png" alt=""></p>
-<p>在上面的例子中，标记左右区间端点。中间元素为<code>2</code>，之后的元素是<code>7</code>满足<code>7 &gt; 2</code>也就是<code>nums[mid - 1] &gt; nums[mid]</code>。因此找到变化点也就是最小元素为<code>2</code>。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// If the list has just one element then return that element.</span></span><br><span class="line">    <span class="keyword">if</span> (nums.length == <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// initializing left and right pointers.</span></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// if the last element is greater than the first element then there is no rotation.</span></span><br><span class="line">    <span class="comment">// e.g. 1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 7. Already sorted array.</span></span><br><span class="line">    <span class="comment">// Hence the smallest element is first element. A[0]</span></span><br><span class="line">    <span class="keyword">if</span> (nums[right] &gt; nums[<span class="number">0</span>]) &#123;</span><br><span class="line">      <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Binary search way</span></span><br><span class="line">    <span class="keyword">while</span> (right &gt;= left) &#123;</span><br><span class="line">      <span class="comment">// Find the mid element</span></span><br><span class="line">      <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// if the mid element is greater than its next element then mid+1 element is the smallest</span></span><br><span class="line">      <span class="comment">// This point would be the point of change. From higher to lower value.</span></span><br><span class="line">      <span class="keyword">if</span> (nums[mid] &gt; nums[mid + <span class="number">1</span>]) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[mid + <span class="number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// if the mid element is lesser than its previous element then mid element is the smallest</span></span><br><span class="line">      <span class="keyword">if</span> (nums[mid - <span class="number">1</span>] &gt; nums[mid]) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[mid];</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// if the mid elements value is greater than the 0th element this means</span></span><br><span class="line">      <span class="comment">// the least value is still somewhere to the right as we are still dealing with elements</span></span><br><span class="line">      <span class="comment">// greater than nums[0]</span></span><br><span class="line">      <span class="keyword">if</span> (nums[mid] &gt; nums[<span class="number">0</span>]) &#123;</span><br><span class="line">        left = mid + <span class="number">1</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// if nums[0] is greater than the mid value then this means the smallest value is somewhere to</span></span><br><span class="line">        <span class="comment">// the left</span></span><br><span class="line">        right = mid - <span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="时间复杂度分析"><a href="#时间复杂度分析" class="headerlink" title="时间复杂度分析"></a>时间复杂度分析</h5><ul>
-<li>时间复杂度：和二分搜索一样$O(logN)$</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-<h5 id="或者"><a href="#或者" class="headerlink" title="或者"></a>或者</h5><ol>
-<li><p>判断最小的数是否在第一个位置，若是则返回<code>nums[0]</code>；</p>
-</li>
-<li><p>否则，选取中间位置mid的数和right位置的数进行比较，若<code>nums[mid] &lt; nums[r]</code>，说明最小的数在mid之前，<code>right = mid</code>；反之，令<code>left = mid + 1</code>；</p>
-</li>
-<li><p>重复进行，直到<code>left &gt;= right</code>。</p>
-</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//伪代码</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span> *nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length - <span class="number">1</span>, mid;</span><br><span class="line">    <span class="keyword">if</span>(nums[left] &lt; nums[right])</span><br><span class="line">        <span class="keyword">return</span> nums[left];</span><br><span class="line">    <span class="keyword">while</span>(left &lt; right) &#123;</span><br><span class="line">        mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums[mid] &gt; nums[right])</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            right = mid;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h5 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h5><p>给定<code>nums = [0,0,1,1,1,2,2,3,3,4]</code>,</p>
+<p>函数应该返回新的长度<code>5</code>, 并且原数组<code>nums</code>的前五个元素被修改为<code>0, 1, 2, 3, 4</code>。</p>
+<p>你不需要考虑数组中超出新长度后面的元素。</p>
+<h4 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>, i;</span><br><span class="line">    <span class="keyword">if</span>(numsSize == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> arr[numsSize];</span><br><span class="line">	arr[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;numsSize; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(nums[i<span class="number">-1</span>] == nums[i]) &#123;</span><br><span class="line">			count++;</span><br><span class="line">		&#125;</span><br><span class="line">		arr[i]=count;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;numsSize;i++)&#123;</span><br><span class="line">		nums[i-arr[i]]=nums[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> numsSize-count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="移除元素"><a href="#移除元素" class="headerlink" title="移除元素"></a>移除元素</h3><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个数组<code>nums</code>和一个值<code>val</code>，你需要<strong>原地</strong>移除所有数值等于<code>val</code>的元素，返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须在<strong>原地修改输入数组</strong>并在使用$O(1)$额外空间的条件下完成。</p>
+<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+<h4 id="算法思路-1"><a href="#算法思路-1" class="headerlink" title="算法思路"></a>算法思路</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">removeElement</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize, <span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count=<span class="number">0</span>, i;</span><br><span class="line">    <span class="keyword">if</span>(numsSize == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;numsSize;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i] == val)&#123;</span><br><span class="line">            count++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            nums[i-count]=nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> numsSize-count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -396,12 +359,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/01/22/algorithm-remove-elements/" rel="prev" title="删除排序数组中的重复项与移除元素">
-      <i class="fa fa-chevron-left"></i> 删除排序数组中的重复项与移除元素
+    <a href="/2020/01/21/algorithm-LCM&GCD/" rel="prev" title="最小公倍数&最大公因数">
+      <i class="fa fa-chevron-left"></i> 最小公倍数&最大公因数
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/01/23/algorithm-something-about-C/" rel="next" title="C语言一些要点总结">
-      C语言一些要点总结 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/01/22/algorithm-Find-Minimum-in-Rotated-Sorted-Array/" rel="next" title="寻找旋转排序数组中的最小值">
+      寻找旋转排序数组中的最小值 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -463,7 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#示例-1"><span class="nav-number">1.1.</span> <span class="nav-text">示例 1:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例-2"><span class="nav-number">1.2.</span> <span class="nav-text">示例 2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法：二分查找"><span class="nav-number">2.</span> <span class="nav-text">方法：二分查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路"><span class="nav-number">2.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法"><span class="nav-number">2.2.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#时间复杂度分析"><span class="nav-number">2.2.1.</span> <span class="nav-text">时间复杂度分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#或者"><span class="nav-number">2.2.2.</span> <span class="nav-text">或者</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除排序数组中的重复项"><span class="nav-number">1.</span> <span class="nav-text">删除排序数组中的重复项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#示例-1"><span class="nav-number">1.1.1.</span> <span class="nav-text">示例 1:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#示例-2"><span class="nav-number">1.1.2.</span> <span class="nav-text">示例 2:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思路"><span class="nav-number">1.2.</span> <span class="nav-text">算法思路</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除元素"><span class="nav-number">2.</span> <span class="nav-text">移除元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思路-1"><span class="nav-number">2.2.</span> <span class="nav-text">算法思路</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
