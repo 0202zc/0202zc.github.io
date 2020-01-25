@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[复试笔试C语⾔重要简答题]]></title>
+    <url>%2F2020%2F01%2F25%2Falgorithm-short-answers-about-C%2F</url>
+    <content type="text"><![CDATA[1. 从C语⾔执⾏效率⽅便，简述下C语⾔采取了哪些措施提⾼执⾏效率。 使⽤指针：有些程序⽤其他语⾔也可以实现，但C能够更有效地实现；有些程序⽆法⽤其它语⾔实现，如直接访问硬件，但C却可以。正因为指针可以拥有类似于汇编的寻址⽅式，所以可以使程序更⾼效。 使⽤宏函数：宏函数仅仅作为预先写好的代码嵌⼊到当前程序，不会产⽣函数调⽤，所以仅仅是占⽤了空间，⽽使程序可以⾼效运⾏。在频繁调⽤同⼀个宏函数的时候，该现象尤其突出。函数和宏函数的区别就在于，宏函数占⽤了⼤量的空间，⽽函数占⽤了时间。 宏函数的例⼦：1234567#include &lt;stdio.h&gt;#define MAX(a,b) (a &gt; b ? a : b)int main() &#123; int maxNum = MAX(5, 6); printf("The max num is : %d\n", maxNum); return 0;&#125; 使⽤位操作：位操作可以减少除法和取模的运算。在计算机程序中数据的位是可以操作的最⼩数据单位，理论上可以⽤“位运算”来完成所有的运算和操作。灵活的位操作可以有效地提⾼程序运⾏的效率。 循环嵌套中将较长循环设为内置循环，较短循环设为外置循环，以减少cpu跨切循环层的次数，提⾼程序的运⾏效率。(操作系统页⾯置换相关，减少页⾯置换次数) 将汇编指令嵌⼊到C语⾔程序中，汇编语⾔是效率最⾼的计算机语⾔，因此为了获得程序的⾼效率，可以在C语⾔程序中嵌⼊汇编，从⽽充分利⽤⾼级语⾔和汇编语⾔各⾃的特点。 在C语⾔程序中可以调⽤系统API，接近底层，从⽽提⾼程序的运⾏效率。 ⼀般情况下，C语⾔源程序中的每⼀⾏代码都要参加编译。但有时候出于对程序代码优化的考虑，希望只对其中⼀部分内容进⾏编译.此时就需要在程序中加上条件，让编译器只对满⾜条件的代码进⾏编译，将不满⾜条件的代码舍弃，这就是条件编译。 2. 请简述C语⾔的隐式类型转换发⽣的四种情况，并说明每种情况如何转换。（注：这⾥⾯还有个⼩题，float如何四舍五⼊转化成int） 算术运算式中，低类型能够转换为⾼类型（自动类型转换）。 赋值表达式中，右边表达式的值⾃动隐式转换为左边变量的类型，并赋值给它。 函数调⽤中参数传递时，系统隐式地将实参转换为形参的类型后，赋给形参。 函数有返回值时，系统将隐式地将返回表达式类型转换为返回值类型，赋给调⽤函数。 ⼩题：float如何四舍五⼊转化成int1234567#include &lt;stdio.h&gt;int main() &#123; float f = 0.5; int i = (int)(f + 0.5); printf("%d\n", i); return 0;&#125;]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>Algorithm</tag>
+        <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[删除排序数组中的重复项与移除元素]]></title>
     <url>%2F2020%2F01%2F24%2Falgorithm-remove-elements%2F</url>
     <content type="text"><![CDATA[LeetCode 26. Remove Duplicates from Sorted Array &amp; 27. remove elements 删除排序数组中的重复项题目描述给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。 不要使用额外的数组空间，你必须在原地修改输入数组并在使用$O(1)$额外空间的条件下完成。 示例 1: 给定数组 nums = [1,1,2],函数应该返回新的长度2, 并且原数组nums的前两个元素被修改为1, 2。你不需要考虑数组中超出新长度后面的元素。 示例 2:给定nums = [0,0,1,1,1,2,2,3,3,4], 函数应该返回新的长度5, 并且原数组nums的前五个元素被修改为0, 1, 2, 3, 4。 你不需要考虑数组中超出新长度后面的元素。 算法思路“拷贝覆盖”如上图所示，用count来记录元素应该覆盖的步长：在i位置时， 若nums[i] == nums[i + 1]，则count++ 否则，countinue此处用了arr[]来记录每个元素应该移动的步长 123456789101112131415161718int removeDuplicates(int* nums, int numsSize) &#123; int count = 0, i; if(numsSize == 0)&#123; //空数组直接返回0 return 0; &#125; int arr[numsSize]; arr[0]=0; for(i = 1; i &lt; numsSize; i++) &#123; if(nums[i - 1] == nums[i]) &#123; count++; &#125; arr[i]=count; &#125; for(i=0; i &lt; numsSize; i++)&#123; nums[i - arr[i]] = nums[i]; &#125; return numsSize - count;&#125; 移除元素题目描述给定一个数组nums和一个值val，你需要原地移除所有数值等于val的元素，返回移除后数组的新长度。 不要使用额外的数组空间，你必须在原地修改输入数组并在使用$O(1)$额外空间的条件下完成。 元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。 算法思路同样是“拷贝覆盖”1234567891011121314int removeElement(int* nums, int numsSize, int val)&#123; int count = 0, i; if(numsSize == 0)&#123; return 0; //空数组直接返回0 &#125; for(i = 0; i &lt; numsSize; i++)&#123; if(nums[i] == val)&#123; count++; &#125; else &#123; nums[i - count] = nums[i]; &#125; &#125; return numsSize - count;&#125;]]></content>
