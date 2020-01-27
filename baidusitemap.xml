@@ -4,8 +4,32 @@
 
     
   <url>
+    <loc>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</loc>
+    <lastmod>2020-01-27T03:42:29.660Z</lastmod>
+    <data>
+        <display>
+        <title>C语言一些要点总结</title>
+        <pubTime>2020-01-23T02:39:09.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>Algorithm</tag>
+         
+        <tag>C/C++</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://0202zc.github.io/2020/01/26/algorithm-merge-list/</loc>
-    <lastmod>2020-01-26T04:37:10.451Z</lastmod>
+    <lastmod>2020-01-27T03:41:38.733Z</lastmod>
     <data>
         <display>
         <title>合并有序线性表</title>
@@ -158,30 +182,6 @@
 
     
   <url>
-    <loc>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</loc>
-    <lastmod>2020-01-24T09:52:45.898Z</lastmod>
-    <data>
-        <display>
-        <title>C语言一些要点总结</title>
-        <pubTime>2020-01-23T02:39:09.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-        <tag>Algorithm</tag>
-         
-        <tag>C/C++</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://0202zc.github.io/2020/01/20/os-index-assignment/</loc>
     <lastmod>2020-01-21T04:46:50.010Z</lastmod>
     <data>
@@ -234,9 +234,9 @@
         <title>Python学习笔记 —— 爬取教务网明日课程并发送微信好友</title>
         <pubTime>2018-05-18T07:29:34.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>网络爬虫</tag>
+         
+        <tag>Python</tag>
          
          
            
