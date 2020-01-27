@@ -4,18 +4,16 @@
 
     
   <url>
-    <loc>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</loc>
-    <lastmod>2020-01-27T03:42:29.660Z</lastmod>
+    <loc>http://0202zc.github.io/2020/01/26/algorithm-merge-list/</loc>
+    <lastmod>2020-01-27T03:51:50.390Z</lastmod>
     <data>
         <display>
-        <title>C语言一些要点总结</title>
-        <pubTime>2020-01-23T02:39:09.000Z</pubTime>
+        <title>合并有序线性表</title>
+        <pubTime>2020-01-26T03:13:54.000Z</pubTime>
         
         <tag>算法</tag>
          
         <tag>Algorithm</tag>
-         
-        <tag>C/C++</tag>
          
          
            
@@ -28,16 +26,18 @@
 
     
   <url>
-    <loc>http://0202zc.github.io/2020/01/26/algorithm-merge-list/</loc>
-    <lastmod>2020-01-27T03:41:38.733Z</lastmod>
+    <loc>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</loc>
+    <lastmod>2020-01-27T03:42:29.660Z</lastmod>
     <data>
         <display>
-        <title>合并有序线性表</title>
-        <pubTime>2020-01-26T03:13:54.000Z</pubTime>
+        <title>C语言一些要点总结</title>
+        <pubTime>2020-01-23T02:39:09.000Z</pubTime>
         
         <tag>算法</tag>
          
         <tag>Algorithm</tag>
+         
+        <tag>C/C++</tag>
          
          
            
