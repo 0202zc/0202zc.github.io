@@ -4,6 +4,52 @@
 
     
   <url>
+    <loc>http://0202zc.github.io/2020/01/27/algorithm-binary-search/</loc>
+    <lastmod>2020-01-27T05:16:06.139Z</lastmod>
+    <data>
+        <display>
+        <title>二分查找算法细节详解</title>
+        <pubTime>2020-01-27T04:37:40.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>Algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://0202zc.github.io/2020/01/25/algorithm-short-answers-about-C/</loc>
+    <lastmod>2020-01-27T04:37:13.226Z</lastmod>
+    <data>
+        <display>
+        <title>复试笔试C语言重要简答题</title>
+        <pubTime>2020-01-25T08:45:37.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>Algorithm</tag>
+         
+        <tag>C/C++</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://0202zc.github.io/2020/01/26/algorithm-merge-list/</loc>
     <lastmod>2020-01-27T03:51:50.390Z</lastmod>
     <data>
@@ -32,30 +78,6 @@
         <display>
         <title>C语言一些要点总结</title>
         <pubTime>2020-01-23T02:39:09.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-        <tag>Algorithm</tag>
-         
-        <tag>C/C++</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://0202zc.github.io/2020/01/25/algorithm-short-answers-about-C/</loc>
-    <lastmod>2020-01-25T09:49:09.942Z</lastmod>
-    <data>
-        <display>
-        <title>复试笔试C语言重要简答题</title>
-        <pubTime>2020-01-25T08:45:37.000Z</pubTime>
         
         <tag>算法</tag>
          

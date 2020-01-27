@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://0202zc.github.io/2020/01/27/algorithm-binary-search/</loc>
+    
+    <lastmod>2020-01-27T05:16:06.139Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://0202zc.github.io/2020/01/25/algorithm-short-answers-about-C/</loc>
+    
+    <lastmod>2020-01-27T04:37:13.226Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://0202zc.github.io/2020/01/26/algorithm-merge-list/</loc>
     
     <lastmod>2020-01-27T03:51:50.390Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</loc>
     
     <lastmod>2020-01-27T03:42:29.660Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://0202zc.github.io/2020/01/25/algorithm-short-answers-about-C/</loc>
-    
-    <lastmod>2020-01-25T09:49:09.942Z</lastmod>
     
   </url>
   
