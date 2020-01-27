@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="From LeetCode 34. Find First and Last Position of Element in Sorted Array">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-27T05:25:08.344Z">
+<meta property="og:updated_time" content="2020-01-27T05:26:56.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二分查找算法细节详解">
 <meta name="twitter:description" content="From LeetCode 34. Find First and Last Position of Element in Sorted Array">
@@ -242,7 +242,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-01-27 12:37:40 / 修改时间：13:25:08" itemprop="dateCreated datePublished" datetime="2020-01-27T12:37:40+08:00">2020-01-27</time>
+              <time title="创建时间：2020-01-27 12:37:40 / 修改时间：13:26:56" itemprop="dateCreated datePublished" datetime="2020-01-27T12:37:40+08:00">2020-01-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -328,8 +328,8 @@
 <p>我们这个算法中使用的是前者 <code>[left, right]</code> 两端都闭的区间。<strong>这个区间其实就是每次进行搜索的区间，我们不妨称为「搜索区间」</strong>。</p>
 <p>什么时候应该停止搜索呢？当然，找到了目标值的时候可以终止：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(nums[mid] == target)</span><br><span class="line">     <span class="keyword">return</span> mid;</span><br></pre></td></tr></table></figure></p>
 <p>但如果没找到，就需要 <code>while</code> 循环终止，然后返回 -1。那 <code>while</code> 循环什么时候应该终止？<strong>搜索区间为空的时候应该终止</strong>，意味着你没得找了，就等于没找到嘛。</p>
-<p><code>while(left &lt;= right)</code> 的终止条件是 <code>left == right + 1</code>，写成区间的形式就是 <code>[right + 1, right]</code>，或者带个具体的数字进去 <code>[3, 2]</code>，<strong>可见这时候搜索区间为空</strong>，因为没有数字既大于等于 $3$ 又小于等于 $2$ 的吧。所以这时候 <code>while</code> 循环终止是正确的，直接返回 -1 即可。</p>
-<p>while(left &lt; right) 的终止条件是 left == right，写成区间的形式就是 $[left, right]$，或者带个具体的数字进去 [2, 2]，这时候搜索区间非空，还有一个数 $2$，但此时 while 循环终止了。也就是说这区间 $[2, 2]$ 被漏掉了，索引 $2$ 没有被搜索，如果这时候直接返回 $-1$ 就是错误的。</p>
+<p><code>while(left &lt;= right)</code> 的终止条件是 <code>left == right + 1</code>，写成区间的形式就是 $[right + 1, right]$，或者带个具体的数字进去 $[3, 2]$，<strong>可见这时候搜索区间为空</strong>，因为没有数字既大于等于 $3$ 又小于等于 $2$ 的吧。所以这时候 <code>while</code> 循环终止是正确的，直接返回 -1 即可。</p>
+<p><code>while(left &lt; right)</code> 的终止条件是 <code>left == right</code>，写成区间的形式就是 $[left, right]$，或者带个具体的数字进去 $[2, 2]$，这时候搜索区间非空，还有一个数 $2$，但此时 while 循环终止了。也就是说这区间 $[2, 2]$ 被漏掉了，索引 $2$ 没有被搜索，如果这时候直接返回 $-1$ 就是错误的。</p>
 <p>当然，如果你非要用 <code>while(left &lt; right)</code> 也可以，我们已经知道了出错的原因，就打个补丁好了：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//...</span></span><br><span class="line"><span class="keyword">while</span>(left &lt; right) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> nums[left] == target ? left : -<span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
 <ol start="2">
 <li>为什么 <code>left = mid + 1</code>，<code>right = mid - 1</code>？我看有的代码是 <code>right = mid</code> 或者 <code>left = mid</code>，没有这些加加减减，到底怎么回事，怎么判断？</li>
