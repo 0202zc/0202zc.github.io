@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[指针与自增优先级的问题]]></title>
-    <url>%2F2020%2F01%2F29%2FC-%2F</url>
+    <url>%2F2020%2F01%2F29%2FC-pointer-and-increase%2F</url>
     <content type="text"><![CDATA[在我们面试时，经常会有一些关于运算符优先级的题目，今天就给大家展示一个常出现的例子。问题：定义一个数组 int a[10]={1,2,3,4,5,6,7,8,9,0}; int *p=a; 则 cout&lt;&lt;*p++&lt;&lt;endl; 由此问题我们可以看出来，其想考察的是C++程序设计的运算符的优先级以及后自增的知识点。我们查看优先级表格表格可以得到后自增（++）运算符优先于取值运算符（*），因此（*p++）等价于(*(p++))。 求值顺序得到了，我们下面的任务就是要分析后自增的实现原理了，我们参考了C++ primer 第五版（503页）讲解的知识如下： 123456789strBlobPtr strBlobPtr::operator++(int) &#123; /*strBlobPtr为定义的一个类名，operator++（int）为重载后自增运算符，参数int为区分前自增还是后自增*/ strBlobPtr ret =*this; ++*this; return ret; &#125; 我们发现，在后自增的运算符实现的步骤中，先返回值，再自增，因此（*p++）计算过程为先运算p++（结果为p指向的地址a）,再对指针求值*p,得到a[0].123456789#include&lt;iostream&gt;using namespace std;int main() &#123; int a[10] = &#123;1,2,3,4,5,6,7,8,9,0&#125;; int *p=a; cout &lt;&lt; "*p:" &lt;&lt; *p &lt;&lt; endl; cout &lt;&lt; "*p++:" &lt;&lt; *p++ &lt;&lt; endl; return 0;&#125;]]></content>
       <categories>
         <category>C语言</category>
