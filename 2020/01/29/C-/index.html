@@ -46,15 +46,20 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="L..z、℃的博客">
-<meta property="og:url" content="http://0202zc.github.io/archives/page/3/index.html">
+  <meta name="description" content="在我们面试时，经常会有一些关于运算符优先级的题目，今天就给大家展示一个常出现的例子。">
+<meta name="keywords" content="C&#x2F;C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指针与自增优先级的问题">
+<meta property="og:url" content="http://0202zc.github.io/2020/01/29/C-/index.html">
 <meta property="og:site_name" content="L..z、℃的博客">
+<meta property="og:description" content="在我们面试时，经常会有一些关于运算符优先级的题目，今天就给大家展示一个常出现的例子。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-29T10:00:41.594Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="L..z、℃的博客">
+<meta name="twitter:title" content="指针与自增优先级的问题">
+<meta name="twitter:description" content="在我们面试时，经常会有一些关于运算符优先级的题目，今天就给大家展示一个常出现的例子。">
 
-<link rel="canonical" href="http://0202zc.github.io/archives/page/3/">
+<link rel="canonical" href="http://0202zc.github.io/2020/01/29/C-/">
 
 
 <script id="page-configurations">
@@ -62,11 +67,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>归档 | L..z、℃的博客</title>
+  <title>指针与自增优先级的问题 | L..z、℃的博客</title>
   
 
 
@@ -208,116 +213,156 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://0202zc.github.io/2020/01/29/C-/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom_logo.jpg">
+      <meta itemprop="name" content="0202zc">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="L..z、℃的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          指针与自增优先级的问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-29 17:54:17 / 修改时间：18:00:41" itemprop="dateCreated datePublished" datetime="2020-01-29T17:54:17+08:00">2020-01-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/01/29/C-/" class="post-meta-item leancloud_visitors" data-flag-title="指针与自增优先级的问题" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 24 篇日志。 继续努力。</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/01/29/C-/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/29/C-/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>731</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2018</h1>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-15T07:33:10+08:00"
-              content="2018-05-15">
-          05-15
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/15/用itchat库给好友发微信消息/" itemprop="url">
-            <span itemprop="name">用itchat库给好友发微信消息</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-14T12:00:32+08:00"
-              content="2018-05-14">
-          05-14
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/14/Python-3-6-模拟登录获取跑操信息/" itemprop="url">
-            <span itemprop="name">Python 3.6 模拟登录学校跑操系统获取跑操信息</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-13T22:54:12+08:00"
-              content="2018-05-13">
-          05-13
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/13/我的测试文章/" itemprop="url">
-            <span itemprop="name">卷积神经网络</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-13T22:40:29+08:00"
-              content="2018-05-13">
-          05-13
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/13/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
+        <p>在我们面试时，经常会有一些关于运算符优先级的题目，今天就给大家展示一个常出现的例子。<br><a id="more"></a><br>问题：定义一个数组 <code>int a[10]={1,2,3,4,5,6,7,8,9,0}; int *p=a;</code> 则 <code>cout&lt;&lt;*p++&lt;&lt;endl;</code> </p>
+<p>由此问题我们可以看出来，其想考察的是C++程序设计的运算符的优先级以及后自增的知识点。我们查看优先级表格表格可以得到后自增（<code>++</code>）运算符优先于取值运算符（<code>*</code>），因此<code>（*p++）</code>等价于<code>(*(p++))</code>。</p>
+<pre><code>求值顺序得到了，我们下面的任务就是要分析后自增的实现原理了，我们参考了C++ primer 第五版（503页）讲解的知识如下：
+</code></pre><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">strBlobPtr strBlobPtr::<span class="keyword">operator</span>++(<span class="keyword">int</span>) &#123;  </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">strBlobPtr为定义的一个类名，operator++（int）为重载后自增运算符，参数int为区分前自增还是后自增</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">       strBlobPtr ret =*<span class="keyword">this</span>;</span><br><span class="line">       ++*<span class="keyword">this</span>;</span><br><span class="line">       <span class="keyword">return</span> ret;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们发现，在后自增的运算符实现的步骤中，先返回值，再自增，因此（<code>*p++</code>）计算过程为先运算<code>p++</code>（结果为<code>p</code>指向的地址<code>a</code>）,再对指针求值<code>*p</code>,得到<code>a[0]</code>.<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">10</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> *p=a;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"*p:"</span> &lt;&lt; *p &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"*p++:"</span> &lt;&lt; *p++ &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
     </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="0202zc 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="0202zc 支付宝">
+        <p>支付宝</p>
+      </div>
+
   </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C-C/" rel="tag"># C/C++</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/28/C-variable-storage/" rel="prev" title="C语言中变量存储类型和生存周期">
+      <i class="fa fa-chevron-left"></i> C语言中变量存储类型和生存周期
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-
+  </div>
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -512,6 +557,54 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 
