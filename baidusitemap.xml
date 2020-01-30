@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</loc>
+    <lastmod>2020-01-30T04:41:05.753Z</lastmod>
+    <data>
+        <display>
+        <title>C语言一些要点总结</title>
+        <pubTime>2020-01-23T02:39:09.000Z</pubTime>
+        
+        <tag>C/C++</tag>
+         
+        <tag>算法</tag>
+         
+        <tag>Algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://0202zc.github.io/2020/01/29/C-pointer-and-increase/</loc>
     <lastmod>2020-01-29T10:04:00.283Z</lastmod>
     <data>
@@ -97,30 +121,6 @@
         <title>合并有序线性表</title>
         <pubTime>2020-01-26T03:13:54.000Z</pubTime>
         
-        <tag>算法</tag>
-         
-        <tag>Algorithm</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</loc>
-    <lastmod>2020-01-27T03:42:29.660Z</lastmod>
-    <data>
-        <display>
-        <title>C语言一些要点总结</title>
-        <pubTime>2020-01-23T02:39:09.000Z</pubTime>
-        
-        <tag>C/C++</tag>
-         
         <tag>算法</tag>
          
         <tag>Algorithm</tag>
@@ -296,9 +296,9 @@
         <title>Python学习笔记 —— 爬取教务网明日课程并发送微信好友</title>
         <pubTime>2018-05-18T07:29:34.000Z</pubTime>
         
-        <tag>网络爬虫</tag>
-         
         <tag>Python</tag>
+         
+        <tag>网络爬虫</tag>
          
          
            
