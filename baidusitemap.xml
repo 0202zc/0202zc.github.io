@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://0202zc.github.io/2020/01/25/algorithm-short-answers-about-C/</loc>
+    <lastmod>2020-01-31T11:41:42.157Z</lastmod>
+    <data>
+        <display>
+        <title>复试笔试C语言重要简答题</title>
+        <pubTime>2020-01-25T08:45:37.000Z</pubTime>
+        
+        <tag>C/C++</tag>
+         
+        <tag>算法</tag>
+         
+        <tag>Algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://0202zc.github.io/2020/01/23/algorithm-something-about-C/</loc>
     <lastmod>2020-01-30T05:07:19.590Z</lastmod>
     <data>
@@ -75,30 +99,6 @@
         <title>二分查找算法细节详解</title>
         <pubTime>2020-01-27T04:37:40.000Z</pubTime>
         
-        <tag>算法</tag>
-         
-        <tag>Algorithm</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://0202zc.github.io/2020/01/25/algorithm-short-answers-about-C/</loc>
-    <lastmod>2020-01-27T04:37:13.226Z</lastmod>
-    <data>
-        <display>
-        <title>复试笔试C语言重要简答题</title>
-        <pubTime>2020-01-25T08:45:37.000Z</pubTime>
-        
-        <tag>C/C++</tag>
-         
         <tag>算法</tag>
          
         <tag>Algorithm</tag>
