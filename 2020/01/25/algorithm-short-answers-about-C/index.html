@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="来源：UESTC考研群">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-31T11:54:44.765Z">
+<meta property="og:updated_time" content="2020-01-31T11:56:00.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="复试笔试C语言重要简答题">
 <meta name="twitter:description" content="来源：UESTC考研群">
@@ -248,7 +248,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-31 19:54:44" itemprop="dateModified" datetime="2020-01-31T19:54:44+08:00">2020-01-31</time>
+                <time title="修改时间：2020-01-31 19:56:00" itemprop="dateModified" datetime="2020-01-31T19:56:00+08:00">2020-01-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -312,7 +312,7 @@
 <h3 id="从C语言执行效率方便，简述下C语言采取了哪些措施提高执行效率。"><a href="#从C语言执行效率方便，简述下C语言采取了哪些措施提高执行效率。" class="headerlink" title="从C语言执行效率方便，简述下C语言采取了哪些措施提高执行效率。"></a>从C语言执行效率方便，简述下C语言采取了哪些措施提高执行效率。</h3><ul>
 <li><p><strong>使用指针</strong>：有些程序用其他语言也可以实现，但C能够更有效地实现；有些程序无法用其它语言实现，如直接访问硬件，但C却可以。正因为指针可以拥有类似于汇编的寻址方式，所以可以使程序更高效。</p>
 </li>
-<li><p><strong>使用宏函数</strong>：宏函数仅仅作为预先写好的代码嵌入到当前程序，不会产生函数调用，所以仅仅是占用了空间，而使程序可以高效运行。在频繁调用同⼀个宏函数的时候，该现象尤其突出。函数和宏函数的区别就在于，宏函数占用了⼤量的空间，而函数占用了时间。</p>
+<li><p><strong>使用宏函数</strong>：宏函数仅仅作为预先写好的代码嵌入到当前程序，不会产生函数调用，所以仅仅是占用了空间，而使程序可以高效运行。在频繁调用同⼀个宏函数的时候，该现象尤其突出。函数和宏函数的区别就在于，宏函数占用了大量的空间，而函数占用了时间。</p>
 <ul>
 <li>宏函数的例子：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX(a,b) (a &gt; b ? a : b)</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxNum = MAX(<span class="number">5</span>, <span class="number">6</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"The max num is : %d\n"</span>, maxNum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
