@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://0202zc.github.io/2020/01/25/algorithm-short-answers-about-C/</loc>
-    <lastmod>2020-01-31T11:56:00.851Z</lastmod>
+    <lastmod>2020-01-31T12:44:29.254Z</lastmod>
     <data>
         <display>
         <title>复试笔试C语言重要简答题</title>
@@ -296,9 +296,9 @@
         <title>Python学习笔记 —— 爬取教务网明日课程并发送微信好友</title>
         <pubTime>2018-05-18T07:29:34.000Z</pubTime>
         
-        <tag>网络爬虫</tag>
-         
         <tag>Python</tag>
+         
+        <tag>网络爬虫</tag>
          
          
            
