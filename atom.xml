@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0202zc.github.io/"/>
-  <updated>2020-01-31T15:14:27.489Z</updated>
+  <updated>2020-02-01T06:28:08.944Z</updated>
   <id>http://0202zc.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C语言中变量存储位置</title>
+    <link href="http://0202zc.github.io/2020/02/01/C-variable-storage-2/"/>
+    <id>http://0202zc.github.io/2020/02/01/C-variable-storage-2/</id>
+    <published>2020-02-01T06:28:06.000Z</published>
+    <updated>2020-02-01T06:28:08.944Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>C语言中，常量存储在哪儿？<code>static</code>全局变量和<code>static</code>局部变量存储在哪儿？</strong><br><a id="more"></a></p><p>全局变量（外部变量）的说明之前再冠以<code>static</code>就构成了静态的全局变量。全局变量本身就是静态存储方式，静态全局变量也是静态存储方式。这两者在存储方式上并无不同。这两者的区别虽在于</p><blockquote><p><strong>非静态全局变量的作用域是整个源程序，</strong><br><strong>当一个源程序由多个源文件组成时，非静态的全局变量在各个源文件中都是有效的，</strong><br><strong>而静态全局变量则限制了其作用域。</strong><br><strong>即只在定义该变量的源文件内有效，</strong></p></blockquote><p>在同一源程序的其他源文件中不能使用它。由于静态全局变量的作用域局限于一个源文件内，只能为该源文件内的函数公用，因此可以避免在其他源文件中引起错误。</p><h3 id="static全局变量与普通的全局变量有什么区别？"><a href="#static全局变量与普通的全局变量有什么区别？" class="headerlink" title="static全局变量与普通的全局变量有什么区别？"></a><code>static</code>全局变量与普通的全局变量有什么区别？</h3><ul><li><strong><code>static</code>全局变量只初始化一次</strong>，防止在其他文件单元中被是引用。</li></ul><h3 id="static局部变量与普通的局部变量有什么区别？"><a href="#static局部变量与普通的局部变量有什么区别？" class="headerlink" title="static局部变量与普通的局部变量有什么区别？"></a><code>static</code>局部变量与普通的局部变量有什么区别？</h3><ul><li><strong><code>static</code>局部变量只被初始化一次</strong>，下一次依据上一次结果值。</li></ul><h3 id="局部变量、静态局部变量、静态全局变量存储位置"><a href="#局部变量、静态局部变量、静态全局变量存储位置" class="headerlink" title="局部变量、静态局部变量、静态全局变量存储位置"></a>局部变量、静态局部变量、静态全局变量存储位置</h3><table><thead><tr><th>变量类型</th><th>存储位置</th></tr></thead><tbody><tr><td>局部变量</td><td>静态区（全局区）</td></tr><tr><td>局部静态变量</td><td>静态区（全局区）的常量区</td></tr><tr><td>全局静态变量</td><td>静态区（全局区）</td></tr></tbody></table><h3 id="各存储区的定义"><a href="#各存储区的定义" class="headerlink" title="各存储区的定义"></a>各存储区的定义</h3><ol><li><p><strong>栈区（stack）</strong> —— 由编译器自动分配释放，存放<u>函数的参数值，局部变量的值</u>等，其操作方式类似于数据结构中的栈。</p></li><li><p><strong>堆区（heap）</strong> —— 一般由程序员分配释放。若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，分配方式倒是类似于链表。</p></li><li><p><strong>全局区（静态区）（static）</strong> —— <u>全局变零和静态变量</u>的存储是放在一起的，初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域，- <em>程序结束后由系统释放</em>。</p></li><li><p>文字常量区 —— <u>常量字符串</u>就是放在这里的。- <em>程序结束后由系统释放</em>。</p></li><li><p>程序代码区 —— <u>存放函数体的二进制代码</u>。</p></li></ol><h3 id="NOTES"><a href="#NOTES" class="headerlink" title="NOTES"></a>NOTES</h3><ol><li><p><strong>栈</strong>，就是那些由编译器在需要的时候分配，在不需要的时候自动清除的变量的存储区。里面的变量通常是局部变量、函数参数等。</p></li><li><p><strong>堆</strong>，就是那些由<code>new</code>分配的内存块，他们的释放编译器不去管，由应用程序控制，一般一个<code>new</code>就要对应一个<code>delete</code>。如果程序员没有释放掉，那么在程序结束后，操作系统会自动回收。</p></li><li><p><strong>自由存储区</strong>，就是那些由<code>malloc</code>分配的内存块，它和堆十分相似，不过它是用<code>free</code>来结束自己的生命。</p></li><li><p><strong>全局/静态存储区</strong>，全局变量和静态变量被分配到同一块内存中，在以前的C语言中，全局变量又分为初始化的和未初始化的，<em>在C++里面没有这个区分</em>，它们共同占用一块内存区。</p></li><li><p><strong>常量存储区</strong>，这是一块比较特殊的存储区，它们存放的是常量，<strong>不允许被修改</strong>。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;C语言中，常量存储在哪儿？&lt;code&gt;static&lt;/code&gt;全局变量和&lt;code&gt;static&lt;/code&gt;局部变量存储在哪儿？&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="C语言" scheme="http://0202zc.github.io/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="C/C++" scheme="http://0202zc.github.io/tags/C-C/"/>
+    
+  </entry>
   
   <entry>
     <title>C语言效率问题</title>
@@ -437,9 +459,9 @@
       <category term="Python学习" scheme="http://0202zc.github.io/categories/Python%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="网络爬虫" scheme="http://0202zc.github.io/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/"/>
-    
       <category term="Python" scheme="http://0202zc.github.io/tags/Python/"/>
+    
+      <category term="网络爬虫" scheme="http://0202zc.github.io/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
@@ -466,28 +488,6 @@
       <category term="人脸识别" scheme="http://0202zc.github.io/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
     
       <category term="百度云" scheme="http://0202zc.github.io/tags/%E7%99%BE%E5%BA%A6%E4%BA%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java学习笔记 —— 新版Windows10配置Java环境变量</title>
-    <link href="http://0202zc.github.io/2018/05/16/%E6%96%B0%E7%89%88Windows10%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
-    <id>http://0202zc.github.io/2018/05/16/新版Windows10配置Java环境变量/</id>
-    <published>2018-05-16T12:56:50.000Z</published>
-    <updated>2020-01-19T03:00:49.552Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在上学期安装好Java后，根据网上的教程配置了环境变量，在cmd里运行”java”成功，而运行”javac”出现“<em>不是内部或外部命令，也不是可运行的程序或批处理文件</em>”的提示。<br>经过了一番苦苦的寻找、测试，终于在百度经验的一篇找到了答案：  <a id="more"></a><br>（原文链接：<em><a href="http://jingyan.baidu.com/article/d5c4b52b80665fda560dc5e4.html" target="_blank" rel="noopener">http://jingyan.baidu.com/article/d5c4b52b80665fda560dc5e4.html</a></em>）<br>发现的确是环境变量配置的问题。  </p><h1 id="原料"><a href="#原料" class="headerlink" title="原料"></a>原料</h1><ul><li>一台新版的win10(16,17,18版)的电脑</li><li>Java jkd/jre 1.8以上版本</li><li>人脑</li><li>熟练操作鼠标和键盘的手</li></ul><h1 id="如何配置"><a href="#如何配置" class="headerlink" title="如何配置"></a>如何配置</h1><h2 id="首先，右键单击桌面“此电脑”图标，选择“属性”"><a href="#首先，右键单击桌面“此电脑”图标，选择“属性”" class="headerlink" title="首先，右键单击桌面“此电脑”图标，选择“属性”"></a>首先，右键单击桌面“此电脑”图标，选择“属性”</h2><h2 id="在左侧的菜单栏中选择“高级系统设置”"><a href="#在左侧的菜单栏中选择“高级系统设置”" class="headerlink" title="在左侧的菜单栏中选择“高级系统设置”"></a>在左侧的菜单栏中选择“高级系统设置”</h2><p><img data-src="/images/javac/1.jpg" alt="">  </p><h2 id="选择“环境变量”"><a href="#选择“环境变量”" class="headerlink" title="选择“环境变量”"></a>选择“环境变量”</h2><p><img data-src="/images/javac/2.jpg" alt="">  </p><h2 id="选择下方的新建，变量名为JAVA-HOME-变量值为你安装jdk的路径，我的是D-Program-Files-Java-jdk1-8-0-182，你的就要看自己的了"><a href="#选择下方的新建，变量名为JAVA-HOME-变量值为你安装jdk的路径，我的是D-Program-Files-Java-jdk1-8-0-182，你的就要看自己的了" class="headerlink" title="选择下方的新建，变量名为JAVA_HOME,变量值为你安装jdk的路径，我的是D:\Program Files\Java\jdk1.8.0_182，你的就要看自己的了"></a>选择下方的新建，变量名为JAVA_HOME,变量值为你安装jdk的路径，我的是D:\Program Files\Java\jdk1.8.0_182，你的就要看自己的了</h2><p><img data-src="/images/javac/3.jpg" alt="">  </p><h2 id="然后在新建个，变量名为CLASSPATH，变量值为-JAVA-HOME-lib-dt-jar-JAVA-HOME-lib-tools-jar-（注意这里一个符号都不能少，包含了前面的-还有后面的-），然后确定"><a href="#然后在新建个，变量名为CLASSPATH，变量值为-JAVA-HOME-lib-dt-jar-JAVA-HOME-lib-tools-jar-（注意这里一个符号都不能少，包含了前面的-还有后面的-），然后确定" class="headerlink" title="然后在新建个，变量名为CLASSPATH，变量值为 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar; （注意这里一个符号都不能少，包含了前面的 .;  还有后面的 ;），然后确定"></a>然后在新建个，变量名为CLASSPATH，变量值为 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar; （注意这里一个符号都不能少，包含了前面的 .;  还有后面的 ;），然后确定</h2><p><img data-src="/images/javac/4.jpg" alt=""></p><h2 id="这一步操作之后会出现一个操作界面是14-15版的win10-没有的，所以要注意看，找到Path-然后选择-“编辑”"><a href="#这一步操作之后会出现一个操作界面是14-15版的win10-没有的，所以要注意看，找到Path-然后选择-“编辑”" class="headerlink" title="这一步操作之后会出现一个操作界面是14,15版的win10 没有的，所以要注意看，找到Path,然后选择 “编辑”"></a>这一步操作之后会出现一个操作界面是14,15版的win10 没有的，所以要注意看，找到Path,然后选择 “编辑”</h2><p><img data-src="/images/javac/5.jpg" alt=""></p><h2 id="会出现这个页面，我们选择下面的“编辑文本”，然后确定"><a href="#会出现这个页面，我们选择下面的“编辑文本”，然后确定" class="headerlink" title="会出现这个页面，我们选择下面的“编辑文本”，然后确定"></a>会出现这个页面，我们选择下面的“编辑文本”，然后确定</h2><p><img data-src="/images/javac/6.jpg" alt=""><br><img data-src="/images/javac/7.jpg" alt=""></p><h2 id="重点-在变量值的开始处，找到C-在C-添加这段变量-JAVA-HOME-bin-JAVA-HOME-jre-bin-（注意前后的符号一个都不能少而且是英文的），然后“确定”"><a href="#重点-在变量值的开始处，找到C-在C-添加这段变量-JAVA-HOME-bin-JAVA-HOME-jre-bin-（注意前后的符号一个都不能少而且是英文的），然后“确定”" class="headerlink" title="重点 在变量值的开始处，找到C: ,在C: 添加这段变量 ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin; （注意前后的符号一个都不能少而且是英文的），然后“确定”"></a><strong>重点</strong> 在变量值的开始处，找到C: ,在C: 添加这段变量 ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin; （注意前后的符号一个都不能少而且是英文的），然后“确定”</h2><p><img data-src="/images/javac/8.jpg" alt=""> </p><h2 id="编辑完后有两个确定要按"><a href="#编辑完后有两个确定要按" class="headerlink" title="编辑完后有两个确定要按"></a>编辑完后有两个确定要按</h2><p><img data-src="/images/javac/9.jpg" alt=""><br><img data-src="/images/javac/10.jpg" alt=""></p><h2 id="接下来测试时否安装成功，win-R-然后输入CMD，进入命令提示符”javac”"><a href="#接下来测试时否安装成功，win-R-然后输入CMD，进入命令提示符”javac”" class="headerlink" title="接下来测试时否安装成功，win+R ,然后输入CMD，进入命令提示符”javac”"></a>接下来测试时否安装成功，win+R ,然后输入CMD，进入命令提示符”javac”</h2><p><img data-src="/images/javac/11.jpg" alt=""></p><h1 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h1><ul><li>其中关键的一步是把<code>PATH</code>里的<code>jdk</code>和<code>jre</code>路径放在<code>PATH</code>列表的<strong>最前面</strong>，这样cmd运行<code>javac</code>时才能先检测到<code>JAVA_HOME</code>系列的路径</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;在上学期安装好Java后，根据网上的教程配置了环境变量，在cmd里运行”java”成功，而运行”javac”出现“&lt;em&gt;不是内部或外部命令，也不是可运行的程序或批处理文件&lt;/em&gt;”的提示。&lt;br&gt;经过了一番苦苦的寻找、测试，终于在百度经验的一篇找到了答案：
-    
-    </summary>
-    
-      <category term="Java学习笔记" scheme="http://0202zc.github.io/categories/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Java学习" scheme="http://0202zc.github.io/tags/Java%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

@@ -46,19 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="google-site-verification: google4f676977fe6ccda7.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="L..z、℃的博客">
-<meta property="og:url" content="http://0202zc.github.io/google4f676977fe6ccda7.html">
+  <meta name="description" content="C语言中，常量存储在哪儿？static全局变量和static局部变量存储在哪儿？">
+<meta name="keywords" content="C&#x2F;C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言中变量存储位置">
+<meta property="og:url" content="http://0202zc.github.io/2020/02/01/C-variable-storage-2/index.html">
 <meta property="og:site_name" content="L..z、℃的博客">
-<meta property="og:description" content="google-site-verification: google4f676977fe6ccda7.html">
+<meta property="og:description" content="C语言中，常量存储在哪儿？static全局变量和static局部变量存储在哪儿？">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-12T01:47:29.464Z">
+<meta property="og:updated_time" content="2020-02-01T06:28:08.944Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="L..z、℃的博客">
-<meta name="twitter:description" content="google-site-verification: google4f676977fe6ccda7.html">
+<meta name="twitter:title" content="C语言中变量存储位置">
+<meta name="twitter:description" content="C语言中，常量存储在哪儿？static全局变量和static局部变量存储在哪儿？">
 
-<link rel="canonical" href="http://0202zc.github.io/google4f676977fe6ccda7">
+<link rel="canonical" href="http://0202zc.github.io/2020/02/01/C-variable-storage-2/">
 
 
 <script id="page-configurations">
@@ -66,12 +67,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title> | L..z、℃的博客
-  </title>
+  <title>C语言中变量存储位置 | L..z、℃的博客</title>
   
 
 
@@ -209,44 +209,207 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">
-</h1>
-
-<div class="post-meta">
+      
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://0202zc.github.io/2020/02/01/C-variable-storage-2/">
 
-</div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom_logo.jpg">
+      <meta itemprop="name" content="0202zc">
+      <meta itemprop="description" content="">
+    </span>
 
-</header>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="L..z、℃的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C语言中变量存储位置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-01 14:28:06 / 修改时间：14:28:08" itemprop="dateCreated datePublished" datetime="2020-02-01T14:28:06+08:00">2020-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/02/01/C-variable-storage-2/" class="post-meta-item leancloud_visitors" data-flag-title="C语言中变量存储位置" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/01/C-variable-storage-2/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/01/C-variable-storage-2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+        <p><strong>C语言中，常量存储在哪儿？<code>static</code>全局变量和<code>static</code>局部变量存储在哪儿？</strong><br><a id="more"></a></p>
+<p>全局变量（外部变量）的说明之前再冠以<code>static</code>就构成了静态的全局变量。全局变量本身就是静态存储方式，静态全局变量也是静态存储方式。这两者在存储方式上并无不同。这两者的区别虽在于</p>
+<blockquote>
+<p><strong>非静态全局变量的作用域是整个源程序，</strong><br><strong>当一个源程序由多个源文件组成时，非静态的全局变量在各个源文件中都是有效的，</strong><br><strong>而静态全局变量则限制了其作用域。</strong><br><strong>即只在定义该变量的源文件内有效，</strong></p>
+</blockquote>
+<p>在同一源程序的其他源文件中不能使用它。由于静态全局变量的作用域局限于一个源文件内，只能为该源文件内的函数公用，因此可以避免在其他源文件中引起错误。</p>
+<h3 id="static全局变量与普通的全局变量有什么区别？"><a href="#static全局变量与普通的全局变量有什么区别？" class="headerlink" title="static全局变量与普通的全局变量有什么区别？"></a><code>static</code>全局变量与普通的全局变量有什么区别？</h3><ul>
+<li><strong><code>static</code>全局变量只初始化一次</strong>，防止在其他文件单元中被是引用。</li>
+</ul>
+<h3 id="static局部变量与普通的局部变量有什么区别？"><a href="#static局部变量与普通的局部变量有什么区别？" class="headerlink" title="static局部变量与普通的局部变量有什么区别？"></a><code>static</code>局部变量与普通的局部变量有什么区别？</h3><ul>
+<li><strong><code>static</code>局部变量只被初始化一次</strong>，下一次依据上一次结果值。</li>
+</ul>
+<h3 id="局部变量、静态局部变量、静态全局变量存储位置"><a href="#局部变量、静态局部变量、静态全局变量存储位置" class="headerlink" title="局部变量、静态局部变量、静态全局变量存储位置"></a>局部变量、静态局部变量、静态全局变量存储位置</h3><table>
+<thead>
+<tr>
+<th>变量类型</th>
+<th>存储位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>局部变量</td>
+<td>静态区（全局区）</td>
+</tr>
+<tr>
+<td>局部静态变量</td>
+<td>静态区（全局区）的常量区</td>
+</tr>
+<tr>
+<td>全局静态变量</td>
+<td>静态区（全局区）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="各存储区的定义"><a href="#各存储区的定义" class="headerlink" title="各存储区的定义"></a>各存储区的定义</h3><ol>
+<li><p><strong>栈区（stack）</strong> —— 由编译器自动分配释放，存放<u>函数的参数值，局部变量的值</u>等，其操作方式类似于数据结构中的栈。</p>
+</li>
+<li><p><strong>堆区（heap）</strong> —— 一般由程序员分配释放。若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，分配方式倒是类似于链表。</p>
+</li>
+<li><p><strong>全局区（静态区）（static）</strong> —— <u>全局变零和静态变量</u>的存储是放在一起的，初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域，- <em>程序结束后由系统释放</em>。</p>
+</li>
+<li><p>文字常量区 —— <u>常量字符串</u>就是放在这里的。- <em>程序结束后由系统释放</em>。</p>
+</li>
+<li><p>程序代码区 —— <u>存放函数体的二进制代码</u>。</p>
+</li>
+</ol>
+<h3 id="NOTES"><a href="#NOTES" class="headerlink" title="NOTES"></a>NOTES</h3><ol>
+<li><p><strong>栈</strong>，就是那些由编译器在需要的时候分配，在不需要的时候自动清除的变量的存储区。里面的变量通常是局部变量、函数参数等。</p>
+</li>
+<li><p><strong>堆</strong>，就是那些由<code>new</code>分配的内存块，他们的释放编译器不去管，由应用程序控制，一般一个<code>new</code>就要对应一个<code>delete</code>。如果程序员没有释放掉，那么在程序结束后，操作系统会自动回收。</p>
+</li>
+<li><p><strong>自由存储区</strong>，就是那些由<code>malloc</code>分配的内存块，它和堆十分相似，不过它是用<code>free</code>来结束自己的生命。</p>
+</li>
+<li><p><strong>全局/静态存储区</strong>，全局变量和静态变量被分配到同一块内存中，在以前的C语言中，全局变量又分为初始化的和未初始化的，<em>在C++里面没有这个区分</em>，它们共同占用一块内存区。</p>
+</li>
+<li><p><strong>常量存储区</strong>，这是一块比较特殊的存储区，它们存放的是常量，<strong>不允许被修改</strong>。</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
       
-      
-      <div class="post-body">
-          google-site-verification: google4f676977fe6ccda7.html
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="0202zc 微信支付">
+        <p>微信支付</p>
       </div>
       
-      
-      
-    </div>
-    
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="0202zc 支付宝">
+        <p>支付宝</p>
+      </div>
 
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C-C/" rel="tag"># C/C++</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/31/C-efficiency/" rel="prev" title="C语言效率问题">
+      <i class="fa fa-chevron-left"></i> C语言效率问题
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
     
-    
-    
+  </article>
+  
+  
+  
+
   </div>
 
 
@@ -299,6 +462,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#static全局变量与普通的全局变量有什么区别？"><span class="nav-number">1.</span> <span class="nav-text">static全局变量与普通的全局变量有什么区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static局部变量与普通的局部变量有什么区别？"><span class="nav-number">2.</span> <span class="nav-text">static局部变量与普通的局部变量有什么区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部变量、静态局部变量、静态全局变量存储位置"><span class="nav-number">3.</span> <span class="nav-text">局部变量、静态局部变量、静态全局变量存储位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各存储区的定义"><span class="nav-number">4.</span> <span class="nav-text">各存储区的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NOTES"><span class="nav-number">5.</span> <span class="nav-text">NOTES</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -447,6 +611,54 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 
