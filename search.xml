@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[操作系统、计算机网络、数据库系统概论等相关问题]]></title>
+    <url>%2F2020%2F02%2F05%2Fos-network-db-questions%2F</url>
+    <content type="text"><![CDATA[操作系统 中断和陷入有什么异同？ 外中断时指来自处理机和内存外部的中断,如I/O中断、定时器中断、外部信号中断等。狭义上也叫中断; 内中断主要指在处理机和内存内部产生的中断,也称陷入,如校验错、页面失效、溢出、除数为零等; 中断和陷阱的主要区别: (1) 陷入通常由处理机正在执行的现行指令引起,而中断则是由与现行指令无关的中断源引起的。 (2) 陷阱处理程序提供的服务为当前进程所用,而中断处理程序提供的服务则不是为了当前进程的。 (3) CPU在执行完一条指令之后,下一条指令开始之前响应中断,而在一条指令执行中也可以响应陷阱。 父子进程是否可以并发运行？可以 在没有程序运行时, CPU在做什么？只要计算机打开着，CPU一定都在不停处理进程。在Windows系统下至少rundll32.exe这个程序是持续运行的。在linux下kernel也是会持续运行的。运行进程个数为零的时候有没有呢？有，那就是计算机关机的时候。 设备驱动器是否属于操作系统，他的作用是什么？不是，驱动程序是另外安装的软件，是操作系统控制并且和硬件之间通讯的桥梁（程序） 线程、进程、程序和任务的区别? 任务是最抽象的， 是一个一般性的术语， 指由软件完成的一个活动。一个任务既可以是一个进程,也可以是一个线程。简而言之,它指的是一系列共同达到某一目的的操 作。例如,读取数据并将数据放入内存中。这个任务可以作为一个进程来实现,也可以作为一个线程（或作为一个中断任务）来实现。 进程常常被定义为程序的执行。可以把一个进程看成是一个独立的程序,在内存中有其完备的数据空间和代码空间。一个进程所拥有的数据和变量只属于它自己。 线程则是某一进程中一路单独运行的程序。也就是说， 线程存在于进程之中。一个进程由一个或多个线程构成， 各线程共享相同的代码和全局数据， 但各有其自己的堆栈。由于堆栈是每个线程一个， 所以局部变量对每一线程来说是私有的。由于所有线程共享同样的代码和全局数据，它们比进程更紧密，比单独的进程间更趋向于相互作用,线程间的相互作用更容易些,因为它们本身就有某些供通信用的共享内存：进程的全局数据进程的全局数据进程的全局数据进程的全局数据 程序只是一组指令的有序集合，它本身没有任何运行的含义，它只是一个静态的实体。 处理中断的过程请求中断→响应中断→关闭中断→保留断点→中断源识别→保护现场→中断服务子程序→恢复现场→中断返回 分页、分段、段页式的特点，为什么要引入？分页是为了提高内存的利用率，提高计算机性能，且分页通过硬件机制来实现，对用户完全透明。分段是为了方便编程，信息保护和共享、动态增长及动态链接等多方面的需要。段页式是两者的结合。 计算机系统怎样实现存储保护？ 防止地址越界（对进程所产生的地址必须加以检查，发生越界时产生中断，由操作系统进行相应处理） 防止操作越权（对属于自己区域的信息，可读可写：对公共区域中允许共享的信息或获得授权可使用的信息，可读而不可修改；对未授权使用的信息，不可读，不可写） MMU 是 Memory Management Unit 的缩写，中文名是内存管理单元，它是中央处理器（CPU）中用来管理虚拟存储器、物理存储器的控制线路，同时也负责虚拟地址映射为物理地址，以及提供硬件机制的内存访问授权。 多线程，真的提高了效率吗？多线程效率，我认为未必会高，而且有时候相反会低。多线程并不是为了提高效率，而是不必等待 可以并行执行多条数据。可以这么想 我们通过 xp 系统复制文件。你可以复制一份文件 这叫是单线呈，但是你要等这个复制完了才能复制另一份文件，而且不能多复制。这样很难受，所以你可以选择多复制文件,这就是多线程。但复制多份文件用的时间未必会比一份一份文件所用时间少。只是它合理利用了时间进行了多个操作。如果是买票系统 就会用到多线呈。买票是同时进行的，如果一个用户一个用户等下去不是办法，所以可以多个用户同时买票，效率也就提高了。这里的效率不是执行的效率 而是时间的合理利用,多个线呈同时进行。 中断的作用中断是计算机系统结构一个重要的组成部分。在中断机制中的硬件部分(中断装置)的作用就是在 CPU 每执行完一条指令后，判别是否有事件发生，如果没有事件发生，CPU继续执行；若有事件发生，中断装置中断原先占用 CPU 的程序的执行，把被中断程序的断点保存起来，让操作系统的处理服务程序占用 CPU 对事件进行处理，处理完后，再让被中断的程序继续占用 CPU 执行下去。 虚拟内存容量由什么决定？虚拟存储区的容量与物理主存大小无关，而受限于计算机的地址结构和可用磁盘容量。 RAID 的工作原理RAID（独立磁盘冗余阵列（Redundant Array of Independent Disks））通过条带化存储和奇偶校验两个措施来实现其冗余和容错的目标。条带化存储意味着可以一次写入一个数据块的方式将文件写入多个磁盘。条带化存储技术将数据分开写入多个驱动器，从而提高数据传输速率并缩短磁盘处理总时间。这种系统非常适用于交易处理、但可靠性却很差，因为系统的可靠性等于最差的单个驱动器的可靠性。奇偶校验通过在传输后对所有数据进行冗余校验可以确保数据的有效性。利用奇偶校验，当 RAID 系统的一个磁盘发生故障时，其它磁盘能够重建该故障磁盘。在这两种情况中，这些功能对于操作系统都是透明的。由磁盘阵列控制器（DAC）进行条带化存储和奇偶校验控制。 计算机网络数据库系统概论]]></content>
+      <categories>
+        <category>计算机操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+        <tag>OS</tag>
+        <tag>计算机网络</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[复试英语口语]]></title>
     <url>%2F2020%2F02%2F02%2FEnglish-speaking-test%2F</url>
     <content type="text"><![CDATA[~2020.02.02~ (1). self-introduction (自我介绍)Good morning, my dear teachers and professors. I am very happy to introduce myself. I am 陈琪, a 22-year-old boy graduated from Chongqing University of Posts and Telecommunications. My major was Computer Science and Technology. And I am very kind-hearted as well and ready to help others especially when they are in troubles. Owing to my kindness I made a lot of friends in university. In my spare time I like sports such as Ping-pong .I also took some part-time jobs as a family tutor. One of my students got his mark improved through our joint effort and I was very proud of that.This is all for my self-introduction. If I am lucky enough to get the chance, I will devote all myself to my major and focus all of my energy on it. (2). reasons for my choice (考研原因)Firstly, I think my major is very practical and useful. Through four years’study in university I find the knowledge I have mastered is not enough to solve some specific problems. So I decide to further my education.Secondly,I can broaden my horizon and enrich the knowledge in this field through the postgraduate education. It is an indispensable step for my self-development in the future as well. (3). plans in the postgraduate study (研究生期间你的计划)Because my dream is to be a scientist , so i want to further my study when i become postgraduate. May be i will be a teacher in the university at first.That’s my simple plan. (4). about hometown (介绍你的家乡)I come from ZiGong of Sichuan province,which is famous for its salt industry and dinosaur fossils.Known as home of dinosaur. What’s more? It is also a city of lights. Every year,there are a lot of tourist traveling here. (5). about family (你的家庭)I have a happy family .In my family, there are five members: grandfather, father, mother.My family is just like a hand, and each of us like a finger.Mother worker, Father teacher. They love me ,we live harmoniously. (6). about university (你的大学)My university is Chongqing university of Post and Telecommunication .it has digital libraries and labs. My university is famous for its 3G research and it is located in a small mountain which is beautiful and full of cherry blossom.There a fresh airs and warm atmosphere. (7). plans after graduation (毕业后有什么打算)After my graduation, I want to find a job in Chengdu and make good use of the theories I will have learned from this university.I want to become a teacher of university or a scientist .if possible ,After graduation, I want to further my study for a Doctor’s degree. Then I’ll work for a research institute. What satisfies me most is to make contributions for the whole earth. (8).What is your greatest strength? (你最突出的优点是什么？)I am good at math and programming, because i can solve a problem by myself independent and improve in a short time without others’ help. 要求重复询问Sorry, I did not catch/follow your meaning. Pardon, please.]]></content>
@@ -230,8 +244,8 @@
         <category>Python学习</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>网络爬虫</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
