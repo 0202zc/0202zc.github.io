@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[反转字符串中的单词 III]]></title>
     <url>%2F2020%2F02%2F10%2Falgorithm-reverse-words-in-a-string-iii%2F</url>
-    <content type="text"><![CDATA[From LeetCode 557. Reverse Words in a String III 题目描述给定一个字符串，你需要反转字符串中每个单词的字符顺序，同时仍保留空格和单词的初始顺序。 示例 1: 输入: “Let’s take LeetCode contest”输出: “s’teL ekat edoCteeL tsetnoc”注意：在字符串中，每个单词由单个空格分隔，并且字符串中不会有任何额外的空格。]]></content>
+    <content type="text"><![CDATA[From LeetCode 557. Reverse Words in a String III 题目描述给定一个字符串，你需要反转字符串中每个单词的字符顺序，同时仍保留空格和单词的初始顺序。 示例 1: 输入: “Let’s take LeetCode contest”输出: “s’teL ekat edoCteeL tsetnoc”注意：在字符串中，每个单词由单个空格分隔，并且字符串中不会有任何额外的空格。 思路误区正确解题思路代码1234567891011121314151617181920char * reverseWords(char * s)&#123; int len = strlen(s) + 1, index = 0; if(len == 1 || len == 2) return s; char * r = (char *)malloc(len); char *start = s, *end; for(int i = 0; i &lt; len; i++, s++)&#123; if(*s == ' ' || *s == '\0')&#123; for(end = s-1; end &gt;= start; end--)&#123; r[index++] = *end; &#125; r[index++] = (*s == ' ') ? ' ' : (*s = '\0'); start = s + 1; &#125; &#125; return r;&#125; 时间复杂度$O(n)$, 空间复杂度$O(n)$]]></content>
       <categories>
         <category>算法</category>
       </categories>
