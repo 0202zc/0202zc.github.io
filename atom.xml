@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0202zc.github.io/"/>
-  <updated>2020-02-12T06:40:00.936Z</updated>
+  <updated>2020-02-16T04:34:31.382Z</updated>
   <id>http://0202zc.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>删除链表的倒数第N个节点</title>
+    <link href="http://0202zc.github.io/2020/02/16/algorithm-remove-nth-node-from-end-of-list/"/>
+    <id>http://0202zc.github.io/2020/02/16/algorithm-remove-nth-node-from-end-of-list/</id>
+    <published>2020-02-16T04:28:04.000Z</published>
+    <updated>2020-02-16T04:34:31.382Z</updated>
+    
+    <content type="html"><![CDATA[<p>LeetCode <a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="noopener">19. Remove Nth Node From End of List</a><br><a id="more"></a></p><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。</p><p><strong>示例：</strong></p><blockquote><p>给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.</p></blockquote><blockquote><p>当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.<br>说明：</p></blockquote><p>给定的 n 保证是有效的。</p><p><strong>进阶：</strong></p><p>你能尝试使用一趟扫描实现吗？</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>快慢指针，快指针先走n步，然后快慢一起走，直到快指针走到最后，要注意的是可能是要删除第一个节点，这个时候可以直接返回<code>head -&gt; next</code></p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct ListNode *next;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function">struct ListNode* <span class="title">removeNthFromEnd</span><span class="params">(struct ListNode* head, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!head || !head -&gt; next) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> * <span class="title">fast</span> = <span class="title">head</span>, *<span class="title">slow</span> = <span class="title">head</span>;</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        fast = fast -&gt; next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!fast)&#123;</span><br><span class="line">        <span class="keyword">return</span> head -&gt; next;    </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(fast -&gt; next)&#123;</span><br><span class="line">        fast = fast -&gt; next;</span><br><span class="line">        slow = slow -&gt; next;</span><br><span class="line">    &#125;</span><br><span class="line">    slow -&gt; next = slow -&gt; next -&gt; next;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="类似题目"><a href="#类似题目" class="headerlink" title="类似题目"></a>类似题目</h3><p><a href="https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/" target="_blank" rel="noopener">面试题22. 链表中倒数第k个节点</a></p><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p>输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。例如，一个链表有6个节点，从头节点开始，它们的值依次是1、2、3、4、5、6。这个链表的倒数第3个节点是值为4的节点。</p><p><strong>示例：</strong></p><blockquote><p>给定一个链表: <strong>1-&gt;2-&gt;3-&gt;4-&gt;5</strong>, 和 <strong>k = 2</strong>.</p></blockquote><blockquote><p>返回链表 <strong>4-&gt;5</strong>.</p></blockquote><h4 id="思路-代码"><a href="#思路-代码" class="headerlink" title="思路 + 代码"></a>思路 + 代码</h4><p>与上面思路相同，使用快慢指针同步移动</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct ListNode *next;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function">struct ListNode* <span class="title">getKthFromEnd</span><span class="params">(struct ListNode* head, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!head)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> *<span class="title">fast</span> = <span class="title">head</span>, *<span class="title">slow</span> = <span class="title">head</span>;</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k &amp;&amp; fast != <span class="literal">NULL</span>; i++)&#123;</span><br><span class="line">        fast=fast-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(fast)&#123;</span><br><span class="line">        fast = fast-&gt;next;</span><br><span class="line">        slow = slow-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> slow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;LeetCode &lt;a href=&quot;https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;19. Remove Nth Node From End of List&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://0202zc.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Algorithm" scheme="http://0202zc.github.io/tags/Algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>有序循环数组查找值</title>
@@ -471,30 +495,6 @@
       <category term="算法" scheme="http://0202zc.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="Algorithm" scheme="http://0202zc.github.io/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文件控制块与索引节点的总结</title>
-    <link href="http://0202zc.github.io/2019/11/24/os-FCB-and-inode/"/>
-    <id>http://0202zc.github.io/2019/11/24/os-FCB-and-inode/</id>
-    <published>2019-11-24T14:37:17.000Z</published>
-    <updated>2020-01-19T12:46:12.647Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>文件控制块（FCB）与索引结点（inode）都是操作系统文件管理中逻辑结构的重要部分。在今日考研复习过程中，基本解决了以前遇到的“FCB与inode”的问题，现以此博文记录该知识点。<br><a id="more"></a></p><h1 id="文件控制块与索引结点"><a href="#文件控制块与索引结点" class="headerlink" title="文件控制块与索引结点"></a>文件控制块与索引结点</h1><p>这需要从目录结构说起。</p><ul><li>文件目录：包含有关文件的信息，信息主要有：属性，位置，所有权。这些信息主要是由OS进行管理。把所有的FCB组织在一起，就构成了文件目录，即文件控制块的有序集合，其包含许多目录项（即FCB）。<br><br>目录管理的基本要求：从用户角度看待，目录在用户（应用程序）所需要的文件名和文件之间提供一种映射。目录管理提供的是：按名存取。</li></ul><ul><li>共享系统中目录还需要提供控制访问文件的信息。重名问题主要通过树形结构来解决。</li></ul><!-- ![](/images/catalogue_FCB.jpg "目录实现对比") --><table><thead><tr><th>普通文件目录</th><th>以索引结点实现的目录</th></tr></thead><tbody><tr><td>由FCB构成的一个一个目录项组成；<br>FCB中存放了和文件相关的所有控制信息</td><td>a. 文件名<br> b. 指向索引结点的指针</td></tr></tbody></table><p>采用索引结点的方式来实现目录，好处是文件目录的目录项长度会缩短很多。因为通过文件目录实现对文件的按名存取时，在寻找文件的过程中只需要用到文件名这个信息，而其他信息在寻找文件的时候没有必要。<br>如果一个目录中存放了很多个文件，采用传统的以FCB构成目录项的方式，那么这个文件目录会非常大，因为每个目录项就特别大。<br>而采用索引结点的方式实现目录，每个目录项就会很小，只包含文件名和指向索引结点的指针。可以提高文件检索速度。</p><ul><li>FCB：文件控制块。用于存放控制文件的各种信息的数据结构，实现了按名存取。</li></ul><p><br><br>总结如下表：<br><img data-src="/images/FCB&amp;inode_1.jpg" alt="" title="FCB与inode"></p><p>此处有个小问题：</p><ul><li>某科技大学的OS考研试卷填空题答案中索引节点分为文件描述信息和i结点，而资料书上说的是索引节点即为i结点</li></ul><p>检索目录文件（FCB的集合）时只用到了文件名。仅当找到一个目录项时才需要从该目录项（FCB）中读出该文件的物理地址。即：检索目录时文件的其他描述信息用不到，也因此不必调入内存。那么我们是否可以考虑，把<strong>文件名</strong>和<strong>文件的描述信息(FCB-文件名)</strong>分开，文件的描述信息单独形成一个数据结构，这个被称作索引结点。简称为i结点。<br>这样就可以简化目录结构为：<strong>文件名</strong>对应<strong>i结点指针</strong>。<br>比如在UNIX系统中，文件目录项（FCB）占16B，其中14B是文件名，2B是i结点指针。<br>注意到设计i结点的设计思路是怎么得到的，就很容易理解FCB和i结点包含的信息大部分是相同的，i结点只是抽出了文件名。每个文件对应一个文件名，则一个文件也只要一个i结点。</p><ul><li>存放在磁盘上的索引结点称为磁盘索引结点。</li></ul><h2 id="文件控制块与索引节点的区别"><a href="#文件控制块与索引节点的区别" class="headerlink" title="文件控制块与索引节点的区别"></a>文件控制块与索引节点的区别</h2><p>个人总结：<br>从文件目录结构来看，UNIX中，</p><ul><li>文件目录由FCB（目录项）组成</li><li>FCB = 文件名 + inode</li><li>inode包含了文件物理地址信息</li><li>物理地址信息的组成主要是主索引表<br><br><br>如图所示:<br><img data-src="/images/FCB&amp;inode.jpg" alt="" title="逻辑结构图"></li></ul><p><strong>个人能力有限，总结有问题请指出。</strong></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;序言&quot;&gt;&lt;a href=&quot;#序言&quot; class=&quot;headerlink&quot; title=&quot;序言&quot;&gt;&lt;/a&gt;序言&lt;/h1&gt;&lt;p&gt;文件控制块（FCB）与索引结点（inode）都是操作系统文件管理中逻辑结构的重要部分。在今日考研复习过程中，基本解决了以前遇到的“FCB与inode”的问题，现以此博文记录该知识点。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="计算机操作系统" scheme="http://0202zc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="操作系统" scheme="http://0202zc.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="OS" scheme="http://0202zc.github.io/tags/OS/"/>
     
   </entry>
   
