@@ -18,8 +18,8 @@
   
   <entry>
     <title>寻找旋转排序数组中的最小值</title>
-    <link href="http://0202zc.github.io/2020/03/15/algorithm-find-the-duplicate-number/"/>
-    <id>http://0202zc.github.io/2020/03/15/algorithm-find-the-duplicate-number/</id>
+    <link href="http://0202zc.github.io/2020/03/15/algorithm/algorithm-find-the-duplicate-number/"/>
+    <id>http://0202zc.github.io/2020/03/15/algorithm/algorithm-find-the-duplicate-number/</id>
     <published>2020-03-15T15:42:16.000Z</published>
     <updated>2020-03-15T15:58:44.564Z</updated>
     
@@ -42,8 +42,8 @@
   
   <entry>
     <title>搜索旋转数组</title>
-    <link href="http://0202zc.github.io/2020/03/15/algorithm-search-rotate-array-lcci/"/>
-    <id>http://0202zc.github.io/2020/03/15/algorithm-search-rotate-array-lcci/</id>
+    <link href="http://0202zc.github.io/2020/03/15/algorithm/algorithm-search-rotate-array-lcci/"/>
+    <id>http://0202zc.github.io/2020/03/15/algorithm/algorithm-search-rotate-array-lcci/</id>
     <published>2020-03-15T02:38:52.000Z</published>
     <updated>2020-03-15T03:11:36.966Z</updated>
     
@@ -66,8 +66,8 @@
   
   <entry>
     <title>反转链表 II</title>
-    <link href="http://0202zc.github.io/2020/03/12/algorithm-reverse-linked-list-ii/"/>
-    <id>http://0202zc.github.io/2020/03/12/algorithm-reverse-linked-list-ii/</id>
+    <link href="http://0202zc.github.io/2020/03/12/algorithm/algorithm-reverse-linked-list-ii/"/>
+    <id>http://0202zc.github.io/2020/03/12/algorithm/algorithm-reverse-linked-list-ii/</id>
     <published>2020-03-12T09:48:25.000Z</published>
     <updated>2020-03-12T10:04:48.449Z</updated>
     
@@ -114,8 +114,8 @@
   
   <entry>
     <title>回文链表</title>
-    <link href="http://0202zc.github.io/2020/03/02/algorithm-palindrome-linked-list/"/>
-    <id>http://0202zc.github.io/2020/03/02/algorithm-palindrome-linked-list/</id>
+    <link href="http://0202zc.github.io/2020/03/02/algorithm/algorithm-palindrome-linked-list/"/>
+    <id>http://0202zc.github.io/2020/03/02/algorithm/algorithm-palindrome-linked-list/</id>
     <published>2020-03-02T03:38:10.000Z</published>
     <updated>2020-03-02T03:38:27.440Z</updated>
     
@@ -138,8 +138,8 @@
   
   <entry>
     <title>二进制链表转整数</title>
-    <link href="http://0202zc.github.io/2020/03/01/algoritm-convert-binary-number-in-a-linked-list-to-integer/"/>
-    <id>http://0202zc.github.io/2020/03/01/algoritm-convert-binary-number-in-a-linked-list-to-integer/</id>
+    <link href="http://0202zc.github.io/2020/03/01/algorithm/algoritm-convert-binary-number-in-a-linked-list-to-integer/"/>
+    <id>http://0202zc.github.io/2020/03/01/algorithm/algoritm-convert-binary-number-in-a-linked-list-to-integer/</id>
     <published>2020-03-01T05:20:47.000Z</published>
     <updated>2020-03-01T05:20:51.451Z</updated>
     
@@ -162,8 +162,8 @@
   
   <entry>
     <title>环路检测</title>
-    <link href="http://0202zc.github.io/2020/02/29/algorithm-linked-list-cycle-lcci/"/>
-    <id>http://0202zc.github.io/2020/02/29/algorithm-linked-list-cycle-lcci/</id>
+    <link href="http://0202zc.github.io/2020/02/29/algorithm/algorithm-linked-list-cycle-lcci/"/>
+    <id>http://0202zc.github.io/2020/02/29/algorithm/algorithm-linked-list-cycle-lcci/</id>
     <published>2020-02-29T04:29:05.000Z</published>
     <updated>2020-02-29T04:35:16.761Z</updated>
     
@@ -186,8 +186,8 @@
   
   <entry>
     <title>重排链表</title>
-    <link href="http://0202zc.github.io/2020/02/29/algorithm-reorder-list/"/>
-    <id>http://0202zc.github.io/2020/02/29/algorithm-reorder-list/</id>
+    <link href="http://0202zc.github.io/2020/02/29/algorithm/algorithm-reorder-list/"/>
+    <id>http://0202zc.github.io/2020/02/29/algorithm/algorithm-reorder-list/</id>
     <published>2020-02-29T03:19:36.000Z</published>
     <updated>2020-02-29T03:19:49.244Z</updated>
     
@@ -210,8 +210,8 @@
   
   <entry>
     <title>链表的中间结点</title>
-    <link href="http://0202zc.github.io/2020/02/29/algorithm-middle-of-the-linked-list/"/>
-    <id>http://0202zc.github.io/2020/02/29/algorithm-middle-of-the-linked-list/</id>
+    <link href="http://0202zc.github.io/2020/02/29/algorithm/algorithm-middle-of-the-linked-list/"/>
+    <id>http://0202zc.github.io/2020/02/29/algorithm/algorithm-middle-of-the-linked-list/</id>
     <published>2020-02-29T01:56:03.000Z</published>
     <updated>2020-02-29T03:08:32.007Z</updated>
     
@@ -234,8 +234,8 @@
   
   <entry>
     <title>删除链表的倒数第N个节点</title>
-    <link href="http://0202zc.github.io/2020/02/16/algorithm-remove-nth-node-from-end-of-list/"/>
-    <id>http://0202zc.github.io/2020/02/16/algorithm-remove-nth-node-from-end-of-list/</id>
+    <link href="http://0202zc.github.io/2020/02/16/algorithm/algorithm-remove-nth-node-from-end-of-list/"/>
+    <id>http://0202zc.github.io/2020/02/16/algorithm/algorithm-remove-nth-node-from-end-of-list/</id>
     <published>2020-02-16T04:28:04.000Z</published>
     <updated>2020-02-16T06:45:57.183Z</updated>
     
@@ -258,8 +258,8 @@
   
   <entry>
     <title>有序循环数组查找值</title>
-    <link href="http://0202zc.github.io/2020/02/12/algorithm-ordering-and-circulate/"/>
-    <id>http://0202zc.github.io/2020/02/12/algorithm-ordering-and-circulate/</id>
+    <link href="http://0202zc.github.io/2020/02/12/algorithm/algorithm-ordering-and-circulate/"/>
+    <id>http://0202zc.github.io/2020/02/12/algorithm/algorithm-ordering-and-circulate/</id>
     <published>2020-02-12T06:01:34.000Z</published>
     <updated>2020-02-12T06:40:00.936Z</updated>
     
@@ -282,8 +282,8 @@
   
   <entry>
     <title>反转字符串中的单词 III</title>
-    <link href="http://0202zc.github.io/2020/02/10/algorithm-reverse-words-in-a-string-iii/"/>
-    <id>http://0202zc.github.io/2020/02/10/algorithm-reverse-words-in-a-string-iii/</id>
+    <link href="http://0202zc.github.io/2020/02/10/algorithm/algorithm-reverse-words-in-a-string-iii/"/>
+    <id>http://0202zc.github.io/2020/02/10/algorithm/algorithm-reverse-words-in-a-string-iii/</id>
     <published>2020-02-10T11:08:43.000Z</published>
     <updated>2020-02-10T12:26:24.900Z</updated>
     
@@ -306,8 +306,8 @@
   
   <entry>
     <title>无重复字符的最长子串</title>
-    <link href="http://0202zc.github.io/2020/02/09/algorithm-Longest-Substring-Without-Repeating-Characters/"/>
-    <id>http://0202zc.github.io/2020/02/09/algorithm-Longest-Substring-Without-Repeating-Characters/</id>
+    <link href="http://0202zc.github.io/2020/02/09/algorithm/algorithm-Longest-Substring-Without-Repeating-Characters/"/>
+    <id>http://0202zc.github.io/2020/02/09/algorithm/algorithm-Longest-Substring-Without-Repeating-Characters/</id>
     <published>2020-02-09T03:10:32.000Z</published>
     <updated>2020-02-09T05:53:24.919Z</updated>
     
@@ -472,8 +472,8 @@
   
   <entry>
     <title>二分查找算法细节详解</title>
-    <link href="http://0202zc.github.io/2020/01/27/algorithm-binary-search/"/>
-    <id>http://0202zc.github.io/2020/01/27/algorithm-binary-search/</id>
+    <link href="http://0202zc.github.io/2020/01/27/algorithm/algorithm-binary-search/"/>
+    <id>http://0202zc.github.io/2020/01/27/algorithm/algorithm-binary-search/</id>
     <published>2020-01-27T04:37:40.000Z</published>
     <updated>2020-01-27T05:28:17.252Z</updated>
     

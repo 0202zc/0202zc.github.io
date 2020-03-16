@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://0202zc.github.io').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="来源：UESTC考研群">
+<meta name="keywords" content="C&#x2F;C++,算法,Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复试笔试C语言重要简答题">
+<meta property="og:url" content="http://0202zc.github.io/2020/01/25/algorithm/algorithm-short-answers-about-C/index.html">
+<meta property="og:site_name" content="L..z、℃的博客">
+<meta property="og:description" content="来源：UESTC考研群">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-31T12:44:29.254Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="复试笔试C语言重要简答题">
+<meta name="twitter:description" content="来源：UESTC考研群">
+
+<link rel="canonical" href="http://0202zc.github.io/2020/01/25/algorithm/algorithm-short-answers-about-C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>复试笔试C语言重要简答题 | L..z、℃的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+    <a href="https://github.com/0202zc" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">L..z、℃的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Be unfazed by defeat.</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-留言板">
+
+    <a href="/message/" rel="section"><i class="fa fa-fw fa-clipboard"></i>留言板</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://0202zc.github.io/2020/01/25/algorithm/algorithm-short-answers-about-C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom_logo.jpg">
+      <meta itemprop="name" content="0202zc">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="L..z、℃的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          复试笔试C语言重要简答题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-25 16:45:37" itemprop="dateCreated datePublished" datetime="2020-01-25T16:45:37+08:00">2020-01-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-31 20:44:29" itemprop="dateModified" datetime="2020-01-31T20:44:29+08:00">2020-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/01/25/algorithm/algorithm-short-answers-about-C/" class="post-meta-item leancloud_visitors" data-flag-title="复试笔试C语言重要简答题" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/01/25/algorithm/algorithm-short-answers-about-C/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/25/algorithm/algorithm-short-answers-about-C/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>来源：UESTC考研群<br><a id="more"></a></p>
+<h3 id="从C语言执行效率方便，简述下C语言采取了哪些措施提高执行效率。"><a href="#从C语言执行效率方便，简述下C语言采取了哪些措施提高执行效率。" class="headerlink" title="从C语言执行效率方便，简述下C语言采取了哪些措施提高执行效率。"></a>从C语言执行效率方便，简述下C语言采取了哪些措施提高执行效率。</h3><ul>
+<li><p><strong>使用指针</strong>：有些程序用其他语言也可以实现，但C能够更有效地实现；有些程序无法用其它语言实现，如直接访问硬件，但C却可以。正因为指针可以拥有类似于汇编的寻址方式，所以可以使程序更高效。</p>
+</li>
+<li><p><strong>使用宏函数</strong>：宏函数仅仅作为预先写好的代码嵌入到当前程序，不会产生函数调用，所以仅仅是占用了空间，而使程序可以高效运行。在频繁调用同⼀个宏函数的时候，该现象尤其突出。函数和宏函数的区别就在于，宏函数占用了大量的空间，而函数占用了时间。</p>
+<ul>
+<li>宏函数的例子：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX(a,b) (a &gt; b ? a : b)</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxNum = MAX(<span class="number">5</span>, <span class="number">6</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"The max num is : %d\n"</span>, maxNum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>使用位操作</strong>：位操作可以减少除法和取模的运算。在计算机程序中数据的位是可以操作的最小数据单位，理论上可以用“位运算”来完成所有的运算和操作。灵活的位操作可以有效地提高程序运行的效率。</p>
+</li>
+<li><p>循环嵌套中将较<strong>长</strong>循环设为<strong>内置</strong>循环，较<strong>短</strong>循环设为<strong>外置</strong>循环，以减少cpu跨切循环层的次数，提高程序的运行效率。(操作系统页面置换相关，减少页面置换次数)</p>
+</li>
+<li><p>将汇编指令嵌入到C语言程序中，<strong>汇编语言是效率最高的计算机语言</strong>，因此为了获得程序的高效率，可以在C语言程序中嵌入汇编，从而充分利用高级语言和汇编语言各⾃的特点。</p>
+</li>
+<li><p>在C语言程序中可以<strong>调用系统API</strong>，接近底层，从而提高程序的运行效率。</p>
+</li>
+<li><p>⼀般情况下，C语言源程序中的每⼀行代码都要参加编译。但有时候出于对程序代码优化的考虑，希望只对其中⼀部分内容进行编译，此时就需要在程序中加上条件，让编译器<strong>只对满足条件的代码进行编译</strong>，将不满足条件的代码舍弃，这就是<em>条件编译</em>。</p>
+</li>
+</ul>
+<h3 id="请简述C语言的隐式类型转换发生的四种情况，并说明每种情况如何转换。（注：这里面还有个小题，float如何四舍五入转化成int）"><a href="#请简述C语言的隐式类型转换发生的四种情况，并说明每种情况如何转换。（注：这里面还有个小题，float如何四舍五入转化成int）" class="headerlink" title="请简述C语言的隐式类型转换发生的四种情况，并说明每种情况如何转换。（注：这里面还有个小题，float如何四舍五入转化成int）"></a>请简述C语言的隐式类型转换发生的四种情况，并说明每种情况如何转换。（注：这里面还有个小题，float如何四舍五入转化成int）</h3><ul>
+<li>算术运算式中，低类型能够转换为高类型（自动类型转换）。</li>
+<li>赋值表达式中，右边表达式的值<u>⾃动隐式转换</u>为左边变量的类型，并赋值给它。</li>
+<li>函数调用中参数传递时，系统隐式地将实参转换为形参的类型后，赋给形参。</li>
+<li>函数有返回值时，系统将隐式地将返回表达式类型转换为返回值类型，赋给调用函数。</li>
+</ul>
+<h4 id="小题：float如何四舍五入转化成int"><a href="#小题：float如何四舍五入转化成int" class="headerlink" title="小题：float如何四舍五入转化成int"></a>小题：float如何四舍五入转化成int</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">float</span> f = <span class="number">0.5</span>;</span><br><span class="line">    <span class="keyword">int</span> i = (<span class="keyword">int</span>)(f + <span class="number">0.5</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, i);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数组越界会产生什么后果？"><a href="#数组越界会产生什么后果？" class="headerlink" title="数组越界会产生什么后果？"></a>数组越界会产生什么后果？</h3><p>越界访问有可能把数据放到已经存储了重要数据的内存单元，也就是<strong>改写了本来不许改写的数据</strong>，如果这个数据是系统的重要数据，有可能<strong>导致系统运行紊乱甚至是崩溃</strong>。当然如果这个数据并不重要，那么越界访问的后果就不明显或者是没有影响。避免的方法是对数组的下标严格检测，判断组数下标是否越界，用指针访问数组时要注意判断<strong>指针的指向是否已超过数组下标的最大值</strong>。</p>
+<h3 id="值传递和地址传递"><a href="#值传递和地址传递" class="headerlink" title="值传递和地址传递"></a>值传递和地址传递</h3><h4 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h4><p>被调函数的形参作为被调函数的<strong>局部变量</strong>处理，即在内存的堆栈中开辟空间以存放由主调函数放进来的实参的值，从而成为了实参的一个<strong>拷贝</strong>。<br>其特点是被调函数对形参的任何操作都是作为<strong>局部变量</strong>进行，<u>不会影响</u>主调函数的实参变量的值。</p>
+<h4 id="地址传递"><a href="#地址传递" class="headerlink" title="地址传递"></a>地址传递</h4><p>被调函数的形参虽然也作为局部变量在堆栈中开辟了内存空间，但是这是存放的是由主调函数放进来的实参变量的地址。被调函数对形参的任何操作都被处理成<strong>间接寻址</strong>，即通过<strong>堆栈中存放的地址</strong>访问主调函数中的实参变量。正因为如此，被调函数对形参做的任何操作都影响了主调函数中的实参变量。</p>
+<h3 id="C语言中，常量存储在哪里？静态局部变量和静态全局变量存储在哪里？"><a href="#C语言中，常量存储在哪里？静态局部变量和静态全局变量存储在哪里？" class="headerlink" title="C语言中，常量存储在哪里？静态局部变量和静态全局变量存储在哪里？"></a>C语言中，常量存储在哪里？静态局部变量和静态全局变量存储在哪里？</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">存储位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">常量</td>
+<td style="text-align:center">常量区</td>
+</tr>
+<tr>
+<td style="text-align:center">静态局部变量</td>
+<td style="text-align:center">全局数据区</td>
+</tr>
+<tr>
+<td style="text-align:center">静态局部变量</td>
+<td style="text-align:center">全局数据区</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="0202zc 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="0202zc 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C-C/" rel="tag"># C/C++</a>
+              <a href="/tags/算法/" rel="tag"># 算法</a>
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/24/algorithm/algorithm-remove-elements/" rel="prev" title="删除排序数组中的重复项与移除元素">
+      <i class="fa fa-chevron-left"></i> 删除排序数组中的重复项与移除元素
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/26/algorithm/algorithm-merge-list/" rel="next" title="合并有序线性表">
+      合并有序线性表 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#从C语言执行效率方便，简述下C语言采取了哪些措施提高执行效率。"><span class="nav-number">1.</span> <span class="nav-text">从C语言执行效率方便，简述下C语言采取了哪些措施提高执行效率。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请简述C语言的隐式类型转换发生的四种情况，并说明每种情况如何转换。（注：这里面还有个小题，float如何四舍五入转化成int）"><span class="nav-number">2.</span> <span class="nav-text">请简述C语言的隐式类型转换发生的四种情况，并说明每种情况如何转换。（注：这里面还有个小题，float如何四舍五入转化成int）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小题：float如何四舍五入转化成int"><span class="nav-number">2.1.</span> <span class="nav-text">小题：float如何四舍五入转化成int</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组越界会产生什么后果？"><span class="nav-number">3.</span> <span class="nav-text">数组越界会产生什么后果？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值传递和地址传递"><span class="nav-number">4.</span> <span class="nav-text">值传递和地址传递</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#值传递"><span class="nav-number">4.1.</span> <span class="nav-text">值传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#地址传递"><span class="nav-number">4.2.</span> <span class="nav-text">地址传递</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C语言中，常量存储在哪里？静态局部变量和静态全局变量存储在哪里？"><span class="nav-number">5.</span> <span class="nav-text">C语言中，常量存储在哪里？静态局部变量和静态全局变量存储在哪里？</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="0202zc"
+      src="/images/custom_logo.jpg">
+  <p class="site-author-name" itemprop="name">0202zc</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/0202zc" title="GitHub → https://github.com/0202zc" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lzc980202@163.com" title="E-mail → mailto:lzc980202@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://weibo.com/0202zc" title="微博 → http://weibo.com/0202zc" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>微博</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">0202zc</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">112k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:42</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.7.1
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'LmnxSgDzqqpaABCtC4LgmPtI-gzGzoHsz',
+      appKey: 'aOT3PG5cL7BHviM1KQkYEB9o',
+      placeholder: "\\(^o^)/~来呀！快活呀！",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: true,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: true,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+  
+  <script type="text/javascript" color="0,0,255" opacity='0.6' zIndex="-2" count="10" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+</body>
+</html>
