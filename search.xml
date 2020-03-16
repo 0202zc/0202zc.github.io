@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[移动零]]></title>
     <url>%2F2020%2F03%2F16%2Falgorithm%2Falgorithm-move-zeros%2F</url>
-    <content type="text"><![CDATA[LeetCode 283. Move Zeroes 题目描述给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 示例: 输入: [0,1,0,3,12]输出: [1,3,12,0,0] 说明: 1. 必须在原数组上操作，不能拷贝额外的数组。 2. 尽量减少操作次数。 解题思路代码实现1234567891011void moveZeroes(int* nums, int numsSize)&#123; int i, j = 0; for(i = 0; i &lt; numsSize; i++)&#123; if(nums[i] != 0)&#123; nums[j++] = nums[i]; &#125; &#125; while(j &lt; numsSize)&#123; nums[j++] = 0; &#125;&#125;]]></content>
+    <content type="text"><![CDATA[LeetCode 283. Move Zeroes 题目描述给定一个数组 nums，编写一个函数将所有 $0$ 移动到数组的末尾，同时保持非零元素的相对顺序。 示例: 输入: [0,1,0,3,12]输出: [1,3,12,0,0] 说明: 1. 必须在原数组上操作，不能拷贝额外的数组。 2. 尽量减少操作次数。 解题思路方法：双指针用两个指针i, j从头到尾依次遍历，遇到零元素就记录位置，遇到非零元素就进行替换零的操作当一个指针i进行完一次遍历，此时非零元素已经全部移动到前面的位置，只需要将剩余位置上的元素置为零即可 代码实现1234567891011121314void moveZeroes(int* nums, int numsSize)&#123; int i, j = 0; for(i = 0; i &lt; numsSize; i++)&#123; if(nums[i] != 0)&#123; //遇到非零元素进行替换零 nums[j++] = nums[i]; &#125; // else 继续查找非零元素 &#125; // 将剩余位置上的元素置为零 while(j &lt; numsSize)&#123; nums[j++] = 0; &#125;&#125;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -414,8 +414,8 @@
         <category>Python学习</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>网络爬虫</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
