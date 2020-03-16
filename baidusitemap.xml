@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://0202zc.github.io/2020/02/05/os-network-db-questions/</loc>
-    <lastmod>2020-03-16T06:55:07.033Z</lastmod>
+    <lastmod>2020-03-16T06:58:49.506Z</lastmod>
     <data>
         <display>
         <title>操作系统、计算机网络、数据库系统概论等相关问题</title>
@@ -22,13 +22,7 @@
          
            
              
-              <breadCrumb title="计算机操作系统" url="http://0202zc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-          
-             
-              <breadCrumb title="计算机网络" url="http://0202zc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-             
-              <breadCrumb title="数据库" url="http://0202zc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+              <breadCrumb title="计算机操作系统 计算机网络 数据库" url="http://0202zc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
           
         </display>
     </data>
@@ -713,9 +707,9 @@
         <title>Python学习笔记 —— 爬取教务网明日课程并发送微信好友</title>
         <pubTime>2018-05-18T07:29:34.000Z</pubTime>
         
-        <tag>网络爬虫</tag>
-         
         <tag>Python</tag>
+         
+        <tag>网络爬虫</tag>
          
          
            
