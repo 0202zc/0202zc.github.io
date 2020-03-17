@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="操作系统、计算机网络、数据库系统概论等相关问题">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-17T01:53:37.117Z">
+<meta property="og:updated_time" content="2020-03-17T01:55:48.412Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统、计算机网络、数据库系统概论等相关问题">
 <meta name="twitter:description" content="操作系统、计算机网络、数据库系统概论等相关问题">
@@ -248,7 +248,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-17 09:53:37" itemprop="dateModified" datetime="2020-03-17T09:53:37+08:00">2020-03-17</time>
+                <time title="修改时间：2020-03-17 09:55:48" itemprop="dateModified" datetime="2020-03-17T09:55:48+08:00">2020-03-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -352,7 +352,7 @@
 <li>可以这么想：我们通过 xp 系统复制文件。你可以复制一份文件 —— 这叫是单线程。但是你要等这个复制完了才能复制另一份文件，而且不能多复制，这样很难受。所以你可以选择多复制文件，这就是多线程。但复制多份文件用的时间未必会比一份一份文件所用时间少。只是它合理利用了时间进行了多个操作。 </li>
 <li>如果是买票系统，就会用到多线程。买票是同时进行的，如果一个用户一个用户等下去不是办法，所以可以多个用户同时买票，效率也就提高了。这里的效率不是执行的效率  而是时间的合理利用，多个线程同时进行。</li>
 </ul>
-<h3 id="11-中断的作用"><a href="#11-中断的作用" class="headerlink" title="11. 中断的作用"></a>11. 中断的作用</h3><p>中断是计算机系统结构一个重要的组成部分。在中断机制中的硬件部分(中断装置)的作用就是<strong>在 CPU 每执行完一条指令后，判别是否有事件发生</strong>。如果没有事件发生，CPU继续执行；若有事件发生，中断装置①中断原先占用 CPU 的程序的执行，②把被中断程序的<strong>断点保存</strong>起来，③让操作系统的处理服务程序占用 CPU 对事件进行处理，④处理完后，再让被中断的程序继续占用 CPU 执行下去。</p>
+<h3 id="11-中断的作用"><a href="#11-中断的作用" class="headerlink" title="11. 中断的作用"></a>11. 中断的作用</h3><p>中断是计算机系统结构一个重要的组成部分。在中断机制中的硬件部分(中断装置)的作用就是<strong>在 CPU 每执行完一条指令后，判别是否有事件发生</strong>。如果没有事件发生，CPU继续执行；若有事件发生，中断装置①<strong>中断</strong>原先占用 CPU 的程序的执行，②把被中断程序的<strong>断点保存</strong>起来，③让操作系统的处理服务程序占用 CPU 对事件进行<strong>处理</strong>，④处理完后，再让被中断的程序<strong>继续</strong>占用 CPU 执行下去。</p>
 <h3 id="12-DMA-的优先级为什么比-CPU-的优先级高？"><a href="#12-DMA-的优先级为什么比-CPU-的优先级高？" class="headerlink" title="12. DMA 的优先级为什么比 CPU 的优先级高？"></a>12. DMA 的优先级为什么比 CPU 的优先级高？</h3><p>因为 DMA 请求得不到及时响应，I/O 传输数据可能会丢失。</p>
 <h3 id="13-虚拟内存容量由什么决定？"><a href="#13-虚拟内存容量由什么决定？" class="headerlink" title="13. 虚拟内存容量由什么决定？"></a>13. 虚拟内存容量由什么决定？</h3><p>虚拟存储区的容量与物理主存大小无关，而受限于计算机的地址结构和可用磁盘容量。</p>
 <h3 id="14-RAID-的工作原理"><a href="#14-RAID-的工作原理" class="headerlink" title="14. RAID 的工作原理"></a>14. RAID 的工作原理</h3><ul>
