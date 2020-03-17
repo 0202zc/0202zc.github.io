@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"0202zc.github.io","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"0202zc.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="LeetCode 21. Merge Two Sorted Lists &amp;amp; 88. Merge Sorted Array">
@@ -28,10 +28,19 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="LeetCode 21. Merge Two Sorted Lists &amp;amp; 88. Merge Sorted Array">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://pic.leetcode-cn.com/7ddaf1beb64fdef4393cc6ebd0dfd1723b97d2c183ab5c8414c0898027623a00-frame_00001.png">
+<meta property="og:image" content="https://pic.leetcode-cn.com/f4b7e354473d2bf28283ac3c410bc81e9f7ecb35f14189de9fadc041452c2653-frame_00002.png">
+<meta property="og:image" content="https://pic.leetcode-cn.com/001e4c2fdd8b5d725bc25df6373f7590404d9ef16efdea6e3700b68c23500a7a-frame_00003.png">
+<meta property="og:image" content="https://pic.leetcode-cn.com/5fbc72d56f32a8b1bc34db4bbd1588abebb4942348d8ea22fdb60724c8e4986c-frame_00004.png">
+<meta property="og:image" content="https://pic.leetcode-cn.com/2b89af59204b9e77445e33b9613be7f61bcd2a1b0a07c0bde2e2b50603d5efff-1.png">
+<meta property="og:image" content="https://pic.leetcode-cn.com/bc8d62acb39e43526e7844b62724f43d6193570d9952a96277f55b02cbe4e525-2.png">
+<meta property="og:image" content="https://pic.leetcode-cn.com/b72c52702e7b932eefbf0459630038a0120bf51cdf0f744bed7bdd317a739677-3.png">
+<meta property="og:image" content="https://pic.leetcode-cn.com/5b0376aed4cf530afc60594379b030511adb22661b4ba7892601d194b6426200-4.png">
 <meta property="og:updated_time" content="2020-01-27T03:51:50.390Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="合并有序线性表">
 <meta name="twitter:description" content="LeetCode 21. Merge Two Sorted Lists &amp;amp; 88. Merge Sorted Array">
+<meta name="twitter:image" content="https://pic.leetcode-cn.com/7ddaf1beb64fdef4393cc6ebd0dfd1723b97d2c183ab5c8414c0898027623a00-frame_00001.png">
 
 <link rel="canonical" href="http://0202zc.github.io/2020/01/26/algorithm/algorithm-merge-list/">
 
@@ -81,7 +90,6 @@
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
     <div class="headband"></div>
-    <a href="https://github.com/0202zc" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
@@ -107,7 +115,6 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -121,64 +128,14 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
-
-  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-留言板">
-
-    <a href="/message/" rel="section"><i class="fa fa-fw fa-clipboard"></i>留言板</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
   </ul>
 
 </nav>
-  <div class="site-search">
-    <div class="search-pop-overlay">
-  <div class="popup search-popup">
-      <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-  </div>
-</div>
-
-  </div>
 </div>
     </header>
 
@@ -187,7 +144,6 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -206,7 +162,7 @@
     <link itemprop="mainEntityOfPage" href="http://0202zc.github.io/2020/01/26/algorithm/algorithm-merge-list/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom_logo.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="0202zc">
       <meta itemprop="description" content="">
     </span>
@@ -245,28 +201,7 @@
                 </span>
             </span>
 
-          
-            <span id="/2020/01/26/algorithm/algorithm-merge-list/" class="post-meta-item leancloud_visitors" data-flag-title="合并有序线性表" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/01/26/algorithm/algorithm-merge-list/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/26/algorithm/algorithm-merge-list/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
+          <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -297,7 +232,7 @@
 <p>输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4<br>输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</p>
 </blockquote>
 <h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>这道题可以使用递归实现，新链表也不需要构造新节点，我们下面列举递归三个要素<br>终止条件：两条链表分别名为<code>l1</code>和<code>l2</code>，当<code>l1</code>为空或<code>l2</code>为空时结束<br>返回值：每一层调用都返回排序好的链表头<br>本级递归内容：如果<code>l1</code>的$val$值更小，则将<code>l1-&gt;next</code>与排序好的链表头相接，<code>l2</code>同理<br>$O(m+n)$，<code>m</code>为<code>l1</code>的长度，<code>n</code>为<code>l2</code>的长度</p>
-<h4 id="画解"><a href="#画解" class="headerlink" title="画解"></a>画解</h4><p><img data-src="https://pic.leetcode-cn.com/7ddaf1beb64fdef4393cc6ebd0dfd1723b97d2c183ab5c8414c0898027623a00-frame_00001.png" alt=""><br><img data-src="https://pic.leetcode-cn.com/f4b7e354473d2bf28283ac3c410bc81e9f7ecb35f14189de9fadc041452c2653-frame_00002.png" alt=""><br><img data-src="https://pic.leetcode-cn.com/001e4c2fdd8b5d725bc25df6373f7590404d9ef16efdea6e3700b68c23500a7a-frame_00003.png" alt=""><br><img data-src="https://pic.leetcode-cn.com/5fbc72d56f32a8b1bc34db4bbd1588abebb4942348d8ea22fdb60724c8e4986c-frame_00004.png" alt=""></p>
+<h4 id="画解"><a href="#画解" class="headerlink" title="画解"></a>画解</h4><p><img src="https://pic.leetcode-cn.com/7ddaf1beb64fdef4393cc6ebd0dfd1723b97d2c183ab5c8414c0898027623a00-frame_00001.png" alt=""><br><img src="https://pic.leetcode-cn.com/f4b7e354473d2bf28283ac3c410bc81e9f7ecb35f14189de9fadc041452c2653-frame_00002.png" alt=""><br><img src="https://pic.leetcode-cn.com/001e4c2fdd8b5d725bc25df6373f7590404d9ef16efdea6e3700b68c23500a7a-frame_00003.png" alt=""><br><img src="https://pic.leetcode-cn.com/5fbc72d56f32a8b1bc34db4bbd1588abebb4942348d8ea22fdb60724c8e4986c-frame_00004.png" alt=""></p>
 <ul>
 <li>作者：guanpengchn</li>
 <li>链接：<a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/hua-jie-suan-fa-21-he-bing-liang-ge-you-xu-lian-bi/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/hua-jie-suan-fa-21-he-bing-liang-ge-you-xu-lian-bi/</a></li>
@@ -314,7 +249,7 @@
 <p>输入:<br>nums1 = [1,2,3,0,0,0], m = 3<br>nums2 = [2,5,6],       n = 3<br>输出: [1,2,2,3,5,6]</p>
 </blockquote>
 <h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><p>因为<code>nums1</code>的空间都集中在后面，所以从后向前处理排序的数据会更好，节省空间，一边遍历一边将值填充进去<br>设置指针<code>len1</code>和<code>len2</code>分别指向<code>nums1</code>和<code>nums2</code>的有数字尾部，从尾部值开始比较遍历，同时设置指针<code>len</code>指向<code>nums1</code>的最末尾，每次遍历比较值大小之后，则进行填充<br>当<code>len1 &lt; 0</code>时遍历结束，此时<code>nums2</code>中海油数据未拷贝完全，将其直接拷贝到<code>nums1</code>的前面，最后得到结果数组<br>时间复杂度：$O(m+n)$</p>
-<h4 id="画解-1"><a href="#画解-1" class="headerlink" title="画解"></a>画解</h4><p><img data-src="https://pic.leetcode-cn.com/2b89af59204b9e77445e33b9613be7f61bcd2a1b0a07c0bde2e2b50603d5efff-1.png" alt=""><br><img data-src="https://pic.leetcode-cn.com/bc8d62acb39e43526e7844b62724f43d6193570d9952a96277f55b02cbe4e525-2.png" alt=""><br><img data-src="https://pic.leetcode-cn.com/b72c52702e7b932eefbf0459630038a0120bf51cdf0f744bed7bdd317a739677-3.png" alt=""><br><img data-src="https://pic.leetcode-cn.com/5b0376aed4cf530afc60594379b030511adb22661b4ba7892601d194b6426200-4.png" alt=""></p>
+<h4 id="画解-1"><a href="#画解-1" class="headerlink" title="画解"></a>画解</h4><p><img src="https://pic.leetcode-cn.com/2b89af59204b9e77445e33b9613be7f61bcd2a1b0a07c0bde2e2b50603d5efff-1.png" alt=""><br><img src="https://pic.leetcode-cn.com/bc8d62acb39e43526e7844b62724f43d6193570d9952a96277f55b02cbe4e525-2.png" alt=""><br><img src="https://pic.leetcode-cn.com/b72c52702e7b932eefbf0459630038a0120bf51cdf0f744bed7bdd317a739677-3.png" alt=""><br><img src="https://pic.leetcode-cn.com/5b0376aed4cf530afc60594379b030511adb22661b4ba7892601d194b6426200-4.png" alt=""></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 作者：guanpengchn</span></span><br><span class="line"><span class="comment">// 链接：https://leetcode-cn.com/problems/merge-sorted-array/solution/hua-jie-suan-fa-88-he-bing-liang-ge-you-xu-shu-zu-/</span></span><br><span class="line"><span class="comment">// 来源：力扣（LeetCode）</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len1 = m - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> len2 = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> len = m + n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(len1 &gt;= <span class="number">0</span> &amp;&amp; len2 &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 注意--符号在后面，表示先进行计算再减1，这种缩写缩短了代码</span></span><br><span class="line">            nums1[len--] = nums1[len1] &gt; nums2[len2] ? nums1[len1--] : nums2[len2--];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 表示将nums2数组从下标0位置开始，拷贝到nums1数组中，从下标0位置开始，长度为len2+1</span></span><br><span class="line">        System.arraycopy(nums2, <span class="number">0</span>, nums1, <span class="number">0</span>, len2 + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -322,26 +257,6 @@
     
     
     
-        <div class="reward-container">
-  <div>如果文章对您有用请随意打赏，谢谢支持！</div>
-  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-      
-      <div style="display: inline-block;">
-        <img src="/images/wechatpay.png" alt="0202zc 微信支付">
-        <p>微信支付</p>
-      </div>
-      
-      <div style="display: inline-block;">
-        <img src="/images/alipay.jpg" alt="0202zc 支付宝">
-        <p>支付宝</p>
-      </div>
-
-  </div>
-</div>
-
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -375,7 +290,6 @@
 
           </div>
           
-    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -428,8 +342,6 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="0202zc"
-      src="/images/custom_logo.jpg">
   <p class="site-author-name" itemprop="name">0202zc</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -444,32 +356,16 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-          
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-          
         <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/0202zc" title="GitHub → https://github.com/0202zc" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:lzc980202@163.com" title="E-mail → mailto:lzc980202@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="http://weibo.com/0202zc" title="微博 → http://weibo.com/0202zc" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>微博</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
 
 
 
@@ -509,7 +405,7 @@
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.7.1
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.2
+  <div class="theme-info">主题 – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.2
   </div>
 
         
@@ -527,8 +423,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>
@@ -542,7 +436,6 @@
 
 
 
-  <script src="/js/local-search.js"></script>
 
 
 
@@ -552,112 +445,11 @@
 
 
 
-
-<script>
-if (document.querySelectorAll('pre.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
-    mermaid.initialize({
-      theme    : 'forest',
-      logLevel : 3,
-      flowchart: { curve     : 'linear' },
-      gantt    : { axisFormat: '%m/%d/%Y' },
-      sequence : { actorMargin: 50 }
-    });
-  }, window.mermaid);
-}
-</script>
 
 
   
 
   
-      
 
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
-
-  
-
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'LmnxSgDzqqpaABCtC4LgmPtI-gzGzoHsz',
-      appKey     : 'aOT3PG5cL7BHviM1KQkYEB9o',
-      placeholder: "\\(^o^)/~来呀！快活呀！",
-      avatar     : 'mm',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : true,
-      lang       : '' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : true,
-      serverURLs : ''
-    });
-  }, window.Valine);
-});
-</script>
-
-  
-  <!-- 页面点击小红心 -->
-  <script type="text/javascript" src="/js/clicklove.js"></script>
 </body>
 </html>

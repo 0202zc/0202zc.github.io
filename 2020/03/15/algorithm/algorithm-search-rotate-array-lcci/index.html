@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"0202zc.github.io","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"0202zc.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="LeetCode 面试题 10.03. Search Rotate Array LCCI">
@@ -28,10 +28,12 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="LeetCode 面试题 10.03. Search Rotate Array LCCI">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://0202zc.github.io/images/algorithm/Search-Rotate-Array-Lcci.jpg">
 <meta property="og:updated_time" content="2020-03-15T03:11:36.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搜索旋转数组">
 <meta name="twitter:description" content="LeetCode 面试题 10.03. Search Rotate Array LCCI">
+<meta name="twitter:image" content="http://0202zc.github.io/images/algorithm/Search-Rotate-Array-Lcci.jpg">
 
 <link rel="canonical" href="http://0202zc.github.io/2020/03/15/algorithm/algorithm-search-rotate-array-lcci/">
 
@@ -81,7 +83,6 @@
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
     <div class="headband"></div>
-    <a href="https://github.com/0202zc" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
@@ -107,7 +108,6 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -121,64 +121,14 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
-
-  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-留言板">
-
-    <a href="/message/" rel="section"><i class="fa fa-fw fa-clipboard"></i>留言板</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
   </ul>
 
 </nav>
-  <div class="site-search">
-    <div class="search-pop-overlay">
-  <div class="popup search-popup">
-      <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-  </div>
-</div>
-
-  </div>
 </div>
     </header>
 
@@ -187,7 +137,6 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -206,7 +155,7 @@
     <link itemprop="mainEntityOfPage" href="http://0202zc.github.io/2020/03/15/algorithm/algorithm-search-rotate-array-lcci/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom_logo.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="0202zc">
       <meta itemprop="description" content="">
     </span>
@@ -239,28 +188,7 @@
                 </span>
             </span>
 
-          
-            <span id="/2020/03/15/algorithm/algorithm-search-rotate-array-lcci/" class="post-meta-item leancloud_visitors" data-flag-title="搜索旋转数组" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/03/15/algorithm/algorithm-search-rotate-array-lcci/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/15/algorithm/algorithm-search-rotate-array-lcci/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
+          <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -327,7 +255,7 @@
                                     （左值等于目标                （将右边界移动到left，循环结束）
                                       已经找到最左边的目标值）
  -->
-<p><img data-src="/images/algorithm/Search-Rotate-Array-Lcci.jpg" alt=""></p>
+<p><img src="/images/algorithm/Search-Rotate-Array-Lcci.jpg" alt=""></p>
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>* arr, <span class="keyword">int</span> arrSize, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!arr) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = arrSize - <span class="number">1</span>, mid;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;                                         <span class="comment">// 循环结束条件left==right</span></span><br><span class="line">            mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[left] &lt; nums[mid]) &#123;                              <span class="comment">// 如果左值小于中值，说明左边区间升序               </span></span><br><span class="line">                <span class="keyword">if</span> (nums[left] &lt;= target &amp;&amp; target &lt;= nums[mid]) &#123;     <span class="comment">// 如果目标在左边的升序区间中，右边界移动到mid</span></span><br><span class="line">                    right = mid;                                       </span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;                                               <span class="comment">// 否则目标在右半边，左边界移动到mid+1</span></span><br><span class="line">                    left = mid + <span class="number">1</span>;                                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[left] &gt; nums[mid]) &#123;                       <span class="comment">// 如果左值大于中值，说明左边不是升序，右半边升序</span></span><br><span class="line">                <span class="keyword">if</span> (nums[left] &lt;= target || target &lt;= nums[mid]) &#123;     <span class="comment">// 如果目标在左边，右边界移动到mid</span></span><br><span class="line">                    right = mid;                                       </span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;                                               <span class="comment">// 否则目标在右半边，左边界移动到mid+1</span></span><br><span class="line">                    left = mid + <span class="number">1</span>;                                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[left] == nums[mid]) &#123;                      <span class="comment">// 如果左值等于中值，可能是已经找到了目标，也可能是遇到了重复值</span></span><br><span class="line">                <span class="keyword">if</span> (nums[left] != target) &#123;                            <span class="comment">// 如果左值不等于目标，说明还没找到，需要逐一清理重复值。</span></span><br><span class="line">                    left++;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;                                               <span class="comment">// 如果左值等于目标，说明已经找到最左边的目标值 </span></span><br><span class="line">                    right = left;                                      <span class="comment">// 将右边界移动到left，循环结束</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (nums[left] == target) ? left : <span class="number">-1</span>;                     <span class="comment">// 返回left，或者-1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -335,26 +263,6 @@
     
     
     
-        <div class="reward-container">
-  <div>如果文章对您有用请随意打赏，谢谢支持！</div>
-  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-      
-      <div style="display: inline-block;">
-        <img src="/images/wechatpay.png" alt="0202zc 微信支付">
-        <p>微信支付</p>
-      </div>
-      
-      <div style="display: inline-block;">
-        <img src="/images/alipay.jpg" alt="0202zc 支付宝">
-        <p>支付宝</p>
-      </div>
-
-  </div>
-</div>
-
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -388,7 +296,6 @@
 
           </div>
           
-    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -441,8 +348,6 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="0202zc"
-      src="/images/custom_logo.jpg">
   <p class="site-author-name" itemprop="name">0202zc</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -457,32 +362,16 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-          
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-          
         <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/0202zc" title="GitHub → https://github.com/0202zc" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:lzc980202@163.com" title="E-mail → mailto:lzc980202@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="http://weibo.com/0202zc" title="微博 → http://weibo.com/0202zc" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>微博</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
 
 
 
@@ -522,7 +411,7 @@
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.7.1
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.2
+  <div class="theme-info">主题 – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.2
   </div>
 
         
@@ -540,8 +429,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>
@@ -555,7 +442,6 @@
 
 
 
-  <script src="/js/local-search.js"></script>
 
 
 
@@ -565,112 +451,11 @@
 
 
 
-
-<script>
-if (document.querySelectorAll('pre.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
-    mermaid.initialize({
-      theme    : 'forest',
-      logLevel : 3,
-      flowchart: { curve     : 'linear' },
-      gantt    : { axisFormat: '%m/%d/%Y' },
-      sequence : { actorMargin: 50 }
-    });
-  }, window.mermaid);
-}
-</script>
 
 
   
 
   
-      
 
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
-
-  
-
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'LmnxSgDzqqpaABCtC4LgmPtI-gzGzoHsz',
-      appKey     : 'aOT3PG5cL7BHviM1KQkYEB9o',
-      placeholder: "\\(^o^)/~来呀！快活呀！",
-      avatar     : 'mm',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : true,
-      lang       : '' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : true,
-      serverURLs : ''
-    });
-  }, window.Valine);
-});
-</script>
-
-  
-  <!-- 页面点击小红心 -->
-  <script type="text/javascript" src="/js/clicklove.js"></script>
 </body>
 </html>
