@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="操作系统、计算机网络、数据库系统概论等相关问题">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-17T01:45:07.072Z">
+<meta property="og:updated_time" content="2020-03-17T01:47:38.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统、计算机网络、数据库系统概论等相关问题">
 <meta name="twitter:description" content="操作系统、计算机网络、数据库系统概论等相关问题">
@@ -248,7 +248,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-17 09:45:07" itemprop="dateModified" datetime="2020-03-17T09:45:07+08:00">2020-03-17</time>
+                <time title="修改时间：2020-03-17 09:47:38" itemprop="dateModified" datetime="2020-03-17T09:47:38+08:00">2020-03-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -341,7 +341,12 @@
 <li>防止地址越界（对进程所产生的地址必须加以检查，发生越界时产生中断，由操作系统<br>进行相应处理）</li>
 <li>防止操作越权（对属于自己区域的信息，可读可写：对公共区域中允许共享的信息或获得授权可使用的信息，可读而不可修改；对未授权使用的信息，不可读，不可写）</li>
 </ol>
-<h3 id="9-MMU"><a href="#9-MMU" class="headerlink" title="9. MMU"></a>9. MMU</h3><p>   MMU 是 Memory Management Unit 的缩写，中文名是<strong>内存管理单元</strong>，它是中央处理器（CPU）中用来①管理虚拟存储器、物理存储器的控制线路，同时也负责②虚拟地址映射为物理地址，以及提供③硬件机制的内存访问授权。</p>
+<h3 id="9-MMU"><a href="#9-MMU" class="headerlink" title="9. MMU"></a>9. MMU</h3><p>   MMU 是 Memory Management Unit 的缩写，中文名是<strong>内存管理单元</strong>，它是中央处理器（CPU）中用来</p>
+<ul>
+<li>①管理虚拟存储器、物理存储器的控制线路，</li>
+<li>②同时也负责虚拟地址映射为物理地址，</li>
+<li>③以及提供硬件机制的内存访问授权。</li>
+</ul>
 <h3 id="10-多线程，真的提高了效率吗？"><a href="#10-多线程，真的提高了效率吗？" class="headerlink" title="10. 多线程，真的提高了效率吗？"></a>10. 多线程，真的提高了效率吗？</h3><p>多线程效率，我认为未必会高，而且有时候相反会低。<br>多线程并不是为了提高效率，而是不必等待  可以并行执行多条数据。<br>可以这么想：我们通过 xp 系统复制文件。你可以复制一份文件  这叫是单线程，但是你要等这个复制完了才能复制另一份文件，而且不能多复制。这样很难受，所以你可以选择多复制文件，这就是多线程。但复制多份文件用的时间未必会比一份一份文件所用时间少。只是它合理利用了时间进行了多个操作。<br>如果是买票系统  就会用到多线程。买票是同时进行的，如果一个用户一个用户等下去不是办法，所以可以多个用户同时买票，效率也就提高了。这里的效率不是执行的效率  而是时间的合理利用，多个线程同时进行。</p>
 <h3 id="11-中断的作用"><a href="#11-中断的作用" class="headerlink" title="11. 中断的作用"></a>11. 中断的作用</h3><p>中断是计算机系统结构一个重要的组成部分。在中断机制中的硬件部分(中断装置)<br>的作用就是在 CPU 每执行完一条指令后，判别是否有事件发生，如果没有事件发生，CPU<br>继续执行；若有事件发生，中断装置中断原先占用 CPU 的程序的执行，把被中断程序的断<br>点保存起来，让操作系统的处理服务程序占用 CPU 对事件进行处理，处理完后，再让被中<br>断的程序继续占用 CPU 执行下去。</p>
 <h3 id="12-DMA-的优先级为什么比-CPU-的优先级高？"><a href="#12-DMA-的优先级为什么比-CPU-的优先级高？" class="headerlink" title="12. DMA 的优先级为什么比 CPU 的优先级高？"></a>12. DMA 的优先级为什么比 CPU 的优先级高？</h3><p>因为 DMA 请求得不到及时响应，I/O 传输数据可能会丢失。</p>
