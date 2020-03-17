@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="操作系统、计算机网络、数据库系统概论等相关问题">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-17T02:33:19.898Z">
+<meta property="og:updated_time" content="2020-03-17T02:42:48.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统、计算机网络、数据库系统概论等相关问题">
 <meta name="twitter:description" content="操作系统、计算机网络、数据库系统概论等相关问题">
@@ -248,7 +248,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-17 10:33:19" itemprop="dateModified" datetime="2020-03-17T10:33:19+08:00">2020-03-17</time>
+                <time title="修改时间：2020-03-17 10:42:48" itemprop="dateModified" datetime="2020-03-17T10:42:48+08:00">2020-03-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -301,7 +301,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6.2k</span>
+              <span>7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -410,12 +410,30 @@
 </ol>
 <h3 id="10-ARP-协议的过程"><a href="#10-ARP-协议的过程" class="headerlink" title="10. ARP 协议的过程"></a>10. ARP 协议的过程</h3><p>   ARP 协议是“Address Resolution Protocol”（地址解析协议）的缩写。在局域网中，网络中实际传输的是“<strong>帧</strong>”，帧里面是有目标主机的 MAC 地址的。在以太网中，一个主机要和另一个主机进行直接通信，必须要知道目标主机的 MAC 地址。但这个目标 MAC 地址是如何获得的呢？它就是通过地址解析协议 ARP 获得的。所谓“地址解析”就是主机在发送帧<strong>前</strong>将目标 IP 地址转换成目标 MAC 地址的过程。 ARP 协议的基本功能就是<strong>通过目标设备的 IP 地址，查询目标设备的 MAC 地址</strong>，以保证通信的顺利进行。</p>
 <h3 id="11-计算机网络的接入类型都有哪些？"><a href="#11-计算机网络的接入类型都有哪些？" class="headerlink" title="11. 计算机网络的接入类型都有哪些？"></a>11. 计算机网络的接入类型都有哪些？</h3><p>   局域网、城域网、广域网和互联网四种</p>
-<h3 id="12-中继器，集线器，交换机，网桥，网关，路由器的功能作用，区别到底是什么？"><a href="#12-中继器，集线器，交换机，网桥，网关，路由器的功能作用，区别到底是什么？" class="headerlink" title="12. 中继器，集线器，交换机，网桥，网关，路由器的功能作用，区别到底是什么？"></a>12. 中继器，集线器，交换机，网桥，网关，路由器的功能作用，区别到底是什么？</h3><ul>
+<h3 id="12-中继器，集线器，交换机，网桥，网关，路由器的功能作用，区别到底是什么？"><a href="#12-中继器，集线器，交换机，网桥，网关，路由器的功能作用，区别到底是什么？" class="headerlink" title="12. 中继器，集线器，交换机，网桥，网关，路由器的功能作用，区别到底是什么？"></a>12. 中继器，集线器，交换机，网桥，网关，路由器的功能作用，区别到底是什么？</h3><p>   <img data-src="https://img-blog.csdn.net/20160430230505309" alt=""></p>
+<ol>
+<li><p>物理层：<strong>中继器（Repeater）</strong>和<strong>集线器（Hub）</strong>。用于连接物理特性相同的网段，这些网段，只是位置不同而已。Hub 的端口没有物理和逻辑地址。</p>
+</li>
+<li><p>逻辑链路层：<strong>网桥（Bridge）</strong>和<strong>交换机（Switch）</strong>。用于连接同一逻辑网络中、物理层规范不同的网段，这些网段的拓扑结构和其上的数据帧格式，都可以不同。Bridge和Switch的端口具有物理地址，但没有逻辑地址。</p>
+</li>
+<li><p>网络层：<strong>路由器（Router）</strong>。用于连接不同的逻辑网络。Router的每一个端口都有唯一的物理地址和逻辑地址。</p>
+</li>
+<li><p>应用层：<strong>网关（Gateway）</strong>。用于互连网络上，使用不同协议的应用程序之间的数据通信，目前尚无硬件产品。</p>
+</li>
+</ol>
+<ul>
 <li>中继器：物理层， 适用于完全相同的两类网络的互连，主要功能是通过对数据信号的重新发送或者转发，来扩大网络传输的距离。</li>
 <li><p>集线器：物理层，基本功能信息分发，它把一个端口接收的所有信号向所有端口分发出去。一些集线器在分发之前将弱信号重新生成。</p>
 <p>中继器与集线器的区别：区别在于<strong>集线器能够提供多端口服务</strong>，也称为多口中继器。</p>
 </li>
-<li><p>网桥：数据链路层， 网桥（Bridge）像一个聪明的中继器， 网桥是一种对帧进行转发的技术，根据 MAC 分区块，可隔离碰撞。网桥将网络的多个网段在数据链路层连接起来。</p>
+<li><p>网桥：数据链路层， 网桥（Bridge）像一个聪明的中继器， 网桥是一种对帧进行转发的技术，根据 MAC 分区块，可隔离碰撞。网桥将网络的多个网段在数据链路层连接起来。【将两个LAN连起来，根据MAC地址来转发帧，可以看作一个“低层的路由器”。】</p>
+</li>
+<li><p>交换机：数据链路层，是一种基于MAC地址识别，能完成封装转发数据包功能的网络设备。可以理解为高级的网桥，他有网桥的功能，但性能比网桥强。交换机和网桥的细微差别就在于：交换机常常用来连接独立的计算机，而网桥连接的目标是 LAN，所以交换机的端口较网桥多。</p>
+</li>
+<li><p>路由器：网络层，用于连接多个逻辑上分开的网络，几个使用不同协议和体系结构的网络；具有判断网络地址和选择路径的功能，过滤和分隔网络信息流。路由器的主要工作就是为经过路由器的每个IP数据包寻找一条最佳传输路径，并将该数据有效地传送到目的站点。 路由器的基本功能是，把数据（IP报文）传送到正确的网络。</p>
+</li>
+<li><p>网关：网关(Gateway)又称网间连接器、协议转换器。网关在网络层以上实现网络互连，是最复杂的网络互连设备，仅用于两个高层协议不同的网络互连。网关既可以用于广域网互连，也可以用于局域网互连。 通过字面意思解释就是网络的关口。从技术角度来解释，就是连接两个不同网络的接口，比如局域网的共享上网服务器就是局域网和广域网的接口。</p>
+<p>来源：<a href="https://blog.csdn.net/qq_25606103/article/details/51288459?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">中继器、集线器、网桥、交换机、路由器、网关的超全总结</a></p>
 </li>
 </ul>
 <h2 id="数据库系统概论"><a href="#数据库系统概论" class="headerlink" title="数据库系统概论"></a>数据库系统概论</h2><h3 id="1-数据库安全性与操作系统安全性的关系？"><a href="#1-数据库安全性与操作系统安全性的关系？" class="headerlink" title="1. 数据库安全性与操作系统安全性的关系？"></a>1. 数据库安全性与操作系统安全性的关系？</h3><p>安全性问题不是数据库系统所独有的，所有计算机系统都有这个问题。只是在数据库系统中大量<strong>数据集中存放</strong>，而且为许多最终用户直接共享，从而使安全性问题更为突出。系统安全保护措施是否有效是数据库系统的主要指标之一。数据库的安全性和计算机系统的安全性，包括操作系统，网络系统的安全性是紧密联系、相互支持的。</p>
@@ -618,7 +636,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">113k</span>
+    <span title="站点总字数">114k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
