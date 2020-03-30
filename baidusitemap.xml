@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://0202zc.github.io/2020/03/30/%E4%BD%8D%E8%BF%90%E7%AE%97/</loc>
+    <lastmod>2020-03-30T01:50:50.913Z</lastmod>
+    <data>
+        <display>
+        <title>位运算</title>
+        <pubTime>2020-03-30T01:46:22.000Z</pubTime>
+        
+        <tag>C/C++</tag>
+         
+         
+           
+             
+              <breadCrumb title="C语言" url="http://0202zc.github.io/categories/C%E8%AF%AD%E8%A8%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://0202zc.github.io/2020/03/15/algorithm/algorithm-find-the-duplicate-number/</loc>
     <lastmod>2020-03-30T01:35:08.744Z</lastmod>
     <data>
@@ -713,9 +733,9 @@
         <title>Python学习笔记 —— 爬取教务网明日课程并发送微信好友</title>
         <pubTime>2018-05-18T07:29:34.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>网络爬虫</tag>
+         
+        <tag>Python</tag>
          
          
            
