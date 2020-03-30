@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>搜索旋转数组</title>
+      <title>只出现一次的数字</title>
       <link href="/2020/03/30/algorithm/algorithm-single-number/"/>
       <url>/2020/03/30/algorithm/algorithm-single-number/</url>
       
@@ -986,9 +986,9 @@
       
         <tags>
             
-            <tag> 网络爬虫 </tag>
-            
             <tag> Python </tag>
+            
+            <tag> 网络爬虫 </tag>
             
         </tags>
       

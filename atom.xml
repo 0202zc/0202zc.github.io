@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0202zc.github.io/"/>
-  <updated>2020-03-30T03:13:07.873Z</updated>
+  <updated>2020-03-30T03:15:27.746Z</updated>
   <id>http://0202zc.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>搜索旋转数组</title>
+    <title>只出现一次的数字</title>
     <link href="http://0202zc.github.io/2020/03/30/algorithm/algorithm-single-number/"/>
     <id>http://0202zc.github.io/2020/03/30/algorithm/algorithm-single-number/</id>
     <published>2020-03-30T03:04:08.000Z</published>
-    <updated>2020-03-30T03:13:07.873Z</updated>
+    <updated>2020-03-30T03:15:27.746Z</updated>
     
     <content type="html"><![CDATA[<p>LeetCode <a href="https://leetcode-cn.com/problems/single-number/" target="_blank" rel="noopener">136. Single Number</a><br><a id="more"></a></p><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p><p><strong>说明：</strong></p><p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p><p><strong>示例 1:</strong></p><blockquote><p>输入: [2,2,1]<br>输出: 1</p></blockquote><p><strong>示例 2:</strong></p><blockquote><p>输入: [4,1,2,1,2]<br>输出: 4</p></blockquote><h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a><a href="https://leetcode-cn.com/problems/single-number/solution/hua-jie-suan-fa-136-zhi-chu-xian-yi-ci-de-shu-zi-b/" target="_blank" rel="noopener">解题思路</a></h1><ul><li><p>标签：位运算</p></li><li><p>本题根据题意，线性时间复杂度 $O(n)$，很容易想到使用 Hash 映射来进行计算，遍历一次后结束得到结果，但是在空间复杂度上会达到 $O(n)$，需要使用较多的额外空间</p></li><li>既满足时间复杂度又满足空间复杂度，就要提到位运算中的异或运算 XOR，主要因为异或运算有以下几个特点：<ul><li>一个数和 0 做 XOR 运算等于本身： a ⊕ 0 = a</li><li>一个数和其本身做 XOR 运算等于 0： a ⊕ a = 0</li><li>XOR 运算满足交换律和结合律： a ⊕ b ⊕ a = (a ⊕ a) ⊕ b = 0 ⊕ b = b</li></ul></li><li>故而在以上的基础条件上，将所有数字按照顺序做抑或运算，最后剩下的结果即为唯一的数字</li><li>时间复杂度：$O(n)$，空间复杂度：$O(1)$。</li></ul><p><img data-src="https://pic.leetcode-cn.com/7d1bd50370f8f2b60d7215ca12f2f5ac4f3cca801f68e4ef1053e8e3180ce74b-frame_00001.png" style="zoom:80%;"></p><p><img data-src="https://pic.leetcode-cn.com/ab397765b568b8547a9c4ef4b256a92e64b7cab698aa0cb656bb8285131524aa-frame_00002.png" alt=""></p><p><img data-src="https://pic.leetcode-cn.com/c7c3577c968692e02c0eb9baa8cb699575bb2338bd6023ced8e00508767ea8ec-frame_00003.png" style="zoom:80%;"></p><p><img data-src="https://pic.leetcode-cn.com/1b03b163501fecf12048ef8224a7c2c694af2289b5e071633f1fa7ef28b12b79-frame_00004.png" style="zoom:80%;"></p><h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numsSize; i++)&#123;</span><br><span class="line">        ans ^= nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
