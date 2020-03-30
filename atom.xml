@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0202zc.github.io/"/>
-  <updated>2020-03-30T01:53:07.783Z</updated>
+  <updated>2020-03-30T03:13:07.873Z</updated>
   <id>http://0202zc.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搜索旋转数组</title>
+    <link href="http://0202zc.github.io/2020/03/30/algorithm/algorithm-single-number/"/>
+    <id>http://0202zc.github.io/2020/03/30/algorithm/algorithm-single-number/</id>
+    <published>2020-03-30T03:04:08.000Z</published>
+    <updated>2020-03-30T03:13:07.873Z</updated>
+    
+    <content type="html"><![CDATA[<p>LeetCode <a href="https://leetcode-cn.com/problems/single-number/" target="_blank" rel="noopener">136. Single Number</a><br><a id="more"></a></p><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p><p><strong>说明：</strong></p><p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p><p><strong>示例 1:</strong></p><blockquote><p>输入: [2,2,1]<br>输出: 1</p></blockquote><p><strong>示例 2:</strong></p><blockquote><p>输入: [4,1,2,1,2]<br>输出: 4</p></blockquote><h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a><a href="https://leetcode-cn.com/problems/single-number/solution/hua-jie-suan-fa-136-zhi-chu-xian-yi-ci-de-shu-zi-b/" target="_blank" rel="noopener">解题思路</a></h1><ul><li><p>标签：位运算</p></li><li><p>本题根据题意，线性时间复杂度 $O(n)$，很容易想到使用 Hash 映射来进行计算，遍历一次后结束得到结果，但是在空间复杂度上会达到 $O(n)$，需要使用较多的额外空间</p></li><li>既满足时间复杂度又满足空间复杂度，就要提到位运算中的异或运算 XOR，主要因为异或运算有以下几个特点：<ul><li>一个数和 0 做 XOR 运算等于本身： a ⊕ 0 = a</li><li>一个数和其本身做 XOR 运算等于 0： a ⊕ a = 0</li><li>XOR 运算满足交换律和结合律： a ⊕ b ⊕ a = (a ⊕ a) ⊕ b = 0 ⊕ b = b</li></ul></li><li>故而在以上的基础条件上，将所有数字按照顺序做抑或运算，最后剩下的结果即为唯一的数字</li><li>时间复杂度：$O(n)$，空间复杂度：$O(1)$。</li></ul><p><img data-src="https://pic.leetcode-cn.com/7d1bd50370f8f2b60d7215ca12f2f5ac4f3cca801f68e4ef1053e8e3180ce74b-frame_00001.png" style="zoom:80%;"></p><p><img data-src="https://pic.leetcode-cn.com/ab397765b568b8547a9c4ef4b256a92e64b7cab698aa0cb656bb8285131524aa-frame_00002.png" alt=""></p><p><img data-src="https://pic.leetcode-cn.com/c7c3577c968692e02c0eb9baa8cb699575bb2338bd6023ced8e00508767ea8ec-frame_00003.png" style="zoom:80%;"></p><p><img data-src="https://pic.leetcode-cn.com/1b03b163501fecf12048ef8224a7c2c694af2289b5e071633f1fa7ef28b12b79-frame_00004.png" style="zoom:80%;"></p><h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numsSize; i++)&#123;</span><br><span class="line">        ans ^= nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;LeetCode &lt;a href=&quot;https://leetcode-cn.com/problems/single-number/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;136. Single Number&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://0202zc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://0202zc.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Algorithm" scheme="http://0202zc.github.io/tags/Algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>位运算</title>
@@ -462,28 +486,6 @@
     <summary type="html">
     
       &lt;p&gt;来源：UESTC考研群&lt;br&gt;
-    
-    </summary>
-    
-      <category term="C语言" scheme="http://0202zc.github.io/categories/C%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="C/C++" scheme="http://0202zc.github.io/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>指针与自增优先级的问题</title>
-    <link href="http://0202zc.github.io/2020/01/29/C-pointer-and-increase/"/>
-    <id>http://0202zc.github.io/2020/01/29/C-pointer-and-increase/</id>
-    <published>2020-01-29T09:54:17.000Z</published>
-    <updated>2020-01-29T10:04:00.283Z</updated>
-    
-    <content type="html"><![CDATA[<p>在我们面试时，经常会有一些关于运算符优先级的题目，今天就给大家展示一个常出现的例子。<br><a id="more"></a><br>问题：定义一个数组 <code>int a[10]={1,2,3,4,5,6,7,8,9,0}; int *p=a;</code> 则 <code>cout&lt;&lt;*p++&lt;&lt;endl;</code> </p><p>由此问题我们可以看出来，其想考察的是C++程序设计的运算符的优先级以及后自增的知识点。我们查看优先级表格表格可以得到后自增（<code>++</code>）运算符优先于取值运算符（<code>*</code>），因此<code>（*p++）</code>等价于<code>(*(p++))</code>。</p><p>求值顺序得到了，我们下面的任务就是要分析后自增的实现原理了，我们参考了《C++ primer 第五版》（503页）讲解的知识如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">strBlobPtr strBlobPtr::<span class="keyword">operator</span>++(<span class="keyword">int</span>) &#123;  </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">strBlobPtr为定义的一个类名，operator++（int）为重载后自增运算符，参数int为区分前自增还是后自增</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">       strBlobPtr ret =*<span class="keyword">this</span>;</span><br><span class="line">       ++*<span class="keyword">this</span>;</span><br><span class="line">       <span class="keyword">return</span> ret;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>我们发现，在后自增的运算符实现的步骤中，先返回值，再自增，因此（<code>*p++</code>）计算过程为先运算<code>p++</code>（结果为<code>p</code>指向的地址<code>a</code>）,再对指针求值<code>*p</code>,得到<code>a[0]</code>.<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">10</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> *p=a;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"*p:"</span> &lt;&lt; *p &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"*p++:"</span> &lt;&lt; *p++ &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在我们面试时，经常会有一些关于运算符优先级的题目，今天就给大家展示一个常出现的例子。&lt;br&gt;
     
     </summary>
     
