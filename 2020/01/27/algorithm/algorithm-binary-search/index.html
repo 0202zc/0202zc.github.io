@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="From LeetCode 34. Find First and Last Position of Element in Sorted Array">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-27T05:28:17.252Z">
+<meta property="og:updated_time" content="2020-03-30T02:47:43.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二分查找算法细节详解">
 <meta name="twitter:description" content="From LeetCode 34. Find First and Last Position of Element in Sorted Array">
@@ -225,10 +225,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-27 12:37:40 / 修改时间：13:28:17" itemprop="dateCreated datePublished" datetime="2020-01-27T12:37:40+08:00">2020-01-27</time>
+              <time title="创建时间：2020-01-27 12:37:40" itemprop="dateCreated datePublished" datetime="2020-01-27T12:37:40+08:00">2020-01-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-30 10:47:43" itemprop="dateModified" datetime="2020-03-30T10:47:43+08:00">2020-03-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -340,7 +346,7 @@
 <p>答：因为要一步一步来，先理解一下这个「左侧边界」有什么特殊含义：</p>
 <p><img data-src="https://pic.leetcode-cn.com/0ee763a9e3b27dddf9c60ffe7e17db7160d2910d7bca591af8f3e3202d0f19ea-file_1560274288808" alt=""></p>
 <p>对于这个数组，算法会返回 $1$。这个 $1$ 的含义可以这样解读：<code>nums</code> 中小于 $2$ 的元素有 $1$ 个。</p>
-<p>比如对于有序数组 <code>nums = [2,3,5,7]</code>, <code>target = 1</code>，算法会返回 $0$<code>，含义是：nums</code> 中小于 $1$ 的元素有 $0$ 个。</p>
+<p>比如对于有序数组 <code>nums = [2,3,5,7]</code>, <code>target = 1</code>，算法会返回 $0$，含义是：<code>nums</code> 中小于 $1$ 的元素有 $0$ 个。</p>
 <p>再比如说 <code>nums</code> 不变，<code>target = 8</code>，算法会返回 $4$，含义是：<code>nums</code> 中小于 $8$ 的元素有 $4$ 个。</p>
 <p>综上可以看出，函数的返回值（即 <code>left</code> 变量的值）取值区间是闭区间 $[0, nums.length]$，所以我们简单添加两行代码就能在正确的时候 <code>return -1</code>：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// target 比所有数都大</span></span><br><span class="line"><span class="keyword">if</span> (left == nums.length) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"><span class="comment">// 类似之前算法的处理方式</span></span><br><span class="line"><span class="keyword">return</span> nums[left] == target ? left : -<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
