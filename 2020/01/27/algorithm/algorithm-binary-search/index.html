@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="L..z、℃的博客">
 <meta property="og:description" content="From LeetCode 34. Find First and Last Position of Element in Sorted Array本文转自作者 labuladong 的文章《二分查找算法细节详解，顺便写了首诗》">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-08T12:03:30.259Z">
+<meta property="og:updated_time" content="2020-04-08T12:23:50.446Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二分查找算法细节详解">
 <meta name="twitter:description" content="From LeetCode 34. Find First and Last Position of Element in Sorted Array本文转自作者 labuladong 的文章《二分查找算法细节详解，顺便写了首诗》">
@@ -233,7 +233,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-08 20:03:30" itemprop="dateModified" datetime="2020-04-08T20:03:30+08:00">2020-04-08</time>
+                <time title="修改时间：2020-04-08 20:23:50" itemprop="dateModified" datetime="2020-04-08T20:23:50+08:00">2020-04-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -336,7 +336,7 @@
 <p>因为对于搜索左右侧边界的二分查找，这种写法比较普遍，我就拿这种写法举例了，保证你以后遇到这类代码可以理解。你非要用两端都闭的写法反而更简单，我会在后面写相关的代码，把三种二分搜索都用一种两端都闭的写法统一起来，你耐心往后看就行了。</p>
 <p><strong>2、为什么没有返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？</strong></p>
 <p>答：因为要一步一步来，先理解一下这个「左侧边界」有什么特殊含义：</p>
-<p><img data-src="https://pic.leetcode-cn.com/761f2acd823c960125e3dddb56f2d811da9c39455fe3f2ee00d3998048a1d6c9.jpg" width="70"></p>
+<p><img data-src="https://pic.leetcode-cn.com/761f2acd823c960125e3dddb56f2d811da9c39455fe3f2ee00d3998048a1d6c9.jpg" width="70%"></p>
 <p>对于这个数组，算法会返回 1。这个 1 的含义可以这样解读：<code>nums</code> 中小于 2 的元素有 1 个。</p>
 <p>比如对于有序数组 <code>nums = [2,3,5,7]</code>, <code>target = 1</code>，算法会返回 0，含义是：<code>nums</code> 中小于 1 的元素有 0 个。</p>
 <p>再比如说 <code>nums = [2,3,5,7]</code>, target = 8，算法会返回 4，含义是：<code>nums</code> 中小于 8 的元素有 4 个。</p>
