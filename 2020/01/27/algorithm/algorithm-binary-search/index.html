@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"0202zc.github.io","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="From LeetCode 34. Find First and Last Position of Element in Sorted Array本文转自作者 labuladong 的文章《二分查找算法细节详解，顺便写了首诗》">
+  <meta name="description" content="From LeetCode 34. Find First and Last Position of Element in Sorted Array">
 <meta name="keywords" content="算法,LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二分查找算法细节详解">
 <meta property="og:url" content="http://0202zc.github.io/2020/01/27/algorithm/algorithm-binary-search/index.html">
 <meta property="og:site_name" content="L..z、℃的博客">
-<meta property="og:description" content="From LeetCode 34. Find First and Last Position of Element in Sorted Array本文转自作者 labuladong 的文章《二分查找算法细节详解，顺便写了首诗》">
+<meta property="og:description" content="From LeetCode 34. Find First and Last Position of Element in Sorted Array">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-08T12:23:50.446Z">
+<meta property="og:updated_time" content="2020-04-08T12:33:17.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二分查找算法细节详解">
-<meta name="twitter:description" content="From LeetCode 34. Find First and Last Position of Element in Sorted Array本文转自作者 labuladong 的文章《二分查找算法细节详解，顺便写了首诗》">
+<meta name="twitter:description" content="From LeetCode 34. Find First and Last Position of Element in Sorted Array">
 
 <link rel="canonical" href="http://0202zc.github.io/2020/01/27/algorithm/algorithm-binary-search/">
 
@@ -233,7 +233,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-08 20:23:50" itemprop="dateModified" datetime="2020-04-08T20:23:50+08:00">2020-04-08</time>
+                <time title="修改时间：2020-04-08 20:33:17" itemprop="dateModified" datetime="2020-04-08T20:33:17+08:00">2020-04-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -272,7 +272,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>9.3k</span>
+              <span>9.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -291,9 +291,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>From LeetCode 34. Find First and Last Position of Element in Sorted Array<br>本文转自作者 <em>labuladong</em> 的文章《二分查找算法细节详解，顺便写了首诗》<br><a id="more"></a></p>
+        <p>From LeetCode 34. Find First and Last Position of Element in Sorted Array<br><a id="more"></a></p>
 <blockquote>
-<p>作者：labuladong<br>链接：<a href="https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/solution/er-fen-cha-zhao-suan-fa-xi-jie-xiang-jie-by-labula/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/solution/er-fen-cha-zhao-suan-fa-xi-jie-xiang-jie-by-labula/</a><br>来源：力扣（LeetCode）</p>
+<p>本文转自作者 <em>labuladong</em> 的文章 <a href="https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/solution/er-fen-cha-zhao-suan-fa-xi-jie-xiang-jie-by-labula/" target="_blank" rel="noopener">《二分查找算法细节详解，顺便写了首诗》</a></p>
 </blockquote>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>我相信对很多读者朋友来说，编写二分查找的算法代码属于玄学编程，虽然看起来很简单，就是会出错，要么会漏个等号，要么少加个 1。</p>
 <p>不要气馁，因为二分查找其实并不简单。看看 Knuth 大佬（发明 KMP 算法的那位）怎么说的：</p>
@@ -301,11 +301,11 @@
 <p>Although the basic idea of binary search is comparatively straightforward,<br>the details can be surprisingly tricky… </p>
 </blockquote>
 <p>这句话可以这样理解：<strong>思路很简单，细节是魔鬼</strong>。很多人喜欢拿整型溢出的 bug 说事儿，但是二分查找真正的坑根本就不是那个细节问题，而是在于到底要给 mid 加一还是减一，while 里到底用 <code>&lt;=</code> 还是 <code>&lt;</code>。</p>
-<p>你要是没有正确理解这些细节，写二分肯定就是玄学编程，有没有 bug 只能靠菩萨保佑。<strong>我特意写了一首诗来歌颂该算法，概括本文的主要内容，建议保存：</strong><br><img data-src="https://pic.leetcode-cn.com/c53e309f6591906bb643ccb2a1ace7bcff7f1eb3d788ec72979ea717f66baf71.png" width="70%"></p>
+<p>你要是没有正确理解这些细节，写二分肯定就是玄学编程，有没有 bug 只能靠菩萨保佑。<strong>我特意写了一首诗来歌颂该算法，概括本文的主要内容，建议保存：</strong><br><img data-src="https://img-blog.csdnimg.cn/20200408202434823.png#pic_center" width="40%"></p>
 <p>本文以问答的形式，探究几个最常用的二分查找场景：寻找一个数、寻找左侧边界、寻找右侧边界。第一个场景是最简单的算法形式，解决 <a href="https://leetcode-cn.com/problems/binary-search/" target="_blank">这道题</a>，后两个场景就是本题。</p>
 <p>本文就来探究几个最常用的二分查找场景：寻找一个数、寻找左侧边界、寻找右侧边界。而且，我们就是要深入细节，比如不等号是否应该带等号，mid 是否应该加一等等。分析这些细节的差异以及出现这些差异的原因，保证你能灵活准确地写出正确的二分查找算法。</p>
 <h1 id="零、二分查找框架"><a href="#零、二分查找框架" class="headerlink" title="零、二分查找框架"></a>零、二分查找框架</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = ...;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(...) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (right + left) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = ...</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ...;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>分析二分查找的一个技巧是：不要出现 else，而是把所有情况用 else if 写清楚，这样可以清楚地展现所有细节。</strong>本文都会使用 else if，旨在讲清楚，读者理解后可自行简化。</p>
+<p><strong>分析二分查找的一个技巧是：不要出现 else，而是把所有情况用 else if 写清楚，这样可以清楚地展现所有细节。</strong> 本文都会使用 else if，旨在讲清楚，读者理解后可自行简化。</p>
 <p>其中 <code>...</code> 标记的部分，就是可能出现细节问题的地方，当你见到一个二分查找的代码时，首先注意这几个地方。后文用实例分析这些地方能有什么样的变化。</p>
 <p>另外声明一下，计算 <code>mid</code> 时需要防止溢出，代码中 <code>left + (right - left) / 2</code> 就和 <code>(left + right) / 2</code> 的结果相同，但是有效防止了 <code>left</code> 和 <code>right</code> 太大直接相加导致溢出。</p>
 <h1 id="一、寻找一个数（基本的二分搜索）"><a href="#一、寻找一个数（基本的二分搜索）" class="headerlink" title="一、寻找一个数（基本的二分搜索）"></a>一、寻找一个数（基本的二分搜索）</h1><p>这个场景是最简单的，肯能也是大家最熟悉的，即搜索一个数，如果存在，返回其索引，否则返回 -1。</p>
@@ -336,7 +336,7 @@
 <p>因为对于搜索左右侧边界的二分查找，这种写法比较普遍，我就拿这种写法举例了，保证你以后遇到这类代码可以理解。你非要用两端都闭的写法反而更简单，我会在后面写相关的代码，把三种二分搜索都用一种两端都闭的写法统一起来，你耐心往后看就行了。</p>
 <p><strong>2、为什么没有返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？</strong></p>
 <p>答：因为要一步一步来，先理解一下这个「左侧边界」有什么特殊含义：</p>
-<p><img data-src="https://pic.leetcode-cn.com/761f2acd823c960125e3dddb56f2d811da9c39455fe3f2ee00d3998048a1d6c9.jpg" width="70%"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200408202539306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2trbTA5,size_16,color_FFFFFF,t_70#pic_center" width="70%"></p>
 <p>对于这个数组，算法会返回 1。这个 1 的含义可以这样解读：<code>nums</code> 中小于 2 的元素有 1 个。</p>
 <p>比如对于有序数组 <code>nums = [2,3,5,7]</code>, <code>target = 1</code>，算法会返回 0，含义是：<code>nums</code> 中小于 1 的元素有 0 个。</p>
 <p>再比如说 <code>nums = [2,3,5,7]</code>, target = 8，算法会返回 4，含义是：<code>nums</code> 中小于 8 的元素有 4 个。</p>
@@ -353,7 +353,7 @@
 <p>因为你非要让搜索区间两端都闭，所以 <code>right</code> 应该初始化为 <code>nums.length - 1</code>，while 的终止条件应该是 <code>left == right + 1</code>，也就是其中应该用 <code>&lt;=</code>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">left_bound</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 搜索区间为 [left, right]</span></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">// if else ...</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 <p>因为搜索区间是两端都闭的，且现在是搜索左侧边界，所以 <code>left</code> 和 <code>right</code> 的更新逻辑如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">    <span class="comment">// 搜索区间变为 [mid+1, right]</span></span><br><span class="line">    left = mid + <span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">    <span class="comment">// 搜索区间变为 [left, mid-1]</span></span><br><span class="line">    right = mid - <span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">    <span class="comment">// 收缩右侧边界</span></span><br><span class="line">    right = mid - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>由于 while 的退出条件是 <code>left == right + 1</code>，所以当 <code>target</code> 比 <code>nums</code> 中所有元素都大时，会存在以下情况使得索引越界：</p>
-<p><img data-src="https://pic.leetcode-cn.com/6922fcf9e7ce6faae8f2c60047cb7ebf49a561887e095b46d9ea60aa0e99945b.jpg" width="70%"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200408202610657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2trbTA5,size_16,color_FFFFFF,t_70#pic_center" width="70%"></p>
 <p>因此，最后返回结果的代码应该检查越界情况：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (left &gt;= nums.length || nums[left] != target)</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"><span class="keyword">return</span> left;</span><br></pre></td></tr></table></figure></p>
 <p>至此，整个算法就写完了，完整代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">left_bound</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length - <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 搜索区间为 [left, right]</span></span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            <span class="comment">// 搜索区间变为 [mid+1, right]</span></span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            <span class="comment">// 搜索区间变为 [left, mid-1]</span></span><br><span class="line">            right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            <span class="comment">// 收缩右侧边界</span></span><br><span class="line">            right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 检查出界情况</span></span><br><span class="line">    <span class="keyword">if</span> (left &gt;= nums.length || nums[left] != target)</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这样就和第一种二分搜索算法统一了，都是两端都闭的「搜索区间」，而且最后返回的也是 left 变量的值。只要把住二分搜索的逻辑，两种形式大家看自己喜欢哪种记哪种吧。</p>
@@ -364,7 +364,7 @@
 <p><strong>2、为什么最后返回 <code>left - 1</code> 而不像左侧边界的函数，返回 <code>left</code>？而且我觉得这里既然是搜索右侧边界，应该返回 <code>right</code> 才对。</strong></p>
 <p>答：首先，while 循环的终止条件是 <code>left == right</code>，所以 <code>left</code> 和 <code>right</code> 是一样的，你非要体现右侧的特点，返回 <code>right - 1</code> 好了。</p>
 <p>至于为什么要减一，这是搜索右侧边界的一个特殊点，关键在这个条件判断：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">    left = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 这样想: mid = left - 1</span></span><br></pre></td></tr></table></figure></p>
-<p><img data-src="https://pic.leetcode-cn.com/f6b0418e62a8413a383d32d1f9be4130a1a253c3728d7ff7155cf6b626b4a53d.jpg" width="70%"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200408202639631.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2trbTA5,size_16,color_FFFFFF,t_70#pic_center" width="70%"></p>
 <p>因为我们对 <code>left</code> 的更新必须是 <code>left = mid + 1</code>，就是说 while 循环结束时，<code>nums[left]</code> 一定不等于 <code>target</code> 了，而 <code>nums[left-1]</code> 可能是 <code>target</code>。</p>
 <p>至于为什么 <code>left</code> 的更新必须是 <code>left = mid + 1</code>，同左侧边界搜索，就不再赘述。</p>
 <p><strong>3、为什么没有返回 -1 的操作？如果 <code>nums</code> 中不存在 <code>target</code> 这个值，怎么办？</strong></p>
@@ -372,7 +372,7 @@
 <p><strong>4、是否也可以把这个算法的「搜索区间」也统一成两端都闭的形式呢？这样这三个写法就完全统一了，以后就可以闭着眼睛写出来了。</strong></p>
 <p>答：当然可以，类似搜索左侧边界的统一写法，其实只要改两个地方就行了：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">right_bound</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            <span class="comment">// 这里改成收缩左侧边界即可</span></span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 这里改为检查 right 越界的情况，见下图</span></span><br><span class="line">    <span class="keyword">if</span> (right &lt; <span class="number">0</span> || nums[right] != target)</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>当 <code>target</code> 比所有元素都小时，<code>right</code> 会被减到 -1，所以需要在最后防止越界：</p>
-<p><img data-src="https://pic.leetcode-cn.com/7a4f522758ba0a7d7934ec750d1c3121be163919a67924dbcdf0bbef8d63485a.jpg" width="70%"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/2020040820271147.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2trbTA5,size_16,color_FFFFFF,t_70#pic_center" width="70%"></p>
 <p>至此，搜索右侧边界的二分查找的两种写法也完成了，其实将「搜索区间」统一成两端都闭反而更容易记忆，你说是吧？</p>
 <h1 id="四、逻辑统一"><a href="#四、逻辑统一" class="headerlink" title="四、逻辑统一"></a>四、逻辑统一</h1><p>来梳理一下这些细节差异的因果逻辑：</p>
 <p><strong>第一个，最基本的二分查找算法：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">因为我们初始化 right = nums.length - 1</span><br><span class="line">所以决定了我们的「搜索区间」是 [left, right]</span><br><span class="line">所以决定了 while (left &lt;= right)</span><br><span class="line">同时也决定了 left = mid+1 和 right = mid-1</span><br><span class="line"></span><br><span class="line">因为我们只需找到一个 target 的索引即可</span><br><span class="line">所以当 nums[mid] == target 时可以立即返回</span><br></pre></td></tr></table></figure></p>
@@ -568,7 +568,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">126k</span>
+    <span title="站点总字数">125k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
