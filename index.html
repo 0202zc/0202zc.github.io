@@ -223,7 +223,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-08 20:04:11 / 修改时间：20:04:40" itemprop="dateCreated datePublished" datetime="2020-04-08T20:04:11+08:00">2020-04-08</time>
+              <time title="创建时间：2020-04-08 20:04:11 / 修改时间：20:07:33" itemprop="dateCreated datePublished" datetime="2020-04-08T20:04:11+08:00">2020-04-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,116 +281,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一篇博文便涉水：<a href="https://blog.csdn.net/m0_37907797/article/details/103231054" target="_blank" rel="noopener">《为什么你学不过动态规划？告别动态规划，谈谈我的经验》</a></p>
-<p>从中摘出来的中心思想方法：</p>
-<blockquote>
-<p>第一步：定义数组元素的<strong>含义</strong><br>第二步：找出数组元素之间的<strong>关系式</strong><br>第三步：找出<strong>初始值</strong>。</p>
-</blockquote>
-<p>其中第二步极其类似于<strong>第二数学归纳法</strong></p>
-<p>文中讲解了3道例题，依次为：</p>
-<ul>
-<li><a href="https://leetcode-cn.com/problems/climbing-stairs" target="_blank" rel="noopener">70. 爬楼梯</a>【一维dp】</li>
-<li><a href="https://leetcode-cn.com/problems/unique-paths" target="_blank" rel="noopener">62. 不同路径</a>【二维dp】</li>
-<li><a href="https://leetcode-cn.com/problems/minimum-path-sum" target="_blank" rel="noopener">64. 最小路径和</a>【二维dp】</li>
-<li><a href="https://leetcode-cn.com/problems/edit-distance" target="_blank" rel="noopener">72. 编辑距离</a>【二维dp】</li>
-</ul>
-<blockquote>
-<p>注：有时候用动态规划解决问题不如指针的方法来得好，如题目<a href="https://leetcode-cn.com/problems/is-subsequence/" target="_blank" rel="noopener">392. 判断子序列</a><br>双指针方法几乎不多占内存，而基于数组的动态规划反而需要一部分内存；但是二者的执行时间相同。<br><img data-src="https://img-blog.csdnimg.cn/20200407204607809.png" width="70%"></p>
-</blockquote>
-<hr>
-<h1 id="53-最大子序和"><a href="#53-最大子序和" class="headerlink" title="53. 最大子序和"></a>53. 最大子序和</h1><p><img data-src="https://img-blog.csdnimg.cn/20200406234041186.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2trbTA5,size_16,color_FFFFFF,t_70" alt="题目描述 53"><br><strong>解题思路：</strong></p>
-<p>想到了一次的正序遍历，但是结果求出的是非连续序列的最大和：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = max(max(dp[i - <span class="number">1</span>], nums[i]), dp[i - <span class="number">1</span>] + nums[i]);</span><br></pre></td></tr></table></figure></p>
-<p>官方题解：</p>
-<blockquote>
-<p>在整个数组或在固定大小的滑动窗口中找到总和或最大值或最小值的问题可以通过动态规划（DP）在线性时间内解决。<br>有两种标准 DP 方法适用于数组：</p>
-<ol>
-<li>常数空间，沿数组移动并在原数组修改。</li>
-<li>线性空间，首先沿 left-&gt;right 方向移动，然后再沿 right-&gt;left 方向移动。 合并结果。</li>
-</ol>
-<ul>
-<li>我们在这里使用第一种方法，因为可以修改数组跟踪<strong>当前位置的最大和</strong>。</li>
-<li>下一步是在知道当前位置的最大和后更新<strong>全局最大和</strong>。</li>
-</ul>
-<p><img data-src="https://img-blog.csdnimg.cn/20200407095810761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2trbTA5,size_16,color_FFFFFF,t_70" width="70%"></p>
-</blockquote>
-<p>简而言之，就是检测<code>max(nums[i], nums[i - 1] + nums[i])</code>：</p>
-<ul>
-<li>if(max &lt;= nums[i])，则不作改变，i++;</li>
-<li>if(max &gt; nums[i])，则更新 nums[i] = nums[i - 1] + nums[i];‘’<br>这就是与非连续子数组最大的不同：遇到负数【间断点】，<strong>不保留之前的最大和</strong>【即实现了非连续】；且不管正数负数，<strong>只要前后之和大于当前值就进行更新</strong></li>
-<li>最后一步检测<code>max(nums[i], nums[i + 1])</code></li>
-</ul>
-<blockquote>
-<p>上图的第二行<code>current max sum</code>指的是局部连续子区间内的最大和，最后一行是全局的最大和</p>
-</blockquote>
-<ol>
-<li><p>定义数组元素含义<br> 定义<code>dp[numsSize]</code>记录局部最大和，<code>dp[i]</code>表示当前局部最大和</p>
-</li>
-<li><p>定义递推表达式<br> 要取最大值，则要看 是加了之后变大，还是原来就比较大，肯定不能是加了一个数之后反而变小了。</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = max(nums[i], dp[i - <span class="number">1</span>] + nums[i]);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化<br> dp[0] = nums[0];</p>
-</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b ? a : b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(numsSize == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> dp[numsSize];</span><br><span class="line">    dp[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; numsSize; i++)&#123;</span><br><span class="line">        dp[i] = max(nums[i], dp[i - <span class="number">1</span>] + nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; numsSize; i++)&#123;  <span class="comment">//局部区间从后向前检测</span></span><br><span class="line">        dp[i] = max(dp[i], dp[i - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[numsSize - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>时间复杂度：$O(n)$<br>空间复杂度：$O(1)$</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//另一种思路，非负数才值得留下</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b ? a : b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = nums[<span class="number">0</span>], sum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numsSize; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(sum &gt; <span class="number">0</span>)</span><br><span class="line">            sum += nums[i];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            sum = nums[i];</span><br><span class="line">        res = max(res, sum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="121-买卖股票的最佳时机"><a href="#121-买卖股票的最佳时机" class="headerlink" title="121. 买卖股票的最佳时机"></a>121. 买卖股票的最佳时机</h1><p><strong>解题思路：</strong></p>
-<p><img data-src="https://img-blog.csdnimg.cn/20200407201408779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2trbTA5,size_16,color_FFFFFF,t_70" width="60%"></p>
-<p>1.定义数组元素含义</p>
-<ul>
-<li>用<code>dp[i]</code>来表示<strong>能买入的最低价的下标</strong></li>
-<li>用<code>profit[i]</code>来表示<strong>当前值与目前最低价之差</strong>【收益】</li>
-</ul>
-<p>2.定义递推表达式</p>
-<ul>
-<li>如果当前价格小于前一个价格，则对买入价格进行更新</li>
-<li><p>否则，继续记录目前最低买入价下标，计算当前价格收益</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(prices[i] &lt;= prices[dp[i - <span class="number">1</span>]])&#123;</span><br><span class="line">    dp[i] = i;</span><br><span class="line">    profit[i] = <span class="number">0</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    dp[i] = dp[i - <span class="number">1</span>];</span><br><span class="line">    profit[i] = prices[i] - prices[dp[i]];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>最终返回值为收益数组<code>profit</code>中最大的那个数</p>
-</li>
-</ul>
-<p>3.初始化</p>
-<ul>
-<li>dp[0] = 0;    //prices数组第一个（prices[0]）的下标</li>
-<li>profit[0] = 0;    //第一个没买没卖，收益为0</li>
-</ul>
-<p>4.最终代码<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>* prices, <span class="keyword">int</span> pricesSize)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pricesSize &lt;= <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> dp[pricesSize], profit[pricesSize];</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">0</span>;  <span class="comment">//dp[i]记录最低价的下标</span></span><br><span class="line">    profit[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; pricesSize; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices[i] &lt;= prices[dp[i - <span class="number">1</span>]])&#123;</span><br><span class="line">            dp[i] = i;</span><br><span class="line">            profit[i] = <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">1</span>];</span><br><span class="line">            profit[i] = prices[i] - prices[dp[i]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> m = profit[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; pricesSize; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(m &lt; profit[i])&#123;</span><br><span class="line">            m = profit[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>时间复杂度：$O(n)$<br>空间复杂度：$O(1)$</p>
-<hr>
-<h1 id="198-打家劫舍"><a href="#198-打家劫舍" class="headerlink" title="198. 打家劫舍"></a>198. 打家劫舍</h1><p><img data-src="https://img-blog.csdnimg.cn/20200407184316240.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2trbTA5,size_16,color_FFFFFF,t_70" alt="题目描述"><br><strong>解题思路：</strong></p>
-<blockquote>
-<p>这道题和上一题相同点在于都有访问限制条件，基于这一点就可以方便书写递推表达式<br>· 同型题目：<a href="https://leetcode-cn.com/problems/the-masseuse-lcci/" target="_blank" rel="noopener">《面试题 17.16. 按摩师》</a></p>
-</blockquote>
-<p>1.定义数组元素含义</p>
-<ul>
-<li>定义<code>dp[i]</code>为当前获得的最高金额</li>
-</ul>
-<p>2.定义递推表达式</p>
-<ul>
-<li>表达式的化简参考<a href="https://leetcode-cn.com/problems/house-robber/solution/da-jia-jie-she-by-leetcode/" target="_blank" rel="noopener">官方题解</a></li>
-<li>根据上述化简结论（dp错位）可设dp[numsSize + 1]，其中设dp[0]为1</li>
-<li><code>dp[i] = max(dp[i - 1], dp[i - 2] + num[i - 1])</code>【图片参考：<a href="https://leetcode-cn.com/problems/house-robber/solution/hua-jie-suan-fa-198-da-jia-jie-she-by-guanpengchn/" target="_blank" rel="noopener">画解算法</a>】</li>
-<li>由于不可以在相邻的房屋闯入，所以在当前位置 n 房屋可盗窃的最大值，要么就是 n-1 房屋可盗窃的最大值，要么就是 n-2 房屋可盗窃的最大值加上当前房屋的值，二者之间取最大值</li>
-</ul>
-<p>3.初始化</p>
-<ul>
-<li>dp[0] = 0;</li>
-<li>dp[1] = nums[0];</li>
-</ul>
-<p>4.代码<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b ? a : b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(numsSize == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> dp[numsSize + <span class="number">1</span>];</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    dp[<span class="number">1</span>] = nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= numsSize; i++)&#123;</span><br><span class="line">        dp[i] = max(dp[i - <span class="number">1</span>], dp[i - <span class="number">2</span>] + nums[i - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[numsSize];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>时间复杂度：$O(n)$</p>
-<blockquote>
-<ul>
-<li>当时自己写的时候走了很多弯路，没有让dp[0]错位，使得代码变得很复杂。</li>
-<li>因为要对dp数组进行排序，每趟都要找dp[0, i - 2]中最大的一个数，时间复杂度达到了$O(n^2)$</li>
-<li>现在明白了dp[2] = max(dp[0] + dp[2], dp[1])的意义：在初始情况下，选择nums[0]和nums[1]中较大的那个</li>
-</ul>
-<p>代码如下：</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max_num</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b ? a : b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(numsSize == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(numsSize == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(numsSize == <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> (nums[<span class="number">0</span>] &gt; nums[<span class="number">1</span>] ? nums[<span class="number">0</span>] : nums[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> dp[numsSize];</span><br><span class="line">    dp[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line">    dp[<span class="number">1</span>] = nums[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; numsSize; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i - <span class="number">2</span>; j++)&#123;    <span class="comment">//找dp[0, i - 2]中最大的一个数</span></span><br><span class="line">            m = max_num(m, dp[j]);</span><br><span class="line">        &#125;</span><br><span class="line">        dp[i] = m + nums[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> max = dp[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; numsSize; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(max &lt; dp[i])</span><br><span class="line">            max = dp[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一篇博文便涉水：<a href="https://blog.csdn.net/m0_37907797/article/details/103231054" target="_blank" rel="noopener">《为什么你学不过动态规划？告别动态规划，谈谈我的经验》</a><br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/08/algorithm/leetcode-dynamic-programming/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

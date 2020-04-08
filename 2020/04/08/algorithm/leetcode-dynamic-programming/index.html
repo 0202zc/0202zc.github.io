@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"0202zc.github.io","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="前言一篇博文便涉水：《为什么你学不过动态规划？告别动态规划，谈谈我的经验》 从中摘出来的中心思想方法：  第一步：定义数组元素的含义第二步：找出数组元素之间的关系式第三步：找出初始值。  其中第二步极其类似于第二数学归纳法 文中讲解了3道例题，依次为：  70. 爬楼梯【一维dp】 62. 不同路径【二维dp】 64. 最小路径和【二维dp】 72. 编辑距离【二维dp】   注：有时候用动态规划">
+  <meta name="description" content="前言一篇博文便涉水：《为什么你学不过动态规划？告别动态规划，谈谈我的经验》">
 <meta name="keywords" content="算法,LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【LeetCode 笔记】动态规划">
 <meta property="og:url" content="http://0202zc.github.io/2020/04/08/algorithm/leetcode-dynamic-programming/index.html">
 <meta property="og:site_name" content="L..z、℃的博客">
-<meta property="og:description" content="前言一篇博文便涉水：《为什么你学不过动态规划？告别动态规划，谈谈我的经验》 从中摘出来的中心思想方法：  第一步：定义数组元素的含义第二步：找出数组元素之间的关系式第三步：找出初始值。  其中第二步极其类似于第二数学归纳法 文中讲解了3道例题，依次为：  70. 爬楼梯【一维dp】 62. 不同路径【二维dp】 64. 最小路径和【二维dp】 72. 编辑距离【二维dp】   注：有时候用动态规划">
+<meta property="og:description" content="前言一篇博文便涉水：《为什么你学不过动态规划？告别动态规划，谈谈我的经验》">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-08T12:04:40.222Z">
+<meta property="og:updated_time" content="2020-04-08T12:07:33.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【LeetCode 笔记】动态规划">
-<meta name="twitter:description" content="前言一篇博文便涉水：《为什么你学不过动态规划？告别动态规划，谈谈我的经验》 从中摘出来的中心思想方法：  第一步：定义数组元素的含义第二步：找出数组元素之间的关系式第三步：找出初始值。  其中第二步极其类似于第二数学归纳法 文中讲解了3道例题，依次为：  70. 爬楼梯【一维dp】 62. 不同路径【二维dp】 64. 最小路径和【二维dp】 72. 编辑距离【二维dp】   注：有时候用动态规划">
+<meta name="twitter:description" content="前言一篇博文便涉水：《为什么你学不过动态规划？告别动态规划，谈谈我的经验》">
 
 <link rel="canonical" href="http://0202zc.github.io/2020/04/08/algorithm/leetcode-dynamic-programming/">
 
@@ -227,7 +227,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-08 20:04:11 / 修改时间：20:04:40" itemprop="dateCreated datePublished" datetime="2020-04-08T20:04:11+08:00">2020-04-08</time>
+              <time title="创建时间：2020-04-08 20:04:11 / 修改时间：20:07:33" itemprop="dateCreated datePublished" datetime="2020-04-08T20:04:11+08:00">2020-04-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,8 +285,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一篇博文便涉水：<a href="https://blog.csdn.net/m0_37907797/article/details/103231054" target="_blank" rel="noopener">《为什么你学不过动态规划？告别动态规划，谈谈我的经验》</a></p>
-<p>从中摘出来的中心思想方法：</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一篇博文便涉水：<a href="https://blog.csdn.net/m0_37907797/article/details/103231054" target="_blank" rel="noopener">《为什么你学不过动态规划？告别动态规划，谈谈我的经验》</a><br><a id="more"></a><br>从中摘出来的中心思想方法：</p>
 <blockquote>
 <p>第一步：定义数组元素的<strong>含义</strong><br>第二步：找出数组元素之间的<strong>关系式</strong><br>第三步：找出<strong>初始值</strong>。</p>
 </blockquote>
