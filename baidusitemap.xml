@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://0202zc.github.io/2020/04/08/algorithm/leetcode-dynamic-programming/</loc>
     <lastmod>2020-04-11T01:08:43.499Z</lastmod>
@@ -784,7 +785,6 @@
     </url>
 
     
-    
   <url>
     <loc>http://0202zc.github.io/2018/05/18/Python-3-6%E8%8E%B7%E5%8F%96%E6%98%8E%E6%97%A5%E8%AF%BE%E7%A8%8B%E5%B9%B6%E5%8F%91%E9%80%81%E5%BE%AE%E4%BF%A1%E5%A5%BD%E5%8F%8B/</loc>
     <lastmod>2020-01-19T03:01:37.864Z</lastmod>
@@ -793,9 +793,9 @@
         <title>Python学习笔记 —— 爬取教务网明日课程并发送微信好友</title>
         <pubTime>2018-05-18T07:29:34.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>网络爬虫</tag>
+         
+        <tag>Python</tag>
          
          
            
