@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0202zc.github.io/"/>
-  <updated>2020-07-24T10:06:32.170Z</updated>
+  <updated>2020-07-24T10:08:45.776Z</updated>
   <id>http://0202zc.github.io/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="http://0202zc.github.io/2020/07/24/os-bitmap-disk-transform/"/>
     <id>http://0202zc.github.io/2020/07/24/os-bitmap-disk-transform/</id>
     <published>2020-07-24T09:55:00.000Z</published>
-    <updated>2020-07-24T10:06:32.170Z</updated>
+    <updated>2020-07-24T10:08:45.776Z</updated>
     
-    <content type="html"><![CDATA[<p>位示图与磁盘内部信息如何进行转换？<br><a id="more"></a></p><p>n个柱面，编号0～n-1；共m个磁头，编号0～m-1；每个磁道内的k个信息块从1开始编号，1～k。</p><p>x：逻辑磁盘块号<br>a：任意逻辑磁盘块的柱面号<br>b：磁头号<br>c：磁道内块号</p><p>则：</p><p>$ x = k × m × a + k × b + c $</p><p>$ a = (x - 1) / (k × m) $</p><p>$ b = ((x - 1) mod (k × m)) / k $</p><p>$ c = ((x - 1) mod (k × m)) mod k + 1 $</p><p>正常情况下，可以理解为：位示图的一个位置对应一个磁盘块，一个磁盘块就是一个扇区（最小单位），所以位示图一个块对应一个扇区。</p><p><strong>注：汤子瀛的《操作系统第四版》里明确说明一个扇区称为一个盘块（或数据块）</strong></p><hr><h2 id="磁盘块与扇区大小问题"><a href="#磁盘块与扇区大小问题" class="headerlink" title="磁盘块与扇区大小问题"></a>磁盘块与扇区大小问题</h2><p>既然磁盘块是一个虚拟概念。是操作系统自己＂杜撰＂的。软件的概念，不是真实的。所以大小由操作系统决定，操作系统可以配置一个块多大。</p><p>一个块大小=一个扇区大小*2的n次方。</p><p>N是可以修改的。</p><p>顿时我思考：为什么磁盘块大小必须是扇区大小的整数倍呢？</p><p>因为，磁盘驱动器，磁盘附带的硬件设备，与磁盘读写数据，操作系统也要靠它。<br>它读取磁盘数据就是扇区的大小。</p><p>一个扇区是512字节。有些硬盘厂商会提供4k大小扇区。这是物理结构。磁盘定下来的结构就是没法修改的</p><blockquote><p>转自博客园<a href="https://www.cnblogs.com/wangtao_20/p/4791265.html" target="_blank" rel="noopener">《思考与总结:扇区和磁盘块的区别是什么》</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="位示图与磁盘内部信息如何进行转换？"><a href="#位示图与磁盘内部信息如何进行转换？" class="headerlink" title="位示图与磁盘内部信息如何进行转换？"></a>位示图与磁盘内部信息如何进行转换？</h2><a id="more"></a><p>n个柱面，编号0～n-1；共m个磁头，编号0～m-1；每个磁道内的k个信息块从1开始编号，1～k。</p><p>x：逻辑磁盘块号<br>a：任意逻辑磁盘块的柱面号<br>b：磁头号<br>c：磁道内块号</p><p>则：</p><p>$ x = k × m × a + k × b + c $</p><p>$ a = (x - 1) / (k × m) $</p><p>$ b = ((x - 1) mod (k × m)) / k $</p><p>$ c = ((x - 1) mod (k × m)) mod k + 1 $</p><p>正常情况下，可以理解为：位示图的一个位置对应一个磁盘块，一个磁盘块就是一个扇区（最小单位），所以位示图一个块对应一个扇区。</p><p><strong>注：汤子瀛的《操作系统第四版》里明确说明一个扇区称为一个盘块（或数据块）</strong></p><hr><h2 id="磁盘块与扇区大小问题"><a href="#磁盘块与扇区大小问题" class="headerlink" title="磁盘块与扇区大小问题"></a>磁盘块与扇区大小问题</h2><p>既然磁盘块是一个虚拟概念。是操作系统自己＂杜撰＂的。软件的概念，不是真实的。所以大小由操作系统决定，操作系统可以配置一个块多大。</p><p>一个块大小=一个扇区大小*2的n次方。</p><p>N是可以修改的。</p><p>顿时我思考：为什么磁盘块大小必须是扇区大小的整数倍呢？</p><p>因为，磁盘驱动器，磁盘附带的硬件设备，与磁盘读写数据，操作系统也要靠它。<br>它读取磁盘数据就是扇区的大小。</p><p>一个扇区是512字节。有些硬盘厂商会提供4k大小扇区。这是物理结构。磁盘定下来的结构就是没法修改的</p><blockquote><p>转自博客园<a href="https://www.cnblogs.com/wangtao_20/p/4791265.html" target="_blank" rel="noopener">《思考与总结:扇区和磁盘块的区别是什么》</a></p></blockquote>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;位示图与磁盘内部信息如何进行转换？&lt;br&gt;
+      &lt;h2 id=&quot;位示图与磁盘内部信息如何进行转换？&quot;&gt;&lt;a href=&quot;#位示图与磁盘内部信息如何进行转换？&quot; class=&quot;headerlink&quot; title=&quot;位示图与磁盘内部信息如何进行转换？&quot;&gt;&lt;/a&gt;位示图与磁盘内部信息如何进行转换？&lt;/h2&gt;
     
     </summary>
     
