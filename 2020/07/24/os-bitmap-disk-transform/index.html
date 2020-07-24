@@ -20,15 +20,20 @@
     var CONFIG = {"hostname":"0202zc.github.io","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Lloyd的博客">
-<meta property="og:url" content="http://0202zc.github.io/archives/2018/05/index.html">
+  <meta name="description" content="位示图与磁盘内部信息如何进行转换？">
+<meta name="keywords" content="操作系统,OS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="位示图信息转换磁盘信息">
+<meta property="og:url" content="http://0202zc.github.io/2020/07/24/os-bitmap-disk-transform/index.html">
 <meta property="og:site_name" content="Lloyd的博客">
+<meta property="og:description" content="位示图与磁盘内部信息如何进行转换？">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-07-24T10:06:32.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lloyd的博客">
+<meta name="twitter:title" content="位示图信息转换磁盘信息">
+<meta name="twitter:description" content="位示图与磁盘内部信息如何进行转换？">
 
-<link rel="canonical" href="http://0202zc.github.io/archives/2018/05/">
+<link rel="canonical" href="http://0202zc.github.io/2020/07/24/os-bitmap-disk-transform/">
 
 
 <script id="page-configurations">
@@ -36,11 +41,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false
+    isPost : true
   };
 </script>
 
-  <title>归档 | Lloyd的博客</title>
+  <title>位示图信息转换磁盘信息 | Lloyd的博客</title>
   
 
 
@@ -193,214 +198,170 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://0202zc.github.io/2020/07/24/os-bitmap-disk-transform/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom_logo.jpg">
+      <meta itemprop="name" content="Lloyd">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lloyd的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          位示图信息转换磁盘信息
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-24 17:55:00 / 修改时间：18:06:32" itemprop="dateCreated datePublished" datetime="2020-07-24T17:55:00+08:00">2020-07-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机操作系统/" itemprop="url" rel="index"><span itemprop="name">计算机操作系统</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/07/24/os-bitmap-disk-transform/" class="post-meta-item leancloud_visitors" data-flag-title="位示图信息转换磁盘信息" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        
-        <span class="collection-header">还行! 目前共计 46 篇日志。 继续努力。</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/24/os-bitmap-disk-transform/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/24/os-bitmap-disk-transform/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>527</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2018</h1>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-21T19:35:32+08:00"
-              content="2018-05-21">
-          05-21
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/21/计算机组成原理笔记/" itemprop="url">
-            <span itemprop="name">计算机组成原理笔记</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-18T15:29:34+08:00"
-              content="2018-05-18">
-          05-18
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/18/Python-3-6获取明日课程并发送微信好友/" itemprop="url">
-            <span itemprop="name">Python学习笔记 —— 爬取教务网明日课程并发送微信好友</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-17T10:43:40+08:00"
-              content="2018-05-17">
-          05-17
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/17/OpenCV-百度云接口实现人脸认证/" itemprop="url">
-            <span itemprop="name">Python学习笔记 —— OpenCV+百度云接口实现人脸认证</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-16T20:56:50+08:00"
-              content="2018-05-16">
-          05-16
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/16/新版Windows10配置Java环境变量/" itemprop="url">
-            <span itemprop="name">Java学习笔记 —— 新版Windows10配置Java环境变量</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-15T20:43:26+08:00"
-              content="2018-05-15">
-          05-15
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/15/Python-3-6-模拟登录学校教务系统获取四六级成绩/" itemprop="url">
-            <span itemprop="name">Python 3.6 模拟登录学校教务系统获取四六级成绩</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-15T07:33:10+08:00"
-              content="2018-05-15">
-          05-15
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/15/用itchat库给好友发微信消息/" itemprop="url">
-            <span itemprop="name">用itchat库给好友发微信消息</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-14T12:00:32+08:00"
-              content="2018-05-14">
-          05-14
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/14/Python-3-6-模拟登录获取跑操信息/" itemprop="url">
-            <span itemprop="name">Python 3.6 模拟登录学校跑操系统获取跑操信息</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-13T22:54:12+08:00"
-              content="2018-05-13">
-          05-13
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/13/我的测试文章/" itemprop="url">
-            <span itemprop="name">卷积神经网络</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-05-13T22:40:29+08:00"
-              content="2018-05-13">
-          05-13
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/05/13/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
+        <p>位示图与磁盘内部信息如何进行转换？<br><a id="more"></a></p>
+<p>n个柱面，编号0～n-1；共m个磁头，编号0～m-1；每个磁道内的k个信息块从1开始编号，1～k。</p>
+<p>x：逻辑磁盘块号<br>a：任意逻辑磁盘块的柱面号<br>b：磁头号<br>c：磁道内块号</p>
+<p>则：</p>
+<p>$ x = k × m × a + k × b + c $</p>
+<p>$ a = (x - 1) / (k × m) $</p>
+<p>$ b = ((x - 1) mod (k × m)) / k $</p>
+<p>$ c = ((x - 1) mod (k × m)) mod k + 1 $</p>
+<p>正常情况下，可以理解为：位示图的一个位置对应一个磁盘块，一个磁盘块就是一个扇区（最小单位），所以位示图一个块对应一个扇区。</p>
+<p><strong>注：汤子瀛的《操作系统第四版》里明确说明一个扇区称为一个盘块（或数据块）</strong></p>
+<hr>
+<h2 id="磁盘块与扇区大小问题"><a href="#磁盘块与扇区大小问题" class="headerlink" title="磁盘块与扇区大小问题"></a>磁盘块与扇区大小问题</h2><p>既然磁盘块是一个虚拟概念。是操作系统自己＂杜撰＂的。软件的概念，不是真实的。所以大小由操作系统决定，操作系统可以配置一个块多大。</p>
+<p>一个块大小=一个扇区大小*2的n次方。</p>
+<p>N是可以修改的。</p>
+<p>顿时我思考：为什么磁盘块大小必须是扇区大小的整数倍呢？</p>
+<p>因为，磁盘驱动器，磁盘附带的硬件设备，与磁盘读写数据，操作系统也要靠它。<br>它读取磁盘数据就是扇区的大小。</p>
+<p>一个扇区是512字节。有些硬盘厂商会提供4k大小扇区。这是物理结构。磁盘定下来的结构就是没法修改的</p>
+<blockquote>
+<p>转自博客园<a href="https://www.cnblogs.com/wangtao_20/p/4791265.html" target="_blank" rel="noopener">《思考与总结:扇区和磁盘块的区别是什么》</a></p>
+</blockquote>
 
     </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Lloyd 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Lloyd 支付宝">
+        <p>支付宝</p>
+      </div>
+
   </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/操作系统/" rel="tag"><i class="fa fa-tag"></i> 操作系统</a>
+              <a href="/tags/OS/" rel="tag"><i class="fa fa-tag"></i> OS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/08/algorithm/leetcode-dynamic-programming/" rel="prev" title="【LeetCode 笔记】动态规划">
+      <i class="fa fa-chevron-left"></i> 【LeetCode 笔记】动态规划
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-
+  </div>
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -447,6 +408,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#磁盘块与扇区大小问题"><span class="nav-number">1.</span> <span class="nav-text">磁盘块与扇区大小问题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -595,6 +557,59 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

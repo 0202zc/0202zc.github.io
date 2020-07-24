@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0202zc.github.io/"/>
-  <updated>2020-04-11T01:08:43.499Z</updated>
+  <updated>2020-07-24T10:06:32.170Z</updated>
   <id>http://0202zc.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>位示图信息转换磁盘信息</title>
+    <link href="http://0202zc.github.io/2020/07/24/os-bitmap-disk-transform/"/>
+    <id>http://0202zc.github.io/2020/07/24/os-bitmap-disk-transform/</id>
+    <published>2020-07-24T09:55:00.000Z</published>
+    <updated>2020-07-24T10:06:32.170Z</updated>
+    
+    <content type="html"><![CDATA[<p>位示图与磁盘内部信息如何进行转换？<br><a id="more"></a></p><p>n个柱面，编号0～n-1；共m个磁头，编号0～m-1；每个磁道内的k个信息块从1开始编号，1～k。</p><p>x：逻辑磁盘块号<br>a：任意逻辑磁盘块的柱面号<br>b：磁头号<br>c：磁道内块号</p><p>则：</p><p>$ x = k × m × a + k × b + c $</p><p>$ a = (x - 1) / (k × m) $</p><p>$ b = ((x - 1) mod (k × m)) / k $</p><p>$ c = ((x - 1) mod (k × m)) mod k + 1 $</p><p>正常情况下，可以理解为：位示图的一个位置对应一个磁盘块，一个磁盘块就是一个扇区（最小单位），所以位示图一个块对应一个扇区。</p><p><strong>注：汤子瀛的《操作系统第四版》里明确说明一个扇区称为一个盘块（或数据块）</strong></p><hr><h2 id="磁盘块与扇区大小问题"><a href="#磁盘块与扇区大小问题" class="headerlink" title="磁盘块与扇区大小问题"></a>磁盘块与扇区大小问题</h2><p>既然磁盘块是一个虚拟概念。是操作系统自己＂杜撰＂的。软件的概念，不是真实的。所以大小由操作系统决定，操作系统可以配置一个块多大。</p><p>一个块大小=一个扇区大小*2的n次方。</p><p>N是可以修改的。</p><p>顿时我思考：为什么磁盘块大小必须是扇区大小的整数倍呢？</p><p>因为，磁盘驱动器，磁盘附带的硬件设备，与磁盘读写数据，操作系统也要靠它。<br>它读取磁盘数据就是扇区的大小。</p><p>一个扇区是512字节。有些硬盘厂商会提供4k大小扇区。这是物理结构。磁盘定下来的结构就是没法修改的</p><blockquote><p>转自博客园<a href="https://www.cnblogs.com/wangtao_20/p/4791265.html" target="_blank" rel="noopener">《思考与总结:扇区和磁盘块的区别是什么》</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;位示图与磁盘内部信息如何进行转换？&lt;br&gt;
+    
+    </summary>
+    
+      <category term="计算机操作系统" scheme="http://0202zc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="操作系统" scheme="http://0202zc.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="OS" scheme="http://0202zc.github.io/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>【LeetCode 笔记】动态规划</title>
@@ -471,28 +495,6 @@
     
     
       <category term="English" scheme="http://0202zc.github.io/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言中变量存储位置</title>
-    <link href="http://0202zc.github.io/2020/02/01/C-variable-storage-2/"/>
-    <id>http://0202zc.github.io/2020/02/01/C-variable-storage-2/</id>
-    <published>2020-02-01T06:28:06.000Z</published>
-    <updated>2020-02-01T06:44:12.011Z</updated>
-    
-    <content type="html"><![CDATA[<p>局部变量、静态局部变量、静态全局变量…<br><a id="more"></a></p><h3 id="一、C语言中，常量存储在哪儿？static全局变量和static局部变量存储在哪儿？"><a href="#一、C语言中，常量存储在哪儿？static全局变量和static局部变量存储在哪儿？" class="headerlink" title="一、C语言中，常量存储在哪儿？static全局变量和static局部变量存储在哪儿？"></a>一、C语言中，常量存储在哪儿？<code>static</code>全局变量和<code>static</code>局部变量存储在哪儿？</h3><p>全局变量（外部变量）的说明之前再冠以<code>static</code>就构成了静态的全局变量。全局变量本身就是静态存储方式，静态全局变量也是静态存储方式。这两者在存储方式上并无不同。这两者的区别虽在于</p><blockquote><p><strong>非静态全局变量的作用域是整个源程序，</strong><br><strong>当一个源程序由多个源文件组成时，非静态的全局变量在各个源文件中都是有效的，</strong><br><strong>而静态全局变量则限制了其作用域。</strong><br><strong>即只在定义该变量的源文件内有效，</strong></p></blockquote><p>在同一源程序的其他源文件中不能使用它。由于静态全局变量的作用域局限于一个源文件内，只能为该源文件内的函数公用，因此可以避免在其他源文件中引起错误。</p><h3 id="二、static全局变量与普通的全局变量有什么区别？"><a href="#二、static全局变量与普通的全局变量有什么区别？" class="headerlink" title="二、static全局变量与普通的全局变量有什么区别？"></a>二、<code>static</code>全局变量与普通的全局变量有什么区别？</h3><ul><li><strong><code>static</code>全局变量只初始化一次</strong>，防止在其他文件单元中被是引用。</li></ul><h3 id="三、static局部变量与普通的局部变量有什么区别？"><a href="#三、static局部变量与普通的局部变量有什么区别？" class="headerlink" title="三、static局部变量与普通的局部变量有什么区别？"></a>三、<code>static</code>局部变量与普通的局部变量有什么区别？</h3><ul><li><strong><code>static</code>局部变量只被初始化一次</strong>，下一次依据上一次结果值。</li></ul><h3 id="四、局部变量、静态局部变量、静态全局变量存储位置"><a href="#四、局部变量、静态局部变量、静态全局变量存储位置" class="headerlink" title="四、局部变量、静态局部变量、静态全局变量存储位置"></a>四、局部变量、静态局部变量、静态全局变量存储位置</h3><table><thead><tr><th>变量类型</th><th>存储位置</th></tr></thead><tbody><tr><td>局部变量</td><td>静态区（全局区）</td></tr><tr><td>局部静态变量</td><td>静态区（全局区）的常量区</td></tr><tr><td>全局静态变量</td><td>静态区（全局区）</td></tr></tbody></table><h3 id="五、各存储区的定义"><a href="#五、各存储区的定义" class="headerlink" title="五、各存储区的定义"></a>五、各存储区的定义</h3><ol><li><p><strong>栈区（stack）</strong> —— 由编译器自动分配释放，存放<u>函数的参数值，局部变量的值</u>等，其操作方式类似于数据结构中的栈。</p></li><li><p><strong>堆区（heap）</strong> —— 一般由程序员分配释放。若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，分配方式倒是类似于链表。</p></li><li><p><strong>全局区（静态区）（static）</strong> —— <u>全局变零和静态变量</u>的存储是放在一起的，初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域，- <em>程序结束后由系统释放</em>。</p></li><li><p><strong>文字常量区</strong> —— <u>常量字符串</u>就是放在这里的。- <em>程序结束后由系统释放</em>。</p></li><li><p><strong>程序代码区</strong> —— <u>存放函数体的二进制代码</u>。</p></li></ol><h3 id="六、NOTES"><a href="#六、NOTES" class="headerlink" title="六、NOTES"></a>六、NOTES</h3><ol><li><p><strong>栈</strong>，就是那些由编译器在需要的时候分配，在不需要的时候自动清除的变量的存储区。里面的变量通常是局部变量、函数参数等。</p></li><li><p><strong>堆</strong>，就是那些由<code>new</code>分配的内存块，他们的释放编译器不去管，由应用程序控制，一般一个<code>new</code>就要对应一个<code>delete</code>。如果程序员没有释放掉，那么在程序结束后，操作系统会自动回收。</p></li><li><p><strong>自由存储区</strong>，就是那些由<code>malloc</code>分配的内存块，它和堆十分相似，不过它是用<code>free</code>来结束自己的生命。</p></li><li><p><strong>全局/静态存储区</strong>，全局变量和静态变量被分配到同一块内存中，在以前的C语言中，全局变量又分为初始化的和未初始化的，<em>在C++里面没有这个区分</em>，它们共同占用一块内存区。</p></li><li><p><strong>常量存储区</strong>，这是一块比较特殊的存储区，它们存放的是常量，<strong>不允许被修改</strong>。</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;局部变量、静态局部变量、静态全局变量…&lt;br&gt;
-    
-    </summary>
-    
-      <category term="C语言" scheme="http://0202zc.github.io/categories/C%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="C/C++" scheme="http://0202zc.github.io/tags/C-C/"/>
     
   </entry>
   
